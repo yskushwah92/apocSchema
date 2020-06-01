@@ -61,14 +61,6 @@
                         <option [ngValue]="purchaseOrderOption.id === editForm.get('purchaseOrder')!.value?.id ? editForm.get('purchaseOrder')!.value : purchaseOrderOption" *ngFor="let purchaseOrderOption of purchaseorders; trackBy: trackById">{{ purchaseOrderOption.id }}</option>
                     </select>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.notificationInfo" for="field_notificationInfo">Notification Info</label>
-                    <select class="form-control" id="field_notificationInfo" name="notificationInfo" formControlName="notificationInfo">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="notificationInfoOption.id === editForm.get('notificationInfo')!.value?.id ? editForm.get('notificationInfo')!.value : notificationInfoOption" *ngFor="let notificationInfoOption of notificationinfos; trackBy: trackById">{{ notificationInfoOption.id }}</option>
-                    </select>
-                </div>
             </div>
 
             <div>

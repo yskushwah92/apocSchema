@@ -13,8 +13,6 @@ import { NotificationInfoService } from './notification-info.service';
 import { IPurchaseOrder } from 'app/shared/model/purchase-order.model';
 import { PurchaseOrderService } from 'app/entities/purchase-order/purchase-order.service';
 
-type SelectableEntity = IPurchaseOrder | INotificationInfo;
-
 @Component({
   selector: 'jhi-notification-info-update',
   templateUrl: './notification-info-update.component.html',
@@ -22,7 +20,6 @@ type SelectableEntity = IPurchaseOrder | INotificationInfo;
 export class NotificationInfoUpdateComponent implements OnInit {
   isSaving = false;
   purchaseorders: IPurchaseOrder[] = [];
-  notificationinfos: INotificationInfo[] = [];
 
   editForm = this.fb.group({
     id: [],
@@ -34,7 +31,6 @@ export class NotificationInfoUpdateComponent implements OnInit {
     createdAt: [],
     createdBy: [],
     purchaseOrder: [],
-    notificationInfo: [],
   });
 
   constructor(
@@ -74,28 +70,6 @@ export class NotificationInfoUpdateComponent implements OnInit {
               .subscribe((concatRes: IPurchaseOrder[]) => (this.purchaseorders = concatRes));
           }
         });
-
-      this.notificationInfoService
-        .query({ filter: 'notificationinfo-is-null' })
-        .pipe(
-          map((res: HttpResponse<INotificationInfo[]>) => {
-            return res.body || [];
-          })
-        )
-        .subscribe((resBody: INotificationInfo[]) => {
-          if (!notificationInfo.notificationInfo || !notificationInfo.notificationInfo.id) {
-            this.notificationinfos = resBody;
-          } else {
-            this.notificationInfoService
-              .find(notificationInfo.notificationInfo.id)
-              .pipe(
-                map((subRes: HttpResponse<INotificationInfo>) => {
-                  return subRes.body ? [subRes.body].concat(resBody) : resBody;
-                })
-              )
-              .subscribe((concatRes: INotificationInfo[]) => (this.notificationinfos = concatRes));
-          }
-        });
     });
   }
 
@@ -110,7 +84,6 @@ export class NotificationInfoUpdateComponent implements OnInit {
       createdAt: notificationInfo.createdAt ? notificationInfo.createdAt.format(DATE_TIME_FORMAT) : null,
       createdBy: notificationInfo.createdBy,
       purchaseOrder: notificationInfo.purchaseOrder,
-      notificationInfo: notificationInfo.notificationInfo,
     });
   }
 
@@ -140,7 +113,6 @@ export class NotificationInfoUpdateComponent implements OnInit {
       createdAt: this.editForm.get(['createdAt'])!.value ? moment(this.editForm.get(['createdAt'])!.value, DATE_TIME_FORMAT) : undefined,
       createdBy: this.editForm.get(['createdBy'])!.value,
       purchaseOrder: this.editForm.get(['purchaseOrder'])!.value,
-      notificationInfo: this.editForm.get(['notificationInfo'])!.value,
     };
   }
 
@@ -160,7 +132,7 @@ export class NotificationInfoUpdateComponent implements OnInit {
     this.isSaving = false;
   }
 
-  trackById(index: number, item: SelectableEntity): any {
+  trackById(index: number, item: IPurchaseOrder): any {
     return item.id;
   }
 }

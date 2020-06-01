@@ -4,7 +4,6 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import * as moment from 'moment';
 import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 
@@ -13,15 +12,12 @@ import { PaymentInfoService } from './payment-info.service';
 import { IInvoice } from 'app/shared/model/invoice.model';
 import { InvoiceService } from 'app/entities/invoice/invoice.service';
 
-type SelectableEntity = IPaymentInfo | IInvoice;
-
 @Component({
   selector: 'jhi-payment-info-update',
   templateUrl: './payment-info-update.component.html',
 })
 export class PaymentInfoUpdateComponent implements OnInit {
   isSaving = false;
-  paymentinfos: IPaymentInfo[] = [];
   invoices: IInvoice[] = [];
 
   editForm = this.fb.group({
@@ -56,7 +52,6 @@ export class PaymentInfoUpdateComponent implements OnInit {
     transactionId: [],
     createdAt: [],
     createdBy: [],
-    paymentInfo: [],
     invoice: [],
   });
 
@@ -82,28 +77,6 @@ export class PaymentInfoUpdateComponent implements OnInit {
       }
 
       this.updateForm(paymentInfo);
-
-      this.paymentInfoService
-        .query({ filter: 'paymentinfo-is-null' })
-        .pipe(
-          map((res: HttpResponse<IPaymentInfo[]>) => {
-            return res.body || [];
-          })
-        )
-        .subscribe((resBody: IPaymentInfo[]) => {
-          if (!paymentInfo.paymentInfo || !paymentInfo.paymentInfo.id) {
-            this.paymentinfos = resBody;
-          } else {
-            this.paymentInfoService
-              .find(paymentInfo.paymentInfo.id)
-              .pipe(
-                map((subRes: HttpResponse<IPaymentInfo>) => {
-                  return subRes.body ? [subRes.body].concat(resBody) : resBody;
-                })
-              )
-              .subscribe((concatRes: IPaymentInfo[]) => (this.paymentinfos = concatRes));
-          }
-        });
 
       this.invoiceService.query().subscribe((res: HttpResponse<IInvoice[]>) => (this.invoices = res.body || []));
     });
@@ -142,7 +115,6 @@ export class PaymentInfoUpdateComponent implements OnInit {
       transactionId: paymentInfo.transactionId,
       createdAt: paymentInfo.createdAt ? paymentInfo.createdAt.format(DATE_TIME_FORMAT) : null,
       createdBy: paymentInfo.createdBy,
-      paymentInfo: paymentInfo.paymentInfo,
       invoice: paymentInfo.invoice,
     });
   }
@@ -205,7 +177,6 @@ export class PaymentInfoUpdateComponent implements OnInit {
       transactionId: this.editForm.get(['transactionId'])!.value,
       createdAt: this.editForm.get(['createdAt'])!.value ? moment(this.editForm.get(['createdAt'])!.value, DATE_TIME_FORMAT) : undefined,
       createdBy: this.editForm.get(['createdBy'])!.value,
-      paymentInfo: this.editForm.get(['paymentInfo'])!.value,
       invoice: this.editForm.get(['invoice'])!.value,
     };
   }
@@ -226,7 +197,7 @@ export class PaymentInfoUpdateComponent implements OnInit {
     this.isSaving = false;
   }
 
-  trackById(index: number, item: SelectableEntity): any {
+  trackById(index: number, item: IInvoice): any {
     return item.id;
   }
 }

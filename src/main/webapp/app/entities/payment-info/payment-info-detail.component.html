@@ -128,12 +128,6 @@
                 <dd>
                     <span>{{ paymentInfo.createdBy }}</span>
                 </dd>
-                <dt><span jhiTranslate="appApp.paymentInfo.paymentInfo">Payment Info</span></dt>
-                <dd>
-                    <div *ngIf="paymentInfo.paymentInfo">
-                        <a [routerLink]="['/payment-info', paymentInfo.paymentInfo?.id, 'view']">{{ paymentInfo.paymentInfo?.id }}</a>
-                    </div>
-                </dd>
                 <dt><span jhiTranslate="appApp.paymentInfo.invoice">Invoice</span></dt>
                 <dd>
                     <div *ngIf="paymentInfo.invoice">

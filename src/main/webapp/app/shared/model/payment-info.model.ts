@@ -38,9 +38,7 @@ export interface IPaymentInfo {
   transactionId?: string;
   createdAt?: Moment;
   createdBy?: string;
-  paymentInfo?: IPaymentInfo;
   invoice?: IInvoice;
-  paymentInfo?: IPaymentInfo;
   invoice?: IInvoice;
 }
 
@@ -77,9 +75,7 @@ export class PaymentInfo implements IPaymentInfo {
     public transactionId?: string,
     public createdAt?: Moment,
     public createdBy?: string,
-    public paymentInfo?: IPaymentInfo,
     public invoice?: IInvoice,
-    public paymentInfo?: IPaymentInfo,
     public invoice?: IInvoice
   ) {}
 }

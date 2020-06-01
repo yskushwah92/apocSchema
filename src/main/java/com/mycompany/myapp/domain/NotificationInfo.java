@@ -49,17 +49,9 @@ public class NotificationInfo implements Serializable {
     @JoinColumn(unique = true)
     private PurchaseOrder purchaseOrder;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private NotificationInfo notificationInfo;
-
     @OneToOne(mappedBy = "notificationInfo")
     @JsonIgnore
     private Invoice invoice;
-
-    @OneToOne(mappedBy = "notificationInfo")
-    @JsonIgnore
-    private NotificationInfo notificationInfo;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -174,19 +166,6 @@ public class NotificationInfo implements Serializable {
         this.purchaseOrder = purchaseOrder;
     }
 
-    public NotificationInfo getNotificationInfo() {
-        return notificationInfo;
-    }
-
-    public NotificationInfo notificationInfo(NotificationInfo notificationInfo) {
-        this.notificationInfo = notificationInfo;
-        return this;
-    }
-
-    public void setNotificationInfo(NotificationInfo notificationInfo) {
-        this.notificationInfo = notificationInfo;
-    }
-
     public Invoice getInvoice() {
         return invoice;
     }
@@ -198,19 +177,6 @@ public class NotificationInfo implements Serializable {
 
     public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
-    }
-
-    public NotificationInfo getNotificationInfo() {
-        return notificationInfo;
-    }
-
-    public NotificationInfo notificationInfo(NotificationInfo notificationInfo) {
-        this.notificationInfo = notificationInfo;
-        return this;
-    }
-
-    public void setNotificationInfo(NotificationInfo notificationInfo) {
-        this.notificationInfo = notificationInfo;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 

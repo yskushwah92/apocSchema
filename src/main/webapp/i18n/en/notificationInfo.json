@@ -24,9 +24,7 @@
       "createdAt": "Created At",
       "createdBy": "Created By",
       "purchaseOrder": "Purchase Order",
-      "notificationInfo": "Notification Info",
-      "invoice": "Invoice",
-      "notificationInfo": "Notification Info"
+      "invoice": "Invoice"
     }
   }
 }

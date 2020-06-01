@@ -12,9 +12,7 @@ export interface INotificationInfo {
   createdAt?: Moment;
   createdBy?: string;
   purchaseOrder?: IPurchaseOrder;
-  notificationInfo?: INotificationInfo;
   invoice?: IInvoice;
-  notificationInfo?: INotificationInfo;
 }
 
 export class NotificationInfo implements INotificationInfo {
@@ -28,8 +26,6 @@ export class NotificationInfo implements INotificationInfo {
     public createdAt?: Moment,
     public createdBy?: string,
     public purchaseOrder?: IPurchaseOrder,
-    public notificationInfo?: INotificationInfo,
-    public invoice?: IInvoice,
-    public notificationInfo?: INotificationInfo
+    public invoice?: IInvoice
   ) {}
 }

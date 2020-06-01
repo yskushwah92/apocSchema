@@ -31,7 +31,6 @@
                     <th scope="col" ><span jhiTranslate="appApp.notificationInfo.createdAt">Created At</span></th>
                     <th scope="col" ><span jhiTranslate="appApp.notificationInfo.createdBy">Created By</span></th>
                     <th scope="col" ><span jhiTranslate="appApp.notificationInfo.purchaseOrder">Purchase Order</span></th>
-                    <th scope="col" ><span jhiTranslate="appApp.notificationInfo.notificationInfo">Notification Info</span></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -48,11 +47,6 @@
                     <td>
                         <div *ngIf="notificationInfo.purchaseOrder">
                             <a [routerLink]="['/purchase-order', notificationInfo.purchaseOrder?.id, 'view']" >{{ notificationInfo.purchaseOrder?.id }}</a>
-                        </div>
-                    </td>
-                    <td>
-                        <div *ngIf="notificationInfo.notificationInfo">
-                            <a [routerLink]="['/notification-info', notificationInfo.notificationInfo?.id, 'view']" >{{ notificationInfo.notificationInfo?.id }}</a>
                         </div>
                     </td>
                     <td class="text-right">

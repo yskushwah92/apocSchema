@@ -620,9 +620,7 @@ relationship OneToOne{
     Invoice to ModelInfo
     NotificationInfo to PurchaseOrder
     Invoice to NotificationInfo
-    NotificationInfo to NotificationInfo 
     Invoice to PaymentInfo,
-    PaymentInfo to PaymentInfo 
     CommunicationConfiguration to MailBox
     ModelInfo to OCRRawExtraction 
     OCRExtractionEngineInfo to ModelInfo

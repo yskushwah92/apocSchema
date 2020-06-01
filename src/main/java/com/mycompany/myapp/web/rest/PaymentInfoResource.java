@@ -96,13 +96,6 @@ public class PaymentInfoResource {
                 .filter(paymentInfo -> paymentInfo.getInvoice() == null)
                 .collect(Collectors.toList());
         }
-        if ("paymentinfo-is-null".equals(filter)) {
-            log.debug("REST request to get all PaymentInfos where paymentInfo is null");
-            return StreamSupport
-                .stream(paymentInfoRepository.findAll().spliterator(), false)
-                .filter(paymentInfo -> paymentInfo.getPaymentInfo() == null)
-                .collect(Collectors.toList());
-        }
         log.debug("REST request to get all PaymentInfos");
         return paymentInfoRepository.findAll();
     }

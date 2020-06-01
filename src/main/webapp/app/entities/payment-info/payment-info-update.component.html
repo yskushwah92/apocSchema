@@ -218,14 +218,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.paymentInfo" for="field_paymentInfo">Payment Info</label>
-                    <select class="form-control" id="field_paymentInfo" name="paymentInfo" formControlName="paymentInfo">
-                        <option [ngValue]="null"></option>
-                        <option [ngValue]="paymentInfoOption.id === editForm.get('paymentInfo')!.value?.id ? editForm.get('paymentInfo')!.value : paymentInfoOption" *ngFor="let paymentInfoOption of paymentinfos; trackBy: trackById">{{ paymentInfoOption.id }}</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="appApp.paymentInfo.invoice" for="field_invoice">Invoice</label>
                     <select class="form-control" id="field_invoice" name="invoice" formControlName="invoice">
                         <option [ngValue]="null"></option>

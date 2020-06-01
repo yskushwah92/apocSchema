@@ -105,9 +105,6 @@
             <column name="created_by" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="payment_info_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_payment_info_payment_info_id" />
-            </column>
             <column name="invoice_id" type="bigint">
                 <constraints nullable="true" />
             </column>

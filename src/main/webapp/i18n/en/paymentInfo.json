@@ -46,9 +46,7 @@
       "transactionId": "Transaction Id",
       "createdAt": "Created At",
       "createdBy": "Created By",
-      "paymentInfo": "Payment Info",
       "invoice": "Invoice",
-      "paymentInfo": "Payment Info",
       "invoice": "Invoice"
     }
   }

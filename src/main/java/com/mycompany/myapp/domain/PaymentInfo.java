@@ -130,17 +130,9 @@ public class PaymentInfo implements Serializable {
     @Column(name = "created_by")
     private String createdBy;
 
-    @OneToOne
-    @JoinColumn(unique = true)
-    private PaymentInfo paymentInfo;
-
     @OneToOne(mappedBy = "paymentInfo")
     @JsonIgnore
     private Invoice invoice;
-
-    @OneToOne(mappedBy = "paymentInfo")
-    @JsonIgnore
-    private PaymentInfo paymentInfo;
 
     @ManyToOne
     @JsonIgnoreProperties(value = "paymentInfos", allowSetters = true)
@@ -545,19 +537,6 @@ public class PaymentInfo implements Serializable {
         this.createdBy = createdBy;
     }
 
-    public PaymentInfo getPaymentInfo() {
-        return paymentInfo;
-    }
-
-    public PaymentInfo paymentInfo(PaymentInfo paymentInfo) {
-        this.paymentInfo = paymentInfo;
-        return this;
-    }
-
-    public void setPaymentInfo(PaymentInfo paymentInfo) {
-        this.paymentInfo = paymentInfo;
-    }
-
     public Invoice getInvoice() {
         return invoice;
     }
@@ -569,19 +548,6 @@ public class PaymentInfo implements Serializable {
 
     public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
-    }
-
-    public PaymentInfo getPaymentInfo() {
-        return paymentInfo;
-    }
-
-    public PaymentInfo paymentInfo(PaymentInfo paymentInfo) {
-        this.paymentInfo = paymentInfo;
-        return this;
-    }
-
-    public void setPaymentInfo(PaymentInfo paymentInfo) {
-        this.paymentInfo = paymentInfo;
     }
 
     public Invoice getInvoice() {

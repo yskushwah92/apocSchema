@@ -42,12 +42,6 @@
                         <a [routerLink]="['/purchase-order', notificationInfo.purchaseOrder?.id, 'view']">{{ notificationInfo.purchaseOrder?.id }}</a>
                     </div>
                 </dd>
-                <dt><span jhiTranslate="appApp.notificationInfo.notificationInfo">Notification Info</span></dt>
-                <dd>
-                    <div *ngIf="notificationInfo.notificationInfo">
-                        <a [routerLink]="['/notification-info', notificationInfo.notificationInfo?.id, 'view']">{{ notificationInfo.notificationInfo?.id }}</a>
-                    </div>
-                </dd>
             </dl>
 
             <button type="submit"

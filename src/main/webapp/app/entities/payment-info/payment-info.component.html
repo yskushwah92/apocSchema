@@ -53,7 +53,6 @@
                     <th scope="col" ><span jhiTranslate="appApp.paymentInfo.transactionId">Transaction Id</span></th>
                     <th scope="col" ><span jhiTranslate="appApp.paymentInfo.createdAt">Created At</span></th>
                     <th scope="col" ><span jhiTranslate="appApp.paymentInfo.createdBy">Created By</span></th>
-                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.paymentInfo">Payment Info</span></th>
                     <th scope="col" ><span jhiTranslate="appApp.paymentInfo.invoice">Invoice</span></th>
                     <th scope="col"></th>
                 </tr>
@@ -91,11 +90,6 @@
                     <td>{{ paymentInfo.transactionId }}</td>
                     <td>{{ paymentInfo.createdAt | date:'medium' }}</td>
                     <td>{{ paymentInfo.createdBy }}</td>
-                    <td>
-                        <div *ngIf="paymentInfo.paymentInfo">
-                            <a [routerLink]="['/payment-info', paymentInfo.paymentInfo?.id, 'view']" >{{ paymentInfo.paymentInfo?.id }}</a>
-                        </div>
-                    </td>
                     <td>
                         <div *ngIf="paymentInfo.invoice">
                             <a [routerLink]="['/invoice', paymentInfo.invoice?.id, 'view']" >{{ paymentInfo.invoice?.id }}</a>

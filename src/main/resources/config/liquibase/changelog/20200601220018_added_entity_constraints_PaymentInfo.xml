@@ -8,12 +8,6 @@
     -->
     <changeSet id="20200601220018-2" author="jhipster">
         
-        <addForeignKeyConstraint baseColumnNames="payment_info_id"
-                                 baseTableName="payment_info"
-                                 constraintName="fk_payment_info_payment_info_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="payment_info"/>
-
         <addForeignKeyConstraint baseColumnNames="invoice_id"
                                  baseTableName="payment_info"
                                  constraintName="fk_payment_info_invoice_id"

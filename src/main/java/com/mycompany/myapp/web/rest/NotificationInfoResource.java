@@ -96,13 +96,6 @@ public class NotificationInfoResource {
                 .filter(notificationInfo -> notificationInfo.getInvoice() == null)
                 .collect(Collectors.toList());
         }
-        if ("notificationinfo-is-null".equals(filter)) {
-            log.debug("REST request to get all NotificationInfos where notificationInfo is null");
-            return StreamSupport
-                .stream(notificationInfoRepository.findAll().spliterator(), false)
-                .filter(notificationInfo -> notificationInfo.getNotificationInfo() == null)
-                .collect(Collectors.toList());
-        }
         log.debug("REST request to get all NotificationInfos");
         return notificationInfoRepository.findAll();
     }
