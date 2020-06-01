@@ -1,0 +1,159 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-vendor-heading" jhiTranslate="appApp.vendor.home.createOrEditLabel">Create or edit a Vendor</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.displayName" for="field_displayName">Display Name</label>
+                    <input type="text" class="form-control" name="displayName" id="field_displayName"
+                           formControlName="displayName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.vendorNumber" for="field_vendorNumber">Vendor Number</label>
+                    <input type="text" class="form-control" name="vendorNumber" id="field_vendorNumber"
+                           formControlName="vendorNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.paymentTerms" for="field_paymentTerms">Payment Terms</label>
+                    <input type="text" class="form-control" name="paymentTerms" id="field_paymentTerms"
+                           formControlName="paymentTerms"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.type" for="field_type">Type</label>
+                    <input type="text" class="form-control" name="type" id="field_type"
+                           formControlName="type"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.iln" for="field_iln">Iln</label>
+                    <input type="text" class="form-control" name="iln" id="field_iln"
+                           formControlName="iln"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.taxIdNO" for="field_taxIdNO">Tax Id NO</label>
+                    <input type="text" class="form-control" name="taxIdNO" id="field_taxIdNO"
+                           formControlName="taxIdNO"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.gstRegistrationNumber" for="field_gstRegistrationNumber">Gst Registration Number</label>
+                    <input type="text" class="form-control" name="gstRegistrationNumber" id="field_gstRegistrationNumber"
+                           formControlName="gstRegistrationNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.gstStatus" for="field_gstStatus">Gst Status</label>
+                    <input type="text" class="form-control" name="gstStatus" id="field_gstStatus"
+                           formControlName="gstStatus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.vatIdNo" for="field_vatIdNo">Vat Id No</label>
+                    <input type="text" class="form-control" name="vatIdNo" id="field_vatIdNo"
+                           formControlName="vatIdNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.clerkId" for="field_clerkId">Clerk Id</label>
+                    <input type="text" class="form-control" name="clerkId" id="field_clerkId"
+                           formControlName="clerkId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.vatRegistrationNumber" for="field_vatRegistrationNumber">Vat Registration Number</label>
+                    <input type="text" class="form-control" name="vatRegistrationNumber" id="field_vatRegistrationNumber"
+                           formControlName="vatRegistrationNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.prefferredModeOfCommunication" for="field_prefferredModeOfCommunication">Prefferred Mode Of Communication</label>
+                    <input type="text" class="form-control" name="prefferredModeOfCommunication" id="field_prefferredModeOfCommunication"
+                           formControlName="prefferredModeOfCommunication"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.pointOfContact" for="field_pointOfContact">Point Of Contact</label>
+                    <input type="text" class="form-control" name="pointOfContact" id="field_pointOfContact"
+                           formControlName="pointOfContact"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.preferredModeOfPayment" for="field_preferredModeOfPayment">Preferred Mode Of Payment</label>
+                    <input type="text" class="form-control" name="preferredModeOfPayment" id="field_preferredModeOfPayment"
+                           formControlName="preferredModeOfPayment"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.contactDetails" for="field_contactDetails">Contact Details</label>
+                    <select class="form-control" id="field_contactDetails" name="contactDetails" formControlName="contactDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contactDetailsOption.id === editForm.get('contactDetails')!.value?.id ? editForm.get('contactDetails')!.value : contactDetailsOption" *ngFor="let contactDetailsOption of contactdetails; trackBy: trackById">{{ contactDetailsOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.organization" for="field_organization">Organization</label>
+                    <select class="form-control" id="field_organization" name="organization" formControlName="organization">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="organizationOption.id === editForm.get('organization')!.value?.id ? editForm.get('organization')!.value : organizationOption" *ngFor="let organizationOption of organizations; trackBy: trackById">{{ organizationOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendor.gLAccountDetails" for="field_gLAccountDetails">G L Account Details</label>
+                    <select class="form-control" id="field_gLAccountDetails" name="gLAccountDetails" formControlName="gLAccountDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gLAccountDetailsOption.id === editForm.get('gLAccountDetails')!.value?.id ? editForm.get('gLAccountDetails')!.value : gLAccountDetailsOption" *ngFor="let gLAccountDetailsOption of glaccountdetails; trackBy: trackById">{{ gLAccountDetailsOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+{
+  "appApp": {
+    "PaymentType": {
+      "null": "",
+      "FORWARD": "FORWARD",
+      "REFUND": "REFUND"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "name": "Organization",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "organizationCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "financeSystem",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vatRegistrationNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "contactDetails",
+      "otherEntityRelationshipName": "organization",
+      "relationshipName": "contactDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "vendor",
+      "otherEntityRelationshipName": "organization",
+      "relationshipName": "vendor",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "purchaseOrderLine",
+      "otherEntityRelationshipName": "organization",
+      "relationshipName": "purchaseOrderLine",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200601212918",
+  "entityTableName": "organization",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

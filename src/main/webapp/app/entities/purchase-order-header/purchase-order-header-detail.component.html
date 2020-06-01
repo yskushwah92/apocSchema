@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="purchaseOrderHeader">
+            <h2><span jhiTranslate="appApp.purchaseOrderHeader.detail.title">Purchase Order Header</span> {{ purchaseOrderHeader.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.serialNo">Serial No</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.serialNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.amount">Amount</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.amount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.type">Type</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.requestedBy">Requested By</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.requestedBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.creationDate">Creation Date</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.creationDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.receiptRequired">Receipt Required</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.receiptRequired }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.POStatus.' + purchaseOrderHeader.status }}">{{ purchaseOrderHeader.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.companyCode">Company Code</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.companyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.currencyCode">Currency Code</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.currencyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderHeader.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderHeader.createdBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/purchase-order-header', purchaseOrderHeader.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

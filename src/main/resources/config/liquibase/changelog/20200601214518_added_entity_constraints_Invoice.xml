@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Invoice.
+    -->
+    <changeSet id="20200601214518-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="file_info_id"
+                                 baseTableName="invoice"
+                                 constraintName="fk_invoice_file_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="file_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="model_info_id"
+                                 baseTableName="invoice"
+                                 constraintName="fk_invoice_model_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="model_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="notification_info_id"
+                                 baseTableName="invoice"
+                                 constraintName="fk_invoice_notification_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="notification_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="payment_info_id"
+                                 baseTableName="invoice"
+                                 constraintName="fk_invoice_payment_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="payment_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="invoice_header_id"
+                                 baseTableName="invoice"
+                                 constraintName="fk_invoice_invoice_header_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="invoice_header"/>
+
+        <addForeignKeyConstraint baseColumnNames="vendor_id"
+                                 baseTableName="invoice"
+                                 constraintName="fk_invoice_vendor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vendor"/>
+
+        <addForeignKeyConstraint baseColumnNames="invoice_id"
+                                 baseTableName="invoice"
+                                 constraintName="fk_invoice_invoice_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="invoice"/>
+
+        <addForeignKeyConstraint baseColumnNames="purchase_order_id"
+                                 baseTableName="invoice"
+                                 constraintName="fk_invoice_purchase_order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="purchase_order"/>
+
+    </changeSet>
+</databaseChangeLog>

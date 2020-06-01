@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoiceHeaderTaxDetails">
+            <h2><span jhiTranslate="appApp.invoiceHeaderTaxDetails.detail.title">Invoice Header Tax Details</span> {{ invoiceHeaderTaxDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.taxCode">Tax Code</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.taxCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.taxRate">Tax Rate</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.taxRate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.taxAmount">Tax Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.taxAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.taxDescription">Tax Description</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.taxDescription }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.taxDisplay">Tax Display</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.taxDisplay }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.whtApplicable">Wht Applicable</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.whtApplicable }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.whtGrpId">Wht Grp Id</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.whtGrpId }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.whtType">Wht Type</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.whtType }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.whtCode">Wht Code</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.whtCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.whtAmount">Wht Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.whtAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.unplannedDeliveryTaxRate">Unplanned Delivery Tax Rate</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.unplannedDeliveryTaxRate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeaderTaxDetails.unplannedDeliveryTaxAmount">Unplanned Delivery Tax Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceHeaderTaxDetails.unplannedDeliveryTaxAmount }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice-header-tax-details', invoiceHeaderTaxDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

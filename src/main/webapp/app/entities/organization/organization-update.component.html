@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-organization-heading" jhiTranslate="appApp.organization.home.createOrEditLabel">Create or edit a Organization</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.organizationCode" for="field_organizationCode">Organization Code</label>
+                    <input type="text" class="form-control" name="organizationCode" id="field_organizationCode"
+                           formControlName="organizationCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.orgName" for="field_orgName">Org Name</label>
+                    <input type="text" class="form-control" name="orgName" id="field_orgName"
+                           formControlName="orgName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.countryKey" for="field_countryKey">Country Key</label>
+                    <input type="text" class="form-control" name="countryKey" id="field_countryKey"
+                           formControlName="countryKey"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.financeSystem" for="field_financeSystem">Finance System</label>
+                    <input type="text" class="form-control" name="financeSystem" id="field_financeSystem"
+                           formControlName="financeSystem"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.vatRegistrationNo" for="field_vatRegistrationNo">Vat Registration No</label>
+                    <input type="text" class="form-control" name="vatRegistrationNo" id="field_vatRegistrationNo"
+                           formControlName="vatRegistrationNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.currency" for="field_currency">Currency</label>
+                    <select class="form-control" name="currency" formControlName="currency" id="field_currency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.language" for="field_language">Language</label>
+                    <input type="text" class="form-control" name="language" id="field_language"
+                           formControlName="language"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.organization.contactDetails" for="field_contactDetails">Contact Details</label>
+                    <select class="form-control" id="field_contactDetails" name="contactDetails" formControlName="contactDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contactDetailsOption.id === editForm.get('contactDetails')!.value?.id ? editForm.get('contactDetails')!.value : contactDetailsOption" *ngFor="let contactDetailsOption of contactdetails; trackBy: trackById">{{ contactDetailsOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

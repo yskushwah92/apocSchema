@@ -1,0 +1,190 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoice">
+            <h2><span jhiTranslate="appApp.invoice.detail.title">Invoice</span> {{ invoice.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.invoice.name">Name</span></dt>
+                <dd>
+                    <span>{{ invoice.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.serialNo">Serial No</span></dt>
+                <dd>
+                    <span>{{ invoice.serialNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.invoiceNo">Invoice No</span></dt>
+                <dd>
+                    <span>{{ invoice.invoiceNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.referenceNo">Reference No</span></dt>
+                <dd>
+                    <span>{{ invoice.referenceNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.caseNo">Case No</span></dt>
+                <dd>
+                    <span>{{ invoice.caseNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.description">Description</span></dt>
+                <dd>
+                    <span>{{ invoice.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.priority">Priority</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Priority.' + invoice.priority }}">{{ invoice.priority }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.InvoiceType.' + invoice.type }}">{{ invoice.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.dateOfCreation">Date Of Creation</span></dt>
+                <dd>
+                    <span>{{ invoice.dateOfCreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.sellerName">Seller Name</span></dt>
+                <dd>
+                    <span>{{ invoice.sellerName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.amountFunctional">Amount Functional</span></dt>
+                <dd>
+                    <span>{{ invoice.amountFunctional }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.amountReporting">Amount Reporting</span></dt>
+                <dd>
+                    <span>{{ invoice.amountReporting }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.price">Price</span></dt>
+                <dd>
+                    <span>{{ invoice.price }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.issuer">Issuer</span></dt>
+                <dd>
+                    <span>{{ invoice.issuer }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.tax">Tax</span></dt>
+                <dd>
+                    <span>{{ invoice.tax }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.inclusiveOfTax">Inclusive Of Tax</span></dt>
+                <dd>
+                    <span>{{ invoice.inclusiveOfTax }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.InvoiceStatus.' + invoice.status }}">{{ invoice.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.gstn">Gstn</span></dt>
+                <dd>
+                    <span>{{ invoice.gstn }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.address">Address</span></dt>
+                <dd>
+                    <span>{{ invoice.address }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.category">Category</span></dt>
+                <dd>
+                    <span>{{ invoice.category }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.contactNo">Contact No</span></dt>
+                <dd>
+                    <span>{{ invoice.contactNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.email">Email</span></dt>
+                <dd>
+                    <span>{{ invoice.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.prefferredModeOfCommunication">Prefferred Mode Of Communication</span></dt>
+                <dd>
+                    <span>{{ invoice.prefferredModeOfCommunication }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.pointOfContact">Point Of Contact</span></dt>
+                <dd>
+                    <span>{{ invoice.pointOfContact }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.bankAccDetails">Bank Acc Details</span></dt>
+                <dd>
+                    <span>{{ invoice.bankAccDetails }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.upiDetails">Upi Details</span></dt>
+                <dd>
+                    <span>{{ invoice.upiDetails }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.preferredModeOfPayment">Preferred Mode Of Payment</span></dt>
+                <dd>
+                    <span>{{ invoice.preferredModeOfPayment }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ invoice.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ invoice.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.fileInfo">File Info</span></dt>
+                <dd>
+                    <div *ngIf="invoice.fileInfo">
+                        <a [routerLink]="['/file-info', invoice.fileInfo?.id, 'view']">{{ invoice.fileInfo?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.modelInfo">Model Info</span></dt>
+                <dd>
+                    <div *ngIf="invoice.modelInfo">
+                        <a [routerLink]="['/model-info', invoice.modelInfo?.id, 'view']">{{ invoice.modelInfo?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.notificationInfo">Notification Info</span></dt>
+                <dd>
+                    <div *ngIf="invoice.notificationInfo">
+                        <a [routerLink]="['/notification-info', invoice.notificationInfo?.id, 'view']">{{ invoice.notificationInfo?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.paymentInfo">Payment Info</span></dt>
+                <dd>
+                    <div *ngIf="invoice.paymentInfo">
+                        <a [routerLink]="['/payment-info', invoice.paymentInfo?.id, 'view']">{{ invoice.paymentInfo?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.invoiceHeader">Invoice Header</span></dt>
+                <dd>
+                    <div *ngIf="invoice.invoiceHeader">
+                        <a [routerLink]="['/invoice-header', invoice.invoiceHeader?.id, 'view']">{{ invoice.invoiceHeader?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.vendor">Vendor</span></dt>
+                <dd>
+                    <div *ngIf="invoice.vendor">
+                        <a [routerLink]="['/vendor', invoice.vendor?.id, 'view']">{{ invoice.vendor?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="invoice.invoice">
+                        <a [routerLink]="['/invoice', invoice.invoice?.id, 'view']">{{ invoice.invoice?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoice.purchaseOrder">Purchase Order</span></dt>
+                <dd>
+                    <div *ngIf="invoice.purchaseOrder">
+                        <a [routerLink]="['/purchase-order', invoice.purchaseOrder?.id, 'view']">{{ invoice.purchaseOrder?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice', invoice.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

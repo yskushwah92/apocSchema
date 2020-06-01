@@ -1,0 +1,35 @@
+{
+  "appApp": {
+    "auditLogDetails": {
+      "home": {
+        "title": "Audit Log Details",
+        "createLabel": "Create a new Audit Log Details",
+        "createOrEditLabel": "Create or edit a Audit Log Details",
+        "notFound": "No Audit Log Details found"
+      },
+      "created": "A new Audit Log Details is created with identifier {{ param }}",
+      "updated": "A Audit Log Details is updated with identifier {{ param }}",
+      "deleted": "A Audit Log Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Audit Log Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Audit Log Details"
+      },
+      "assignedBy": "Assigned By",
+      "actor": "Actor",
+      "status": "Status",
+      "statusCode": "Status Code",
+      "reason": "Reason",
+      "reasonCode": "Reason Code",
+      "createdOn": "Created On",
+      "comments": "Comments",
+      "delegate": "Delegate",
+      "delegatedFlag": "Delegated Flag",
+      "metSLA": "Met SLA",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "auditLog": "Audit Log"
+    }
+  }
+}

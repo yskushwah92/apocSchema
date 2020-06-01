@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contactDetails">
+            <h2><span jhiTranslate="appApp.contactDetails.detail.title">Contact Details</span> {{ contactDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.contactDetails.street">Street</span></dt>
+                <dd>
+                    <span>{{ contactDetails.street }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.zipCode">Zip Code</span></dt>
+                <dd>
+                    <span>{{ contactDetails.zipCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.city">City</span></dt>
+                <dd>
+                    <span>{{ contactDetails.city }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.district">District</span></dt>
+                <dd>
+                    <span>{{ contactDetails.district }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.poBox">Po Box</span></dt>
+                <dd>
+                    <span>{{ contactDetails.poBox }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.poBoxCode">Po Box Code</span></dt>
+                <dd>
+                    <span>{{ contactDetails.poBoxCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.country">Country</span></dt>
+                <dd>
+                    <span>{{ contactDetails.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.telephoneNo">Telephone No</span></dt>
+                <dd>
+                    <span>{{ contactDetails.telephoneNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.faxNumber">Fax Number</span></dt>
+                <dd>
+                    <span>{{ contactDetails.faxNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.email">Email</span></dt>
+                <dd>
+                    <span>{{ contactDetails.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ contactDetails.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.contactDetails.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ contactDetails.createdBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contact-details', contactDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

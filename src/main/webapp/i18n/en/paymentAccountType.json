@@ -1,0 +1,18 @@
+{
+  "appApp": {
+    "PaymentAccountType": {
+      "null": "",
+      "BYBANKTRANSFERINADVANCE": "BYBANKTRANSFERINADVANCE",
+      "BYINVOICE": "BYINVOICE",
+      "CASH": "CASH",
+      "CHECKINADVANCE": "CHECKINADVANCE",
+      "COD": "COD",
+      "DIRECTDEBIT": "DIRECTDEBIT",
+      "GOOGLECHECKOUT": "GOOGLECHECKOUT",
+      "UPI": "UPI",
+      "PAYTM": "PAYTM",
+      "PAYPAL": "PAYPAL",
+      "PHONEPE": "PHONEPE"
+    }
+  }
+}

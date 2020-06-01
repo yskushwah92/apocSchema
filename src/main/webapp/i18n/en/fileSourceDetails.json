@@ -1,0 +1,30 @@
+{
+  "appApp": {
+    "fileSourceDetails": {
+      "home": {
+        "title": "File Source Details",
+        "createLabel": "Create a new File Source Details",
+        "createOrEditLabel": "Create or edit a File Source Details",
+        "notFound": "No File Source Details found"
+      },
+      "created": "A new File Source Details is created with identifier {{ param }}",
+      "updated": "A File Source Details is updated with identifier {{ param }}",
+      "deleted": "A File Source Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete File Source Details {{ id }}?"
+      },
+      "detail": {
+        "title": "File Source Details"
+      },
+      "name": "Name",
+      "apiKey": "Api Key",
+      "userName": "User Name",
+      "password": "Password",
+      "protocol": "Protocol",
+      "url": "Url",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "fileInfo": "File Info"
+    }
+  }
+}

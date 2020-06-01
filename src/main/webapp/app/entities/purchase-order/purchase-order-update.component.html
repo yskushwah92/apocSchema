@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-purchase-order-heading" jhiTranslate="appApp.purchaseOrder.home.createOrEditLabel">Create or edit a Purchase Order</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.serialNo" for="field_serialNo">Serial No</label>
+                    <input type="text" class="form-control" name="serialNo" id="field_serialNo"
+                           formControlName="serialNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.header" for="field_header">Header</label>
+                    <input type="text" class="form-control" name="header" id="field_header"
+                           formControlName="header"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.unit" for="field_unit">Unit</label>
+                    <input type="text" class="form-control" name="unit" id="field_unit"
+                           formControlName="unit"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.issuer" for="field_issuer">Issuer</label>
+                    <input type="text" class="form-control" name="issuer" id="field_issuer"
+                           formControlName="issuer"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.issuerDetails" for="field_issuerDetails">Issuer Details</label>
+                    <input type="text" class="form-control" name="issuerDetails" id="field_issuerDetails"
+                           formControlName="issuerDetails"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.creationDate" for="field_creationDate">Creation Date</label>
+                    <div class="d-flex">
+                        <input id="field_creationDate" type="datetime-local" class="form-control" name="creationDate" formControlName="creationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.price" for="field_price">Price</label>
+                    <input type="text" class="form-control" name="price" id="field_price"
+                           formControlName="price"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.purchaseOrderHeader" for="field_purchaseOrderHeader">Purchase Order Header</label>
+                    <select class="form-control" id="field_purchaseOrderHeader" name="purchaseOrderHeader" formControlName="purchaseOrderHeader">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="purchaseOrderHeaderOption.id === editForm.get('purchaseOrderHeader')!.value?.id ? editForm.get('purchaseOrderHeader')!.value : purchaseOrderHeaderOption" *ngFor="let purchaseOrderHeaderOption of purchaseorderheaders; trackBy: trackById">{{ purchaseOrderHeaderOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrder.gRNDetails" for="field_gRNDetails">G RN Details</label>
+                    <select class="form-control" id="field_gRNDetails" name="gRNDetails" formControlName="gRNDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gRNDetailsOption.id === editForm.get('gRNDetails')!.value?.id ? editForm.get('gRNDetails')!.value : gRNDetailsOption" *ngFor="let gRNDetailsOption of grndetails; trackBy: trackById">{{ gRNDetailsOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="appApp.purchaseOrder.vendor" for="field_vendors">Vendor</label>
+                    <select class="form-control" id="field_vendors" multiple name="vendors" formControlName="vendors">
+                        <option [ngValue]="getSelected(editForm.get('vendors')!.value, vendorOption)" *ngFor="let vendorOption of vendors; trackBy: trackById">{{ vendorOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

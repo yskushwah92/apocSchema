@@ -1,0 +1,74 @@
+{
+  "name": "OCRRawExtraction",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fieldName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "capturedfieldValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "actualFieldValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "Language",
+      "fieldValues": "ENGLISH"
+    },
+    {
+      "fieldName": "documentType",
+      "fieldType": "DocumentType",
+      "fieldValues": "INVOICE,PURCHASE_ORDER"
+    },
+    {
+      "fieldName": "accuracy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extractions",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "modelInfo",
+      "otherEntityRelationshipName": "oCRRawExtraction",
+      "relationshipName": "modelInfo",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "oCRRawExtraction",
+      "relationshipName": "invoice",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601215518",
+  "entityTableName": "ocr_raw_extraction",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

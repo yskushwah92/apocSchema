@@ -1,0 +1,9 @@
+{
+  "appApp": {
+    "AssignmentMode": {
+      "null": "",
+      "MANUAL": "MANUAL",
+      "AUTOMATIC": "AUTOMATIC"
+    }
+  }
+}

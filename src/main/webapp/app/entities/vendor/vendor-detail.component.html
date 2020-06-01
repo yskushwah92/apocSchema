@@ -1,0 +1,116 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vendor">
+            <h2><span jhiTranslate="appApp.vendor.detail.title">Vendor</span> {{ vendor.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.vendor.name">Name</span></dt>
+                <dd>
+                    <span>{{ vendor.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.displayName">Display Name</span></dt>
+                <dd>
+                    <span>{{ vendor.displayName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.vendorNumber">Vendor Number</span></dt>
+                <dd>
+                    <span>{{ vendor.vendorNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.paymentTerms">Payment Terms</span></dt>
+                <dd>
+                    <span>{{ vendor.paymentTerms }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.type">Type</span></dt>
+                <dd>
+                    <span>{{ vendor.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.iln">Iln</span></dt>
+                <dd>
+                    <span>{{ vendor.iln }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.taxIdNO">Tax Id NO</span></dt>
+                <dd>
+                    <span>{{ vendor.taxIdNO }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.gstRegistrationNumber">Gst Registration Number</span></dt>
+                <dd>
+                    <span>{{ vendor.gstRegistrationNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.gstStatus">Gst Status</span></dt>
+                <dd>
+                    <span>{{ vendor.gstStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.vatIdNo">Vat Id No</span></dt>
+                <dd>
+                    <span>{{ vendor.vatIdNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.clerkId">Clerk Id</span></dt>
+                <dd>
+                    <span>{{ vendor.clerkId }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.status">Status</span></dt>
+                <dd>
+                    <span>{{ vendor.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.vatRegistrationNumber">Vat Registration Number</span></dt>
+                <dd>
+                    <span>{{ vendor.vatRegistrationNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.prefferredModeOfCommunication">Prefferred Mode Of Communication</span></dt>
+                <dd>
+                    <span>{{ vendor.prefferredModeOfCommunication }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.pointOfContact">Point Of Contact</span></dt>
+                <dd>
+                    <span>{{ vendor.pointOfContact }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.preferredModeOfPayment">Preferred Mode Of Payment</span></dt>
+                <dd>
+                    <span>{{ vendor.preferredModeOfPayment }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ vendor.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ vendor.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.contactDetails">Contact Details</span></dt>
+                <dd>
+                    <div *ngIf="vendor.contactDetails">
+                        <a [routerLink]="['/contact-details', vendor.contactDetails?.id, 'view']">{{ vendor.contactDetails?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.organization">Organization</span></dt>
+                <dd>
+                    <div *ngIf="vendor.organization">
+                        <a [routerLink]="['/organization', vendor.organization?.id, 'view']">{{ vendor.organization?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendor.gLAccountDetails">G L Account Details</span></dt>
+                <dd>
+                    <div *ngIf="vendor.gLAccountDetails">
+                        <a [routerLink]="['/gl-account-details', vendor.gLAccountDetails?.id, 'view']">{{ vendor.gLAccountDetails?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vendor', vendor.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

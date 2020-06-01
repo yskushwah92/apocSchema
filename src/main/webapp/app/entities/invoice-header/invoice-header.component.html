@@ -1,0 +1,145 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.invoiceHeader.home.title">Invoice Headers</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-invoice-header" [routerLink]="['/invoice-header/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.invoiceHeader.home.createLabel">
+            Create a new Invoice Header
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="invoiceHeaders?.length === 0">
+        <span jhiTranslate="appApp.invoiceHeader.home.notFound">No invoiceHeaders found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="invoiceHeaders && invoiceHeaders.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.companyCode">Company Code</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.legalEntityName">Legal Entity Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.comments">Comments</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.grossAmount">Gross Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.netAmount">Net Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.currency">Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.country">Country</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.countryKey">Country Key</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.languageKey">Language Key</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.erpReferenceNumber">Erp Reference Number</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.poBoxCode">Po Box Code</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.scanDate">Scan Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.receivedDate">Received Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.caseCreationDate">Case Creation Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.numberOfScannedPages">Number Of Scanned Pages</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.sla">Sla</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.slaExpirationDate">Sla Expiration Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.tradingPartner">Trading Partner</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.deliveryDate">Delivery Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.deliveryNoteNumber">Delivery Note Number</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.recepientEmail">Recepient Email</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.isCaseClose">Is Case Close</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.ocrRequired">Ocr Required</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.barcode">Barcode</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.functionalCurrency">Functional Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.reportingCurrency">Reporting Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.approverRequired">Approver Required</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.siteCode">Site Code</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.sortCode">Sort Code</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.discount">Discount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.additionalCharges">Additional Charges</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.sumLineAmount">Sum Line Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.conversionRate">Conversion Rate</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.paymentCurrency">Payment Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.liabilityAccount">Liability Account</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.postingDate">Posting Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.termDate">Term Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.shippingAmount">Shipping Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.invoiceHeader.gRNDetails">G RN Details</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let invoiceHeader of invoiceHeaders ;trackBy: trackId">
+                    <td><a [routerLink]="['/invoice-header', invoiceHeader.id, 'view']">{{ invoiceHeader.id }}</a></td>
+                    <td>{{ invoiceHeader.companyCode }}</td>
+                    <td>{{ invoiceHeader.legalEntityName }}</td>
+                    <td>{{ invoiceHeader.comments }}</td>
+                    <td>{{ invoiceHeader.grossAmount }}</td>
+                    <td>{{ invoiceHeader.netAmount }}</td>
+                    <td jhiTranslate="{{ 'appApp.Currency.' + invoiceHeader.currency }}">{{ invoiceHeader.currency }}</td>
+                    <td>{{ invoiceHeader.country }}</td>
+                    <td>{{ invoiceHeader.countryKey }}</td>
+                    <td>{{ invoiceHeader.languageKey }}</td>
+                    <td>{{ invoiceHeader.erpReferenceNumber }}</td>
+                    <td>{{ invoiceHeader.poBoxCode }}</td>
+                    <td>{{ invoiceHeader.scanDate | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.receivedDate | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.caseCreationDate | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.numberOfScannedPages }}</td>
+                    <td>{{ invoiceHeader.sla }}</td>
+                    <td>{{ invoiceHeader.slaExpirationDate | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.tradingPartner }}</td>
+                    <td>{{ invoiceHeader.deliveryDate | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.deliveryNoteNumber | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.recepientEmail }}</td>
+                    <td>{{ invoiceHeader.isCaseClose }}</td>
+                    <td>{{ invoiceHeader.ocrRequired }}</td>
+                    <td>{{ invoiceHeader.barcode }}</td>
+                    <td jhiTranslate="{{ 'appApp.Currency.' + invoiceHeader.functionalCurrency }}">{{ invoiceHeader.functionalCurrency }}</td>
+                    <td jhiTranslate="{{ 'appApp.Currency.' + invoiceHeader.reportingCurrency }}">{{ invoiceHeader.reportingCurrency }}</td>
+                    <td>{{ invoiceHeader.approverRequired }}</td>
+                    <td>{{ invoiceHeader.siteCode }}</td>
+                    <td>{{ invoiceHeader.sortCode }}</td>
+                    <td>{{ invoiceHeader.discount }}</td>
+                    <td>{{ invoiceHeader.additionalCharges }}</td>
+                    <td>{{ invoiceHeader.sumLineAmount }}</td>
+                    <td>{{ invoiceHeader.conversionRate }}</td>
+                    <td jhiTranslate="{{ 'appApp.Currency.' + invoiceHeader.paymentCurrency }}">{{ invoiceHeader.paymentCurrency }}</td>
+                    <td>{{ invoiceHeader.liabilityAccount }}</td>
+                    <td>{{ invoiceHeader.postingDate | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.termDate | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.shippingAmount }}</td>
+                    <td>{{ invoiceHeader.createdAt | date:'medium' }}</td>
+                    <td>{{ invoiceHeader.createdBy }}</td>
+                    <td>
+                        <div *ngIf="invoiceHeader.gRNDetails">
+                            <a [routerLink]="['/grn-details', invoiceHeader.gRNDetails?.id, 'view']" >{{ invoiceHeader.gRNDetails?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/invoice-header', invoiceHeader.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/invoice-header', invoiceHeader.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(invoiceHeader)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

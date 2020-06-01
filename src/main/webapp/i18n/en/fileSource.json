@@ -1,0 +1,10 @@
+{
+  "appApp": {
+    "FileSource": {
+      "null": "",
+      "MAIL": "MAIL",
+      "FAX": "FAX",
+      "SFTP": "SFTP"
+    }
+  }
+}

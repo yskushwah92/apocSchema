@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="auditLog">
+            <h2><span jhiTranslate="appApp.auditLog.detail.title">Audit Log</span> {{ auditLog.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.auditLog.activityName">Activity Name</span></dt>
+                <dd>
+                    <span>{{ auditLog.activityName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.activityCreationDate">Activity Creation Date</span></dt>
+                <dd>
+                    <span>{{ auditLog.activityCreationDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.activityStartTime">Activity Start Time</span></dt>
+                <dd>
+                    <span>{{ auditLog.activityStartTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.activityEndTime">Activity End Time</span></dt>
+                <dd>
+                    <span>{{ auditLog.activityEndTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.assignedDate">Assigned Date</span></dt>
+                <dd>
+                    <span>{{ auditLog.assignedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.user">User</span></dt>
+                <dd>
+                    <span>{{ auditLog.user }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.status">Status</span></dt>
+                <dd>
+                    <span>{{ auditLog.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.reason">Reason</span></dt>
+                <dd>
+                    <span>{{ auditLog.reason }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.comments">Comments</span></dt>
+                <dd>
+                    <span>{{ auditLog.comments }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.completeOn">Complete On</span></dt>
+                <dd>
+                    <span>{{ auditLog.completeOn }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.duration">Duration</span></dt>
+                <dd>
+                    <span>{{ auditLog.duration }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ auditLog.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ auditLog.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.auditLog.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="auditLog.invoice">
+                        <a [routerLink]="['/invoice', auditLog.invoice?.id, 'view']">{{ auditLog.invoice?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/audit-log', auditLog.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

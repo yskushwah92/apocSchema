@@ -1,0 +1,114 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-audit-log-details-heading" jhiTranslate="appApp.auditLogDetails.home.createOrEditLabel">Create or edit a Audit Log Details</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.assignedBy" for="field_assignedBy">Assigned By</label>
+                    <input type="text" class="form-control" name="assignedBy" id="field_assignedBy"
+                           formControlName="assignedBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.actor" for="field_actor">Actor</label>
+                    <input type="text" class="form-control" name="actor" id="field_actor"
+                           formControlName="actor"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.statusCode" for="field_statusCode">Status Code</label>
+                    <input type="text" class="form-control" name="statusCode" id="field_statusCode"
+                           formControlName="statusCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.reason" for="field_reason">Reason</label>
+                    <input type="text" class="form-control" name="reason" id="field_reason"
+                           formControlName="reason"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.reasonCode" for="field_reasonCode">Reason Code</label>
+                    <input type="text" class="form-control" name="reasonCode" id="field_reasonCode"
+                           formControlName="reasonCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.createdOn" for="field_createdOn">Created On</label>
+                    <div class="d-flex">
+                        <input id="field_createdOn" type="datetime-local" class="form-control" name="createdOn" formControlName="createdOn" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.comments" for="field_comments">Comments</label>
+                    <input type="text" class="form-control" name="comments" id="field_comments"
+                           formControlName="comments"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.delegate" for="field_delegate">Delegate</label>
+                    <input type="text" class="form-control" name="delegate" id="field_delegate"
+                           formControlName="delegate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.delegatedFlag" for="field_delegatedFlag">Delegated Flag</label>
+                    <input type="checkbox" class="form-control" name="delegatedFlag" id="field_delegatedFlag"
+                           formControlName="delegatedFlag"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.metSLA" for="field_metSLA">Met SLA</label>
+                    <input type="text" class="form-control" name="metSLA" id="field_metSLA"
+                           formControlName="metSLA"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.auditLogDetails.auditLog" for="field_auditLog">Audit Log</label>
+                    <select class="form-control" id="field_auditLog" name="auditLog" formControlName="auditLog">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="auditLogOption.id === editForm.get('auditLog')!.value?.id ? editForm.get('auditLog')!.value : auditLogOption" *ngFor="let auditLogOption of auditlogs; trackBy: trackById">{{ auditLogOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

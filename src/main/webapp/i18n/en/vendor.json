@@ -1,0 +1,46 @@
+{
+  "appApp": {
+    "vendor": {
+      "home": {
+        "title": "Vendors",
+        "createLabel": "Create a new Vendor",
+        "createOrEditLabel": "Create or edit a Vendor",
+        "notFound": "No Vendors found"
+      },
+      "created": "A new Vendor is created with identifier {{ param }}",
+      "updated": "A Vendor is updated with identifier {{ param }}",
+      "deleted": "A Vendor is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vendor {{ id }}?"
+      },
+      "detail": {
+        "title": "Vendor"
+      },
+      "name": "Name",
+      "displayName": "Display Name",
+      "vendorNumber": "Vendor Number",
+      "paymentTerms": "Payment Terms",
+      "type": "Type",
+      "iln": "Iln",
+      "taxIdNO": "Tax Id NO",
+      "gstRegistrationNumber": "Gst Registration Number",
+      "gstStatus": "Gst Status",
+      "vatIdNo": "Vat Id No",
+      "clerkId": "Clerk Id",
+      "status": "Status",
+      "vatRegistrationNumber": "Vat Registration Number",
+      "prefferredModeOfCommunication": "Prefferred Mode Of Communication",
+      "pointOfContact": "Point Of Contact",
+      "preferredModeOfPayment": "Preferred Mode Of Payment",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "contactDetails": "Contact Details",
+      "organization": "Organization",
+      "gLAccountDetails": "G L Account Details",
+      "invoice": "Invoice",
+      "vendorPaymentAccountDetails": "Vendor Payment Account Details",
+      "purchaseOrderLine": "Purchase Order Line",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-communication-configuration-heading" jhiTranslate="appApp.communicationConfiguration.home.createOrEditLabel">Create or edit a Communication Configuration</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.communicationConfiguration.priority" for="field_priority">Priority</label>
+                    <input type="text" class="form-control" name="priority" id="field_priority"
+                           formControlName="priority"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.communicationConfiguration.retries" for="field_retries">Retries</label>
+                    <input type="text" class="form-control" name="retries" id="field_retries"
+                           formControlName="retries"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.communicationConfiguration.mode" for="field_mode">Mode</label>
+                    <select class="form-control" name="mode" formControlName="mode" id="field_mode">
+                        <option value="MAIL">{{ 'appApp.CommunicationMode.MAIL' | translate }}</option>
+                        <option value="SMS">{{ 'appApp.CommunicationMode.SMS' | translate }}</option>
+                        <option value="WHATSAPP">{{ 'appApp.CommunicationMode.WHATSAPP' | translate }}</option>
+                        <option value="CALL">{{ 'appApp.CommunicationMode.CALL' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.communicationConfiguration.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.communicationConfiguration.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.communicationConfiguration.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.communicationConfiguration.mailBox" for="field_mailBox">Mail Box</label>
+                    <select class="form-control" id="field_mailBox" name="mailBox" formControlName="mailBox">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="mailBoxOption.id === editForm.get('mailBox')!.value?.id ? editForm.get('mailBox')!.value : mailBoxOption" *ngFor="let mailBoxOption of mailboxes; trackBy: trackById">{{ mailBoxOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

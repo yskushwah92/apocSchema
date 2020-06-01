@@ -1,0 +1,158 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="paymentInfo">
+            <h2><span jhiTranslate="appApp.paymentInfo.detail.title">Payment Info</span> {{ paymentInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.paymentInfo.name">Name</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.terms">Terms</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.terms }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.mode">Mode</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.PaymentMode.' + paymentInfo.mode }}">{{ paymentInfo.mode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.dueDate">Due Date</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.dueDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.PaymentStatus.' + paymentInfo.status }}">{{ paymentInfo.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.paymentChannel">Payment Channel</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.paymentChannel }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.PaymentType.' + paymentInfo.type }}">{{ paymentInfo.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.approvalStatus">Approval Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.ApprovalStatus.' + paymentInfo.approvalStatus }}">{{ paymentInfo.approvalStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.dateOfApproval">Date Of Approval</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.dateOfApproval }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.dateOfPayment">Date Of Payment</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.dateOfPayment }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.paymentReferenceNumber">Payment Reference Number</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.paymentReferenceNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.checkDate">Check Date</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.checkDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.checkNumber">Check Number</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.checkNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.checkAmount">Check Amount</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.checkAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.earlyPaymentDate">Early Payment Date</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.earlyPaymentDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.earlyPaymentDiscount">Early Payment Discount</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.earlyPaymentDiscount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.earlyPaymentAmount">Early Payment Amount</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.earlyPaymentAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.earlyPaymentRemarks">Early Payment Remarks</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.earlyPaymentRemarks }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.paymentDocDate">Payment Doc Date</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.paymentDocDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.paymentDocNo">Payment Doc No</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.paymentDocNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.paymentAmount">Payment Amount</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.paymentAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.discountTaken">Discount Taken</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.discountTaken }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.discountLost">Discount Lost</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.discountLost }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.paymentCurrency">Payment Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + paymentInfo.paymentCurrency }}">{{ paymentInfo.paymentCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.invoiceBaseAmount">Invoice Base Amount</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.invoiceBaseAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.clearedDate">Cleared Date</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.clearedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.clearedAmount">Cleared Amount</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.clearedAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.transactionId">Transaction Id</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.transactionId }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ paymentInfo.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.paymentInfo">Payment Info</span></dt>
+                <dd>
+                    <div *ngIf="paymentInfo.paymentInfo">
+                        <a [routerLink]="['/payment-info', paymentInfo.paymentInfo?.id, 'view']">{{ paymentInfo.paymentInfo?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.paymentInfo.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="paymentInfo.invoice">
+                        <a [routerLink]="['/invoice', paymentInfo.invoice?.id, 'view']">{{ paymentInfo.invoice?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/payment-info', paymentInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "appApp": {
+    "invoiceStatusDetails": {
+      "home": {
+        "title": "Invoice Status Details",
+        "createLabel": "Create a new Invoice Status Details",
+        "createOrEditLabel": "Create or edit a Invoice Status Details",
+        "notFound": "No Invoice Status Details found"
+      },
+      "created": "A new Invoice Status Details is created with identifier {{ param }}",
+      "updated": "A Invoice Status Details is updated with identifier {{ param }}",
+      "deleted": "A Invoice Status Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Invoice Status Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoice Status Details"
+      },
+      "name": "Name",
+      "currentStatus": "Current Status",
+      "statusReason": "Status Reason",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "invoice": "Invoice"
+    }
+  }
+}

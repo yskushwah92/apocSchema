@@ -1,0 +1,55 @@
+{
+  "appApp": {
+    "paymentInfo": {
+      "home": {
+        "title": "Payment Infos",
+        "createLabel": "Create a new Payment Info",
+        "createOrEditLabel": "Create or edit a Payment Info",
+        "notFound": "No Payment Infos found"
+      },
+      "created": "A new Payment Info is created with identifier {{ param }}",
+      "updated": "A Payment Info is updated with identifier {{ param }}",
+      "deleted": "A Payment Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Payment Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Payment Info"
+      },
+      "name": "Name",
+      "terms": "Terms",
+      "mode": "Mode",
+      "dueDate": "Due Date",
+      "status": "Status",
+      "paymentChannel": "Payment Channel",
+      "type": "Type",
+      "approvalStatus": "Approval Status",
+      "dateOfApproval": "Date Of Approval",
+      "dateOfPayment": "Date Of Payment",
+      "paymentReferenceNumber": "Payment Reference Number",
+      "checkDate": "Check Date",
+      "checkNumber": "Check Number",
+      "checkAmount": "Check Amount",
+      "earlyPaymentDate": "Early Payment Date",
+      "earlyPaymentDiscount": "Early Payment Discount",
+      "earlyPaymentAmount": "Early Payment Amount",
+      "earlyPaymentRemarks": "Early Payment Remarks",
+      "paymentDocDate": "Payment Doc Date",
+      "paymentDocNo": "Payment Doc No",
+      "paymentAmount": "Payment Amount",
+      "discountTaken": "Discount Taken",
+      "discountLost": "Discount Lost",
+      "paymentCurrency": "Payment Currency",
+      "invoiceBaseAmount": "Invoice Base Amount",
+      "clearedDate": "Cleared Date",
+      "clearedAmount": "Cleared Amount",
+      "transactionId": "Transaction Id",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "paymentInfo": "Payment Info",
+      "invoice": "Invoice",
+      "paymentInfo": "Payment Info",
+      "invoice": "Invoice"
+    }
+  }
+}

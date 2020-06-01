@@ -1,0 +1,33 @@
+{
+  "appApp": {
+    "oCRRawExtraction": {
+      "home": {
+        "title": "OCR Raw Extractions",
+        "createLabel": "Create a new OCR Raw Extraction",
+        "createOrEditLabel": "Create or edit a OCR Raw Extraction",
+        "notFound": "No OCR Raw Extractions found"
+      },
+      "created": "A new OCR Raw Extraction is created with identifier {{ param }}",
+      "updated": "A OCR Raw Extraction is updated with identifier {{ param }}",
+      "deleted": "A OCR Raw Extraction is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete OCR Raw Extraction {{ id }}?"
+      },
+      "detail": {
+        "title": "OCR Raw Extraction"
+      },
+      "name": "Name",
+      "fieldName": "Field Name",
+      "capturedfieldValue": "Capturedfield Value",
+      "actualFieldValue": "Actual Field Value",
+      "language": "Language",
+      "documentType": "Document Type",
+      "accuracy": "Accuracy",
+      "extractions": "Extractions",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "modelInfo": "Model Info",
+      "invoice": "Invoice"
+    }
+  }
+}

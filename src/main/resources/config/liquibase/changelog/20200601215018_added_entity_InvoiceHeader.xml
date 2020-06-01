@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity InvoiceHeader.
+    -->
+    <changeSet id="20200601215018-1" author="jhipster">
+        <createTable tableName="invoice_header">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="company_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="legal_entity_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="comments" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="gross_amount" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="net_amount" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="currency" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="country" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="country_key" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="language_key" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="erp_reference_number" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="po_box_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="scan_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="received_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="case_creation_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="number_of_scanned_pages" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sla" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sla_expiration_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="trading_partner" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="delivery_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="delivery_note_number" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="recepient_email" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_case_close" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ocr_required" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="barcode" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="functional_currency" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="reporting_currency" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="approver_required" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="site_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sort_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="discount" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="additional_charges" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="sum_line_amount" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="conversion_rate" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="payment_currency" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="liability_account" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="posting_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="term_date" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="shipping_amount" type="double">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="grndetails_id" type="bigint">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_invoice_header_grndetails_id" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="invoice_header" columnName="scan_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_header" columnName="received_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_header" columnName="case_creation_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_header" columnName="sla_expiration_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_header" columnName="delivery_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_header" columnName="delivery_note_number" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_header" columnName="posting_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_header" columnName="term_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_header" columnName="created_at" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20200601215018-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200601215018-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/invoice_header.csv"
+                  separator=";"
+                  tableName="invoice_header">
+            <column name="id" type="numeric"/>
+            <column name="company_code" type="string"/>
+            <column name="legal_entity_name" type="string"/>
+            <column name="comments" type="string"/>
+            <column name="gross_amount" type="string"/>
+            <column name="net_amount" type="string"/>
+            <column name="currency" type="string"/>
+            <column name="country" type="string"/>
+            <column name="country_key" type="string"/>
+            <column name="language_key" type="string"/>
+            <column name="erp_reference_number" type="string"/>
+            <column name="po_box_code" type="string"/>
+            <column name="scan_date" type="datetime"/>
+            <column name="received_date" type="datetime"/>
+            <column name="case_creation_date" type="datetime"/>
+            <column name="number_of_scanned_pages" type="string"/>
+            <column name="sla" type="string"/>
+            <column name="sla_expiration_date" type="datetime"/>
+            <column name="trading_partner" type="string"/>
+            <column name="delivery_date" type="datetime"/>
+            <column name="delivery_note_number" type="datetime"/>
+            <column name="recepient_email" type="string"/>
+            <column name="is_case_close" type="string"/>
+            <column name="ocr_required" type="boolean"/>
+            <column name="barcode" type="string"/>
+            <column name="functional_currency" type="string"/>
+            <column name="reporting_currency" type="string"/>
+            <column name="approver_required" type="string"/>
+            <column name="site_code" type="string"/>
+            <column name="sort_code" type="string"/>
+            <column name="discount" type="numeric"/>
+            <column name="additional_charges" type="numeric"/>
+            <column name="sum_line_amount" type="numeric"/>
+            <column name="conversion_rate" type="numeric"/>
+            <column name="payment_currency" type="string"/>
+            <column name="liability_account" type="string"/>
+            <column name="posting_date" type="datetime"/>
+            <column name="term_date" type="datetime"/>
+            <column name="shipping_amount" type="numeric"/>
+            <column name="created_at" type="datetime"/>
+            <column name="created_by" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

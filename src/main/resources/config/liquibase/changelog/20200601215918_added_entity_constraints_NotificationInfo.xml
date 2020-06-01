@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity NotificationInfo.
+    -->
+    <changeSet id="20200601215918-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="purchase_order_id"
+                                 baseTableName="notification_info"
+                                 constraintName="fk_notification_info_purchase_order_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="purchase_order"/>
+
+        <addForeignKeyConstraint baseColumnNames="notification_info_id"
+                                 baseTableName="notification_info"
+                                 constraintName="fk_notification_info_notification_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="notification_info"/>
+
+    </changeSet>
+</databaseChangeLog>

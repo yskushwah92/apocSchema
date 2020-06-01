@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.taxCode.home.title">Tax Codes</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tax-code" [routerLink]="['/tax-code/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.taxCode.home.createLabel">
+            Create a new Tax Code
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="taxCodes?.length === 0">
+        <span jhiTranslate="appApp.taxCode.home.notFound">No taxCodes found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="taxCodes && taxCodes.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.country">Country</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.countryKey">Country Key</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.taxCode">Tax Code</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.description">Description</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.taxCodeDescription">Tax Code Description</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.taxRate">Tax Rate</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.taxCode.createdBy">Created By</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let taxCode of taxCodes ;trackBy: trackId">
+                    <td><a [routerLink]="['/tax-code', taxCode.id, 'view']">{{ taxCode.id }}</a></td>
+                    <td>{{ taxCode.name }}</td>
+                    <td>{{ taxCode.country }}</td>
+                    <td>{{ taxCode.countryKey }}</td>
+                    <td>{{ taxCode.taxCode }}</td>
+                    <td>{{ taxCode.description }}</td>
+                    <td>{{ taxCode.taxCodeDescription }}</td>
+                    <td>{{ taxCode.taxRate }}</td>
+                    <td>{{ taxCode.createdAt | date:'medium' }}</td>
+                    <td>{{ taxCode.createdBy }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/tax-code', taxCode.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/tax-code', taxCode.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(taxCode)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

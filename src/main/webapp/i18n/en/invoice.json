@@ -1,0 +1,65 @@
+{
+  "appApp": {
+    "invoice": {
+      "home": {
+        "title": "Invoices",
+        "createLabel": "Create a new Invoice",
+        "createOrEditLabel": "Create or edit a Invoice",
+        "notFound": "No Invoices found"
+      },
+      "created": "A new Invoice is created with identifier {{ param }}",
+      "updated": "A Invoice is updated with identifier {{ param }}",
+      "deleted": "A Invoice is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Invoice {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoice"
+      },
+      "name": "Name",
+      "serialNo": "Serial No",
+      "invoiceNo": "Invoice No",
+      "referenceNo": "Reference No",
+      "caseNo": "Case No",
+      "description": "Description",
+      "priority": "Priority",
+      "type": "Type",
+      "dateOfCreation": "Date Of Creation",
+      "sellerName": "Seller Name",
+      "amountFunctional": "Amount Functional",
+      "amountReporting": "Amount Reporting",
+      "price": "Price",
+      "issuer": "Issuer",
+      "tax": "Tax",
+      "inclusiveOfTax": "Inclusive Of Tax",
+      "status": "Status",
+      "gstn": "Gstn",
+      "address": "Address",
+      "category": "Category",
+      "contactNo": "Contact No",
+      "email": "Email",
+      "prefferredModeOfCommunication": "Prefferred Mode Of Communication",
+      "pointOfContact": "Point Of Contact",
+      "bankAccDetails": "Bank Acc Details",
+      "upiDetails": "Upi Details",
+      "preferredModeOfPayment": "Preferred Mode Of Payment",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "fileInfo": "File Info",
+      "modelInfo": "Model Info",
+      "notificationInfo": "Notification Info",
+      "paymentInfo": "Payment Info",
+      "invoiceHeader": "Invoice Header",
+      "oCRRawExtraction": "O CR Raw Extraction",
+      "invoice": "Invoice",
+      "invoiceLineItem": "Invoice Line Item",
+      "invoiceStatusDetails": "Invoice Status Details",
+      "paymentInfo": "Payment Info",
+      "auditLog": "Audit Log",
+      "assignment": "Assignment",
+      "vendor": "Vendor",
+      "invoice": "Invoice",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

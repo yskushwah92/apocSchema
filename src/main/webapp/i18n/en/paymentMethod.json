@@ -1,0 +1,9 @@
+{
+  "appApp": {
+    "PaymentMethod": {
+      "null": "",
+      "BANK": "BANK",
+      "CASH": "CASH"
+    }
+  }
+}

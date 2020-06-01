@@ -1,0 +1,76 @@
+{
+  "name": "NotificationInfo",
+  "fields": [
+    {
+      "fieldName": "sender",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "receiver",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "purchaseOrder",
+      "otherEntityRelationshipName": "notificationInfo",
+      "relationshipName": "purchaseOrder",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "notificationInfo",
+      "otherEntityRelationshipName": "notificationInfo",
+      "relationshipName": "notificationInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "notificationInfo",
+      "relationshipName": "invoice",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "notificationInfo",
+      "otherEntityRelationshipName": "notificationInfo",
+      "relationshipName": "notificationInfo",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200601215918",
+  "entityTableName": "notification_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

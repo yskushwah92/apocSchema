@@ -1,0 +1,28 @@
+{
+  "appApp": {
+    "communicationConfiguration": {
+      "home": {
+        "title": "Communication Configurations",
+        "createLabel": "Create a new Communication Configuration",
+        "createOrEditLabel": "Create or edit a Communication Configuration",
+        "notFound": "No Communication Configurations found"
+      },
+      "created": "A new Communication Configuration is created with identifier {{ param }}",
+      "updated": "A Communication Configuration is updated with identifier {{ param }}",
+      "deleted": "A Communication Configuration is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Communication Configuration {{ id }}?"
+      },
+      "detail": {
+        "title": "Communication Configuration"
+      },
+      "priority": "Priority",
+      "retries": "Retries",
+      "mode": "Mode",
+      "name": "Name",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "mailBox": "Mail Box"
+    }
+  }
+}

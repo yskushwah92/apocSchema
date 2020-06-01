@@ -1,0 +1,95 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.purchaseOrder.home.title">Purchase Orders</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-purchase-order" [routerLink]="['/purchase-order/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.purchaseOrder.home.createLabel">
+            Create a new Purchase Order
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="purchaseOrders?.length === 0">
+        <span jhiTranslate="appApp.purchaseOrder.home.notFound">No purchaseOrders found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="purchaseOrders && purchaseOrders.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.serialNo">Serial No</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.header">Header</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.unit">Unit</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.issuer">Issuer</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.issuerDetails">Issuer Details</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.creationDate">Creation Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.price">Price</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.purchaseOrderHeader">Purchase Order Header</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.gRNDetails">G RN Details</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrder.vendor">Vendor</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let purchaseOrder of purchaseOrders ;trackBy: trackId">
+                    <td><a [routerLink]="['/purchase-order', purchaseOrder.id, 'view']">{{ purchaseOrder.id }}</a></td>
+                    <td>{{ purchaseOrder.serialNo }}</td>
+                    <td>{{ purchaseOrder.header }}</td>
+                    <td>{{ purchaseOrder.unit }}</td>
+                    <td>{{ purchaseOrder.issuer }}</td>
+                    <td>{{ purchaseOrder.issuerDetails }}</td>
+                    <td>{{ purchaseOrder.creationDate | date:'medium' }}</td>
+                    <td>{{ purchaseOrder.price }}</td>
+                    <td>{{ purchaseOrder.status }}</td>
+                    <td>{{ purchaseOrder.createdBy }}</td>
+                    <td>
+                        <div *ngIf="purchaseOrder.purchaseOrderHeader">
+                            <a [routerLink]="['/purchase-order-header', purchaseOrder.purchaseOrderHeader?.id, 'view']" >{{ purchaseOrder.purchaseOrderHeader?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="purchaseOrder.gRNDetails">
+                            <a [routerLink]="['/grn-details', purchaseOrder.gRNDetails?.id, 'view']" >{{ purchaseOrder.gRNDetails?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <span *ngFor="let vendor of purchaseOrder.vendors; let last = last">
+                            <a class="form-control-static" [routerLink]="['/vendor', vendor?.id, 'view']">{{ vendor.id }}</a>{{ last ? '' : ', ' }}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/purchase-order', purchaseOrder.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/purchase-order', purchaseOrder.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(purchaseOrder)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

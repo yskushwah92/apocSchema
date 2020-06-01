@@ -1,0 +1,28 @@
+{
+  "appApp": {
+    "mailBox": {
+      "home": {
+        "title": "Mail Boxes",
+        "createLabel": "Create a new Mail Box",
+        "createOrEditLabel": "Create or edit a Mail Box",
+        "notFound": "No Mail Boxes found"
+      },
+      "created": "A new Mail Box is created with identifier {{ param }}",
+      "updated": "A Mail Box is updated with identifier {{ param }}",
+      "deleted": "A Mail Box is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Mail Box {{ id }}?"
+      },
+      "detail": {
+        "title": "Mail Box"
+      },
+      "name": "Name",
+      "server": "Server",
+      "address": "Address",
+      "displayName": "Display Name",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "communicationConfiguration": "Communication Configuration"
+    }
+  }
+}

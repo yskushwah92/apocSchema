@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity ModelInfo.
+    -->
+    <changeSet id="20200601213218-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="ocrraw_extraction_id"
+                                 baseTableName="model_info"
+                                 constraintName="fk_model_info_ocrraw_extraction_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ocr_raw_extraction"/>
+
+    </changeSet>
+</databaseChangeLog>

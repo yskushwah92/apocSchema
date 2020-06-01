@@ -1,0 +1,197 @@
+{
+  "name": "InvoiceHeader",
+  "fields": [
+    {
+      "fieldName": "companyCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "legalEntityName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grossAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "netAmount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "countryKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "languageKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "erpReferenceNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "poBoxCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scanDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "receivedDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "caseCreationDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "numberOfScannedPages",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sla",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "slaExpirationDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "tradingPartner",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deliveryDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deliveryNoteNumber",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "recepientEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isCaseClose",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ocrRequired",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "barcode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "functionalCurrency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "reportingCurrency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "approverRequired",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "siteCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "sortCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "additionalCharges",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "sumLineAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "conversionRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "paymentCurrency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "liabilityAccount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postingDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "termDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "shippingAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gRNDetails",
+      "otherEntityRelationshipName": "invoiceHeader",
+      "relationshipName": "gRNDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "invoiceHeader",
+      "relationshipName": "invoice",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200601215018",
+  "entityTableName": "invoice_header",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

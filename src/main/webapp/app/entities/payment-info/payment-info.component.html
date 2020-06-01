@@ -1,0 +1,131 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.paymentInfo.home.title">Payment Infos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-payment-info" [routerLink]="['/payment-info/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.paymentInfo.home.createLabel">
+            Create a new Payment Info
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="paymentInfos?.length === 0">
+        <span jhiTranslate="appApp.paymentInfo.home.notFound">No paymentInfos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="paymentInfos && paymentInfos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.terms">Terms</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.mode">Mode</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.dueDate">Due Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.paymentChannel">Payment Channel</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.type">Type</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.approvalStatus">Approval Status</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.dateOfApproval">Date Of Approval</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.dateOfPayment">Date Of Payment</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.paymentReferenceNumber">Payment Reference Number</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.checkDate">Check Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.checkNumber">Check Number</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.checkAmount">Check Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.earlyPaymentDate">Early Payment Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.earlyPaymentDiscount">Early Payment Discount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.earlyPaymentAmount">Early Payment Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.earlyPaymentRemarks">Early Payment Remarks</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.paymentDocDate">Payment Doc Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.paymentDocNo">Payment Doc No</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.paymentAmount">Payment Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.discountTaken">Discount Taken</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.discountLost">Discount Lost</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.paymentCurrency">Payment Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.invoiceBaseAmount">Invoice Base Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.clearedDate">Cleared Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.clearedAmount">Cleared Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.transactionId">Transaction Id</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.paymentInfo">Payment Info</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.paymentInfo.invoice">Invoice</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paymentInfo of paymentInfos ;trackBy: trackId">
+                    <td><a [routerLink]="['/payment-info', paymentInfo.id, 'view']">{{ paymentInfo.id }}</a></td>
+                    <td>{{ paymentInfo.name }}</td>
+                    <td>{{ paymentInfo.terms }}</td>
+                    <td jhiTranslate="{{ 'appApp.PaymentMode.' + paymentInfo.mode }}">{{ paymentInfo.mode }}</td>
+                    <td>{{ paymentInfo.dueDate | date:'medium' }}</td>
+                    <td jhiTranslate="{{ 'appApp.PaymentStatus.' + paymentInfo.status }}">{{ paymentInfo.status }}</td>
+                    <td>{{ paymentInfo.paymentChannel }}</td>
+                    <td jhiTranslate="{{ 'appApp.PaymentType.' + paymentInfo.type }}">{{ paymentInfo.type }}</td>
+                    <td jhiTranslate="{{ 'appApp.ApprovalStatus.' + paymentInfo.approvalStatus }}">{{ paymentInfo.approvalStatus }}</td>
+                    <td>{{ paymentInfo.dateOfApproval | date:'medium' }}</td>
+                    <td>{{ paymentInfo.dateOfPayment | date:'medium' }}</td>
+                    <td>{{ paymentInfo.paymentReferenceNumber }}</td>
+                    <td>{{ paymentInfo.checkDate | date:'medium' }}</td>
+                    <td>{{ paymentInfo.checkNumber }}</td>
+                    <td>{{ paymentInfo.checkAmount }}</td>
+                    <td>{{ paymentInfo.earlyPaymentDate | date:'medium' }}</td>
+                    <td>{{ paymentInfo.earlyPaymentDiscount }}</td>
+                    <td>{{ paymentInfo.earlyPaymentAmount }}</td>
+                    <td>{{ paymentInfo.earlyPaymentRemarks }}</td>
+                    <td>{{ paymentInfo.paymentDocDate | date:'medium' }}</td>
+                    <td>{{ paymentInfo.paymentDocNo }}</td>
+                    <td>{{ paymentInfo.paymentAmount }}</td>
+                    <td>{{ paymentInfo.discountTaken }}</td>
+                    <td>{{ paymentInfo.discountLost }}</td>
+                    <td jhiTranslate="{{ 'appApp.Currency.' + paymentInfo.paymentCurrency }}">{{ paymentInfo.paymentCurrency }}</td>
+                    <td>{{ paymentInfo.invoiceBaseAmount }}</td>
+                    <td>{{ paymentInfo.clearedDate | date:'medium' }}</td>
+                    <td>{{ paymentInfo.clearedAmount }}</td>
+                    <td>{{ paymentInfo.transactionId }}</td>
+                    <td>{{ paymentInfo.createdAt | date:'medium' }}</td>
+                    <td>{{ paymentInfo.createdBy }}</td>
+                    <td>
+                        <div *ngIf="paymentInfo.paymentInfo">
+                            <a [routerLink]="['/payment-info', paymentInfo.paymentInfo?.id, 'view']" >{{ paymentInfo.paymentInfo?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="paymentInfo.invoice">
+                            <a [routerLink]="['/invoice', paymentInfo.invoice?.id, 'view']" >{{ paymentInfo.invoice?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/payment-info', paymentInfo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/payment-info', paymentInfo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(paymentInfo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

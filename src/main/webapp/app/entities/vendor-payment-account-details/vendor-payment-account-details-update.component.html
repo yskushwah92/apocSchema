@@ -1,0 +1,120 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-vendor-payment-account-details-heading" jhiTranslate="appApp.vendorPaymentAccountDetails.home.createOrEditLabel">Create or edit a Vendor Payment Account Details</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="BYBANKTRANSFERINADVANCE">{{ 'appApp.PaymentAccountType.BYBANKTRANSFERINADVANCE' | translate }}</option>
+                        <option value="BYINVOICE">{{ 'appApp.PaymentAccountType.BYINVOICE' | translate }}</option>
+                        <option value="CASH">{{ 'appApp.PaymentAccountType.CASH' | translate }}</option>
+                        <option value="CHECKINADVANCE">{{ 'appApp.PaymentAccountType.CHECKINADVANCE' | translate }}</option>
+                        <option value="COD">{{ 'appApp.PaymentAccountType.COD' | translate }}</option>
+                        <option value="DIRECTDEBIT">{{ 'appApp.PaymentAccountType.DIRECTDEBIT' | translate }}</option>
+                        <option value="GOOGLECHECKOUT">{{ 'appApp.PaymentAccountType.GOOGLECHECKOUT' | translate }}</option>
+                        <option value="UPI">{{ 'appApp.PaymentAccountType.UPI' | translate }}</option>
+                        <option value="PAYTM">{{ 'appApp.PaymentAccountType.PAYTM' | translate }}</option>
+                        <option value="PAYPAL">{{ 'appApp.PaymentAccountType.PAYPAL' | translate }}</option>
+                        <option value="PHONEPE">{{ 'appApp.PaymentAccountType.PHONEPE' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.method" for="field_method">Method</label>
+                    <select class="form-control" name="method" formControlName="method" id="field_method">
+                        <option value="BANK">{{ 'appApp.PaymentMethod.BANK' | translate }}</option>
+                        <option value="CASH">{{ 'appApp.PaymentMethod.CASH' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.accountNumber" for="field_accountNumber">Account Number</label>
+                    <input type="text" class="form-control" name="accountNumber" id="field_accountNumber"
+                           formControlName="accountNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.accountName" for="field_accountName">Account Name</label>
+                    <input type="text" class="form-control" name="accountName" id="field_accountName"
+                           formControlName="accountName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.accountCode" for="field_accountCode">Account Code</label>
+                    <input type="text" class="form-control" name="accountCode" id="field_accountCode"
+                           formControlName="accountCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.accountKey" for="field_accountKey">Account Key</label>
+                    <input type="text" class="form-control" name="accountKey" id="field_accountKey"
+                           formControlName="accountKey"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.bankAccountType" for="field_bankAccountType">Bank Account Type</label>
+                    <input type="text" class="form-control" name="bankAccountType" id="field_bankAccountType"
+                           formControlName="bankAccountType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.iban" for="field_iban">Iban</label>
+                    <input type="text" class="form-control" name="iban" id="field_iban"
+                           formControlName="iban"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.isActive" for="field_isActive">Is Active</label>
+                    <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.vendorPaymentAccountDetails.vendor" for="field_vendor">Vendor</label>
+                    <select class="form-control" id="field_vendor" name="vendor" formControlName="vendor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="vendorOption.id === editForm.get('vendor')!.value?.id ? editForm.get('vendor')!.value : vendorOption" *ngFor="let vendorOption of vendors; trackBy: trackById">{{ vendorOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

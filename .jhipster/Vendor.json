@@ -1,0 +1,141 @@
+{
+  "name": "Vendor",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "displayName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vendorNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentTerms",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iln",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxIdNO",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gstRegistrationNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gstStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vatIdNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clerkId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "vatRegistrationNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prefferredModeOfCommunication",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pointOfContact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "preferredModeOfPayment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "contactDetails",
+      "otherEntityRelationshipName": "vendor",
+      "relationshipName": "contactDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "organization",
+      "otherEntityRelationshipName": "vendor",
+      "relationshipName": "organization",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gLAccountDetails",
+      "otherEntityRelationshipName": "vendor",
+      "relationshipName": "gLAccountDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "vendor",
+      "relationshipName": "invoice"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "vendorPaymentAccountDetails",
+      "otherEntityRelationshipName": "vendor",
+      "relationshipName": "vendorPaymentAccountDetails"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "purchaseOrderLine",
+      "otherEntityRelationshipName": "vendor",
+      "relationshipName": "purchaseOrderLine",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "purchaseOrder",
+      "otherEntityRelationshipName": "vendor",
+      "relationshipName": "purchaseOrder",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200601213918",
+  "entityTableName": "vendor",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

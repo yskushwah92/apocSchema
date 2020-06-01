@@ -1,0 +1,206 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-purchase-order-line-heading" jhiTranslate="appApp.purchaseOrderLine.home.createOrEditLabel">Create or edit a Purchase Order Line</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.country" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                           formControlName="country"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.articleNo" for="field_articleNo">Article No</label>
+                    <input type="text" class="form-control" name="articleNo" id="field_articleNo"
+                           formControlName="articleNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.qty" for="field_qty">Qty</label>
+                    <input type="number" class="form-control" name="qty" id="field_qty"
+                           formControlName="qty"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.receivedQty" for="field_receivedQty">Received Qty</label>
+                    <input type="number" class="form-control" name="receivedQty" id="field_receivedQty"
+                           formControlName="receivedQty"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.billedQty" for="field_billedQty">Billed Qty</label>
+                    <input type="number" class="form-control" name="billedQty" id="field_billedQty"
+                           formControlName="billedQty"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.unitOfMeasurement" for="field_unitOfMeasurement">Unit Of Measurement</label>
+                    <input type="text" class="form-control" name="unitOfMeasurement" id="field_unitOfMeasurement"
+                           formControlName="unitOfMeasurement"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.currency" for="field_currency">Currency</label>
+                    <select class="form-control" name="currency" formControlName="currency" id="field_currency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.lineAmount" for="field_lineAmount">Line Amount</label>
+                    <input type="number" class="form-control" name="lineAmount" id="field_lineAmount"
+                           formControlName="lineAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.lineAmountExclTax" for="field_lineAmountExclTax">Line Amount Excl Tax</label>
+                    <input type="number" class="form-control" name="lineAmountExclTax" id="field_lineAmountExclTax"
+                           formControlName="lineAmountExclTax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.unitPrice" for="field_unitPrice">Unit Price</label>
+                    <input type="number" class="form-control" name="unitPrice" id="field_unitPrice"
+                           formControlName="unitPrice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.costCentre" for="field_costCentre">Cost Centre</label>
+                    <input type="text" class="form-control" name="costCentre" id="field_costCentre"
+                           formControlName="costCentre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.costCentreid" for="field_costCentreid">Cost Centreid</label>
+                    <input type="text" class="form-control" name="costCentreid" id="field_costCentreid"
+                           formControlName="costCentreid"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.articleDescription" for="field_articleDescription">Article Description</label>
+                    <input type="text" class="form-control" name="articleDescription" id="field_articleDescription"
+                           formControlName="articleDescription"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.deliveryReceiptNo" for="field_deliveryReceiptNo">Delivery Receipt No</label>
+                    <input type="text" class="form-control" name="deliveryReceiptNo" id="field_deliveryReceiptNo"
+                           formControlName="deliveryReceiptNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.deliveryDate" for="field_deliveryDate">Delivery Date</label>
+                    <div class="d-flex">
+                        <input id="field_deliveryDate" type="datetime-local" class="form-control" name="deliveryDate" formControlName="deliveryDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.hsnCode" for="field_hsnCode">Hsn Code</label>
+                    <input type="text" class="form-control" name="hsnCode" id="field_hsnCode"
+                           formControlName="hsnCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.tolerance" for="field_tolerance">Tolerance</label>
+                    <input type="text" class="form-control" name="tolerance" id="field_tolerance"
+                           formControlName="tolerance"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.tolerancePrice" for="field_tolerancePrice">Tolerance Price</label>
+                    <input type="number" class="form-control" name="tolerancePrice" id="field_tolerancePrice"
+                           formControlName="tolerancePrice"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.receiptReqd" for="field_receiptReqd">Receipt Reqd</label>
+                    <input type="checkbox" class="form-control" name="receiptReqd" id="field_receiptReqd"
+                           formControlName="receiptReqd"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.acceptedQty" for="field_acceptedQty">Accepted Qty</label>
+                    <input type="number" class="form-control" name="acceptedQty" id="field_acceptedQty"
+                           formControlName="acceptedQty"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.amountReceived" for="field_amountReceived">Amount Received</label>
+                    <input type="number" class="form-control" name="amountReceived" id="field_amountReceived"
+                           formControlName="amountReceived"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.availableQty" for="field_availableQty">Available Qty</label>
+                    <input type="number" class="form-control" name="availableQty" id="field_availableQty"
+                           formControlName="availableQty"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.organization" for="field_organization">Organization</label>
+                    <select class="form-control" id="field_organization" name="organization" formControlName="organization">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="organizationOption.id === editForm.get('organization')!.value?.id ? editForm.get('organization')!.value : organizationOption" *ngFor="let organizationOption of organizations; trackBy: trackById">{{ organizationOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.vendor" for="field_vendor">Vendor</label>
+                    <select class="form-control" id="field_vendor" name="vendor" formControlName="vendor">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="vendorOption.id === editForm.get('vendor')!.value?.id ? editForm.get('vendor')!.value : vendorOption" *ngFor="let vendorOption of vendors; trackBy: trackById">{{ vendorOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.gLAccountDetails" for="field_gLAccountDetails">G L Account Details</label>
+                    <select class="form-control" id="field_gLAccountDetails" name="gLAccountDetails" formControlName="gLAccountDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gLAccountDetailsOption.id === editForm.get('gLAccountDetails')!.value?.id ? editForm.get('gLAccountDetails')!.value : gLAccountDetailsOption" *ngFor="let gLAccountDetailsOption of glaccountdetails; trackBy: trackById">{{ gLAccountDetailsOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.purchaseOrderLine.purchaseOrder" for="field_purchaseOrder">Purchase Order</label>
+                    <select class="form-control" id="field_purchaseOrder" name="purchaseOrder" formControlName="purchaseOrder">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="purchaseOrderOption.id === editForm.get('purchaseOrder')!.value?.id ? editForm.get('purchaseOrder')!.value : purchaseOrderOption" *ngFor="let purchaseOrderOption of purchaseorders; trackBy: trackById">{{ purchaseOrderOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

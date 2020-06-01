@@ -1,0 +1,33 @@
+{
+  "appApp": {
+    "invoiceHeaderTaxDetails": {
+      "home": {
+        "title": "Invoice Header Tax Details",
+        "createLabel": "Create a new Invoice Header Tax Details",
+        "createOrEditLabel": "Create or edit a Invoice Header Tax Details",
+        "notFound": "No Invoice Header Tax Details found"
+      },
+      "created": "A new Invoice Header Tax Details is created with identifier {{ param }}",
+      "updated": "A Invoice Header Tax Details is updated with identifier {{ param }}",
+      "deleted": "A Invoice Header Tax Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Invoice Header Tax Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoice Header Tax Details"
+      },
+      "taxCode": "Tax Code",
+      "taxRate": "Tax Rate",
+      "taxAmount": "Tax Amount",
+      "taxDescription": "Tax Description",
+      "taxDisplay": "Tax Display",
+      "whtApplicable": "Wht Applicable",
+      "whtGrpId": "Wht Grp Id",
+      "whtType": "Wht Type",
+      "whtCode": "Wht Code",
+      "whtAmount": "Wht Amount",
+      "unplannedDeliveryTaxRate": "Unplanned Delivery Tax Rate",
+      "unplannedDeliveryTaxAmount": "Unplanned Delivery Tax Amount"
+    }
+  }
+}

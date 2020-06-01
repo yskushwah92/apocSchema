@@ -1,0 +1,77 @@
+{
+  "name": "AuditLogDetails",
+  "fields": [
+    {
+      "fieldName": "assignedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "actor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "statusCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reasonCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdOn",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "delegate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "delegatedFlag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "metSLA",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "auditLog",
+      "otherEntityRelationshipName": "auditLogDetails",
+      "relationshipName": "auditLog",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601214718",
+  "entityTableName": "audit_log_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

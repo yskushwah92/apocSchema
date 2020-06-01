@@ -1,0 +1,214 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoiceLineItem">
+            <h2><span jhiTranslate="appApp.invoiceLineItem.detail.title">Invoice Line Item</span> {{ invoiceLineItem.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.invoiceLineItem.name">Name</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.expenseType">Expense Type</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.expenseType }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.distributionId">Distribution Id</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.distributionId }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.lineNumber">Line Number</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.lineNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.description">Description</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.quantity">Quantity</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.quantity }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.unitPrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.taxRate">Tax Rate</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.taxRate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.taxDesc">Tax Desc</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.taxDesc }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.taxAmount">Tax Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.taxAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.lineAmount">Line Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.lineAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.grossLineAmount">Gross Line Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.grossLineAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.confirmerId">Confirmer Id</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.confirmerId }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.poRequestBy">Po Request By</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.poRequestBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.uom">Uom</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.uom }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.debitCreditIndicator">Debit Credit Indicator</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.debitCreditIndicator }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.availableQty">Available Qty</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.availableQty }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.additionalCostPerUnit">Additional Cost Per Unit</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.additionalCostPerUnit }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.taxBaseAmount">Tax Base Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.taxBaseAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.invoiceQty">Invoice Qty</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.invoiceQty }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.invoiceUnitPrice">Invoice Unit Price</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.invoiceUnitPrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.vatTaxRate">Vat Tax Rate</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.vatTaxRate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.confirmerName">Confirmer Name</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.confirmerName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.availableExpectedvalue">Available Expectedvalue</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.availableExpectedvalue }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.availableLimitValue">Available Limit Value</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.availableLimitValue }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.expectedValue">Expected Value</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.expectedValue }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.actualLimit">Actual Limit</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.actualLimit }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.overallLimit">Overall Limit</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.overallLimit }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.limitOrderExpiryDate">Limit Order Expiry Date</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.limitOrderExpiryDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.limitOrderStartDate">Limit Order Start Date</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.limitOrderStartDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.vatTaxCode">Vat Tax Code</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.vatTaxCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.internalOrderStatistical">Internal Order Statistical</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.internalOrderStatistical }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.debitCreditValue">Debit Credit Value</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.debitCreditValue }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.deliveryNote">Delivery Note</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.deliveryNote }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.reason">Reason</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.reason }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ invoiceLineItem.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.purchaseOrderLine">Purchase Order Line</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLineItem.purchaseOrderLine">
+                        <a [routerLink]="['/purchase-order-line', invoiceLineItem.purchaseOrderLine?.id, 'view']">{{ invoiceLineItem.purchaseOrderLine?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.gLAccountDetails">G L Account Details</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLineItem.gLAccountDetails">
+                        <a [routerLink]="['/gl-account-details', invoiceLineItem.gLAccountDetails?.id, 'view']">{{ invoiceLineItem.gLAccountDetails?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.technicalApprover">Technical Approver</span></dt>
+                <dd>
+                    {{ invoiceLineItem.technicalApprover?.id }}
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.shippingLocation">Shipping Location</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLineItem.shippingLocation">
+                        <a [routerLink]="['/shipping-location', invoiceLineItem.shippingLocation?.id, 'view']">{{ invoiceLineItem.shippingLocation?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.product">Product</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLineItem.product">
+                        <a [routerLink]="['/product', invoiceLineItem.product?.id, 'view']">{{ invoiceLineItem.product?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.gRNDetails">G RN Details</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLineItem.gRNDetails">
+                        <a [routerLink]="['/grn-details', invoiceLineItem.gRNDetails?.id, 'view']">{{ invoiceLineItem.gRNDetails?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceLineItem.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="invoiceLineItem.invoice">
+                        <a [routerLink]="['/invoice', invoiceLineItem.invoice?.id, 'view']">{{ invoiceLineItem.invoice?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice-line-item', invoiceLineItem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

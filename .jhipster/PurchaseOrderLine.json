@@ -1,0 +1,153 @@
+{
+  "name": "PurchaseOrderLine",
+  "fields": [
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "articleNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "qty",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "receivedQty",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "billedQty",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "unitOfMeasurement",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "lineAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "lineAmountExclTax",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "unitPrice",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "costCentre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "costCentreid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "articleDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deliveryReceiptNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deliveryDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "hsnCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tolerance",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tolerancePrice",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "receiptReqd",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "acceptedQty",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "amountReceived",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "availableQty",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "organization",
+      "otherEntityRelationshipName": "purchaseOrderLine",
+      "relationshipName": "organization",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "vendor",
+      "otherEntityRelationshipName": "purchaseOrderLine",
+      "relationshipName": "vendor",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gLAccountDetails",
+      "otherEntityRelationshipName": "purchaseOrderLine",
+      "relationshipName": "gLAccountDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoiceLineItem",
+      "otherEntityRelationshipName": "purchaseOrderLine",
+      "relationshipName": "invoiceLineItem",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "purchaseOrder",
+      "otherEntityRelationshipName": "purchaseOrderLine",
+      "relationshipName": "purchaseOrder",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601213818",
+  "entityTableName": "purchase_order_line",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

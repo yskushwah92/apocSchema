@@ -1,0 +1,674 @@
+ 
+ entity Organization {
+ 	name String,
+    organizationCode String,
+    orgName String,
+    countryKey String,
+    financeSystem String,
+    vatRegistrationNo String,
+    currency Currency,
+    language String,
+    createdAt ZonedDateTime,
+    createdBy String
+ }
+ 
+ entity User {
+ 	name String,
+    email String,
+    status UserStatus	,
+    role UserRole,
+    OrgId String,
+    createdAt ZonedDateTime,
+    createdBy String
+ }
+ 
+ entity OCRExtractionEngineInfo{
+ 	name String,
+    userName String,
+    password String,
+    apiKey String,
+    createdAt ZonedDateTime,
+    createdBy String
+ }
+ 
+ entity ModelInfo{
+ 	name String,
+    version String,
+    location String,
+    executionScript String,
+    createdAt ZonedDateTime,
+    createdBy String
+ }
+
+ entity FileInfo{
+ 	source FileSource,
+    sourceDetails String,
+    senderMailId String,
+    filePath String,
+    fileName String,
+    reason String,
+    fileExtension String,
+    type FileType,
+    documentType DocumentType,
+    documentCategory DocumentCategory,
+    clientId String,
+    clientDetails String,
+    protocol String,
+    createdAt ZonedDateTime,
+    createdBy String
+ }
+ 
+entity CurrencyExchange{
+
+    country String,
+    fromCurrency Currency,
+    toCurrency Currency,
+    validfrom ZonedDateTime,
+    exchangeRate Double,
+    exchangeType String,
+    ratioFrom String,
+    ratioTo String,
+    isActive Boolean,
+    isDeleted Boolean,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+ 
+entity FileSourceDetails{
+ 	name String,
+    apiKey String,
+    userName String,
+    password String,
+    protocol String,
+    url String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+ 
+entity PurchaseOrder{
+	serialNo String,
+	header String,
+    unit String,
+    issuer String,
+    issuerDetails String,
+    creationDate ZonedDateTime,
+    price String,
+    status String,
+    createdBy String
+
+}
+
+entity PurchaseOrderHeader{
+	serialNo String,
+    amount Double,
+    type String 
+    requestedBy String,
+    creationDate ZonedDateTime,
+    receiptRequired Boolean,
+    status POStatus, 
+    companyCode String,
+    currencyCode String, 
+    createdAt ZonedDateTime,
+    createdBy String
+    
+}
+
+entity PurchaseOrderLine{
+	country String,
+    articleNo String,
+    qty Double,
+    receivedQty Double,
+    billedQty Double,
+    unitOfMeasurement String,
+    currency Currency,
+    lineAmount Double,
+    lineAmountExclTax Double,
+    unitPrice Double,
+    costCentre String,
+    costCentreid String,
+    articleDescription String,
+    deliveryReceiptNo String,
+    deliveryDate ZonedDateTime,
+    hsnCode String,
+    tolerance String,
+    tolerancePrice Double,
+    receiptReqd Boolean,
+    acceptedQty Double,
+    amountReceived Double,
+    availableQty Double,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity Vendor{
+	name String,
+    displayName String,
+    vendorNumber String,
+    paymentTerms String,
+    type String,
+    iln String,
+    taxIdNO String,
+    gstRegistrationNumber String,
+    gstStatus String,
+    vatIdNo String,
+    clerkId String,
+    status String,
+    vatRegistrationNumber String,
+    prefferredModeOfCommunication String,
+    pointOfContact String,
+    preferredModeOfPayment String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity GLAccountDetails{
+
+    accountNo String,
+    country String,
+    chartOfAccounts String,
+    categoryId String,
+    accountType String,
+    isBalanceSheet Boolean,
+    textForCriterion String,
+    someText String,
+    taxCatTaxCode String,
+    currencykey String,
+    activeCOA String,
+    activeCoCode String,
+    postingWithoutTaxAllowed String,
+    postingBlock String,
+    postAtProfitCentre String,
+    postAtCostCentre String,
+    postAtSegment String,
+    postAtInternalOrder String,
+    isActive Boolean,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity ContactDetails{
+ 	street String,
+    zipCode String,
+    city String,
+    district String,
+    poBox String,
+    poBoxCode String,
+    country String,
+    telephoneNo String,
+    faxNumber String,
+    email String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity VendorPaymentAccountDetails{
+	name String,
+    type PaymentAccountType,
+    method PaymentMethod,
+    accountNumber String,
+    accountName String,
+    accountCode String,
+    accountKey String,
+    bankAccountType String,
+    iban String,
+    isActive Boolean,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity ShippingLocation{
+	name String,
+    locationCode String,
+    description String,
+    address String,
+    country String,
+    postalCode String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity TaxCode{
+	name String,
+    country String,
+    countryKey String,
+    taxCode String,
+    description String,
+    taxCodeDescription String,
+    taxRate Double,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity Invoice{
+	name String,
+    serialNo String,
+    invoiceNo String,
+    referenceNo String,
+    caseNo String,
+    description String,
+    priority Priority,
+    type InvoiceType,
+    dateOfCreation ZonedDateTime,
+    sellerName String,
+    amountFunctional Double,
+    amountReporting Double,
+    price String,
+    issuer String,
+    tax String,
+    inclusiveOfTax Boolean,
+    status InvoiceStatus,
+    gstn String,
+    address String,
+    category String,
+    contactNo String,
+    email String,
+    prefferredModeOfCommunication String,
+    pointOfContact String, 
+    bankAccDetails String,
+    upiDetails String,
+    preferredModeOfPayment String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity AuditLog{
+	activityName String,
+    activityCreationDate ZonedDateTime,
+    activityStartTime ZonedDateTime,
+    activityEndTime ZonedDateTime,
+    assignedDate ZonedDateTime,
+    user String,
+    status String,
+    reason String,
+    comments String,
+    completeOn ZonedDateTime,
+    duration Duration,
+    createdAt ZonedDateTime,
+    createdBy String   
+}
+
+entity AuditLogDetails{
+	assignedBy String,
+    actor String,
+    status String,
+    statusCode String,
+    reason String,
+    reasonCode String,
+    createdOn ZonedDateTime,
+    comments String,
+    delegate String,
+    delegatedFlag Boolean,
+    metSLA String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity Assignment{
+	assignmentDate ZonedDateTime,
+    assignedTo String,
+    assignedBy String,
+    setSLA ZonedDateTime,
+    assignmentStatus String,
+    percentageCompleted Integer,
+    assignmentMode AssignmentMode,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity InvoiceStatusDetails{
+	name String,
+    currentStatus String,
+    statusReason String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity InvoiceHeader{
+	companyCode String,
+    legalEntityName String,
+    comments String,
+    grossAmount String,
+    netAmount String,
+    currency Currency,
+    country String,
+    countryKey String,
+    languageKey String,
+    erpReferenceNumber String,
+    poBoxCode String,
+    scanDate ZonedDateTime,
+    receivedDate ZonedDateTime,
+    caseCreationDate ZonedDateTime,
+    numberOfScannedPages String,
+    sla String,
+    slaExpirationDate ZonedDateTime,
+    tradingPartner String,
+    deliveryDate ZonedDateTime,
+    deliveryNoteNumber ZonedDateTime,
+    recepientEmail String,
+    isCaseClose String,
+    ocrRequired Boolean,
+    barcode String,
+    functionalCurrency Currency,
+    reportingCurrency Currency,
+    approverRequired String,
+    siteCode String,
+    sortCode String,
+    discount Double,
+    additionalCharges Double,
+    sumLineAmount Double,
+    conversionRate Double,
+    paymentCurrency Currency,
+    liabilityAccount String,
+    postingDate ZonedDateTime,
+    termDate ZonedDateTime,
+    shippingAmount Double,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity InvoiceHeaderTaxDetails{
+	taxCode String,
+    taxRate Double,
+    taxAmount Double,
+    taxDescription String,
+    taxDisplay String,
+    whtApplicable String,
+    whtGrpId String,
+    whtType String,
+    whtCode String,
+    whtAmount Double,
+    unplannedDeliveryTaxRate Double,
+    unplannedDeliveryTaxAmount Double
+}
+
+entity InvoiceLineItem{
+	name String,
+    expenseType String,
+    distributionId String,
+    lineNumber Double,
+    description String,
+    quantity String,
+    unitPrice Double,
+    taxRate Double,
+    taxDesc String,
+    taxAmount Double,
+    lineAmount Double,
+    grossLineAmount Double,
+    confirmerId String,
+    poRequestBy String,
+    uom String,
+    debitCreditIndicator String,
+    availableQty Double,
+    additionalCostPerUnit Double,
+    taxBaseAmount Double,
+    invoiceQty Double,
+    invoiceUnitPrice Double,
+    vatTaxRate Double,
+    confirmerName String,
+    availableExpectedvalue Double,
+    availableLimitValue String,
+    expectedValue Double,
+    actualLimit Double,
+    overallLimit Double,
+    limitOrderExpiryDate ZonedDateTime,
+    limitOrderStartDate ZonedDateTime,
+    vatTaxCode String,
+    internalOrderStatistical String,
+    debitCreditValue Double,
+    deliveryNote String,
+    reason String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity GRNDetails{
+	grnNumber String,
+    grnLineNumber String,
+    grnQuantity Double,
+    grnType GRNType,
+    deliveryNote String,
+    isOpen Boolean
+}
+
+entity Product{
+	name String,
+    description String,
+    isActive Boolean,
+    createdAt ZonedDateTime,
+    createdBy String
+    
+}
+
+entity OCRRawExtraction{
+	name String,
+    fieldName String,
+    capturedfieldValue String,
+    actualFieldValue String,
+    language Language,
+    documentType DocumentType,
+    accuracy String,
+    extractions String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity CaseStatusDetails{
+	status String,
+    assignee String,
+    comments String,
+    timeElapasedInCurrentStatus String,
+    createdAt ZonedDateTime,
+    createdBy String
+}
+
+entity CommunicationConfiguration{
+	priority String,
+    retries String,
+    mode CommunicationMode, 
+    name String,
+    createdAt ZonedDateTime, 
+    createdBy String
+}
+
+entity MailBox {
+	name String,
+    server String, 
+    address String,
+    displayName String,
+    createdAt ZonedDateTime, 
+    createdBy String
+}
+
+entity NotificationInfo{
+	sender String,
+    receiver String,
+    mode String,
+    message String,
+    status String,
+    createdAt ZonedDateTime, 
+    createdBy String
+}
+
+entity PaymentInfo{
+	name String,
+    terms String,
+    mode PaymentMode, 
+    dueDate ZonedDateTime,
+    status PaymentStatus,
+    paymentChannel String, 
+    type PaymentType,
+    approvalStatus ApprovalStatus,
+    dateOfApproval ZonedDateTime,
+    dateOfPayment ZonedDateTime,
+    paymentReferenceNumber String,
+    checkDate ZonedDateTime,
+    checkNumber String,
+    checkAmount Double,
+    earlyPaymentDate ZonedDateTime,
+    earlyPaymentDiscount String,
+    earlyPaymentAmount Double,
+    earlyPaymentRemarks String,
+    paymentDocDate ZonedDateTime,
+    paymentDocNo String,
+    paymentAmount Double,
+    discountTaken Double,
+    discountLost Double,
+    paymentCurrency Currency,
+    invoiceBaseAmount Double,
+    clearedDate ZonedDateTime,
+    clearedAmount Double,
+    transactionId String,
+    createdAt ZonedDateTime, 
+    createdBy String    
+}
+ 
+
+
+enum DocumentCategory{
+ 	INVOICE, PO
+}
+
+enum FileSource{
+ 	MAIL, FAX, SFTP
+}
+ 
+enum FileType{
+	PDF, DOC, PNG, JPEG, DOCX, RTF
+}
+
+
+enum POStatus{
+	CLOSED, CANCELLED
+}
+
+enum PaymentMethod{
+	BANK, CASH
+}
+
+enum PaymentAccountType{
+	BYBANKTRANSFERINADVANCE, BYINVOICE, 
+    CASH, CHECKINADVANCE, 
+    COD, DIRECTDEBIT, 
+    GOOGLECHECKOUT, 
+    UPI, PAYTM, 
+    PAYPAL, PHONEPE
+}
+
+enum Currency{
+	INDIAN_RUPEE, US_DOLLAR
+}
+
+enum GRNType{
+	INVOICE, PO
+}
+enum Priority {
+	HIGH, MEDIUM, LOW
+}
+
+enum Language{
+	ENGLISH
+}
+enum DocumentType{
+	INVOICE, PURCHASE_ORDER
+}
+enum InvoiceStatus{
+	ACCEPTED, REJECTED, FULFILLED, DEFERRED, HALT
+}
+
+enum CommunicationMode{
+	MAIL, SMS, WHATSAPP, CALL
+}
+enum ApprovalStatus{
+	APPROVED, DISAPPROVED, PAID, CANCELLED, FAILED
+}
+enum PaymentMode{
+	CASH, UPI, ONLINEBANKING, CHEQUE, DRAFT 
+}
+
+enum PaymentStatus{
+	SUCCESS, FAILURE, PROCESSING, PENDING 
+}
+enum PaymentType{
+	FORWARD, REFUND
+}
+
+enum RolePermissions{
+ 	REJECT, CLARIFICATIONS
+ }
+ 
+ enum InvoiceType{
+ 	PURCHASE_ORDER,
+    NON_PURCHASE_ORDER
+ }
+ 
+ enum UserStatus {
+ 	ACTIVE,
+    INACTIVE
+ }
+ 
+ enum UserRole {
+ 	AGENT,
+    ADMIN
+}
+
+enum AssignmentMode{
+	MANUAL, AUTOMATIC
+}
+
+relationship OneToOne{
+	Invoice to FileInfo
+    Invoice to ModelInfo
+    NotificationInfo to PurchaseOrder
+    Invoice to NotificationInfo
+    NotificationInfo to NotificationInfo 
+    Invoice to PaymentInfo,
+    PaymentInfo to PaymentInfo 
+    CommunicationConfiguration to MailBox
+    ModelInfo to OCRRawExtraction 
+    OCRExtractionEngineInfo to ModelInfo
+    Invoice to InvoiceHeader
+    PurchaseOrder to PurchaseOrderHeader
+    InvoiceHeader to GRNDetails
+    PurchaseOrder to GRNDetails
+    Vendor to ContactDetails
+    Organization to ContactDetails
+    Vendor to Organization
+    Vendor to GLAccountDetails
+    PurchaseOrderLine to Organization
+    PurchaseOrderLine to Vendor
+    PurchaseOrderLine to GLAccountDetails
+    InvoiceLineItem to PurchaseOrderLine
+    InvoiceLineItem to GLAccountDetails
+    InvoiceLineItem{technicalApprover} to User
+    InvoiceLineItem to ShippingLocation
+    InvoiceLineItem to Product
+    InvoiceLineItem to GRNDetails
+}
+
+
+relationship OneToMany{
+    PurchaseOrder to PurchaseOrderLine
+    Invoice to OCRRawExtraction
+    Vendor to Invoice
+    Invoice to Invoice 
+    
+    
+    
+    Invoice to InvoiceLineItem
+    PurchaseOrder to Invoice
+    FileInfo to FileInfo
+    FileInfo to FileSourceDetails
+    Vendor to VendorPaymentAccountDetails
+    Invoice to InvoiceStatusDetails
+    Invoice to PaymentInfo
+    InvoiceLineItem to CaseStatusDetails
+	AuditLog to AuditLogDetails
+    Invoice to AuditLog
+    Invoice to Assignment
+
+}
+
+relationship ManyToMany{
+	PurchaseOrder to Vendor
+}
+

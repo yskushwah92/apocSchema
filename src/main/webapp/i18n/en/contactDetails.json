@@ -1,0 +1,35 @@
+{
+  "appApp": {
+    "contactDetails": {
+      "home": {
+        "title": "Contact Details",
+        "createLabel": "Create a new Contact Details",
+        "createOrEditLabel": "Create or edit a Contact Details",
+        "notFound": "No Contact Details found"
+      },
+      "created": "A new Contact Details is created with identifier {{ param }}",
+      "updated": "A Contact Details is updated with identifier {{ param }}",
+      "deleted": "A Contact Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Contact Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Contact Details"
+      },
+      "street": "Street",
+      "zipCode": "Zip Code",
+      "city": "City",
+      "district": "District",
+      "poBox": "Po Box",
+      "poBoxCode": "Po Box Code",
+      "country": "Country",
+      "telephoneNo": "Telephone No",
+      "faxNumber": "Fax Number",
+      "email": "Email",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "vendor": "Vendor",
+      "organization": "Organization"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="caseStatusDetails">
+            <h2><span jhiTranslate="appApp.caseStatusDetails.detail.title">Case Status Details</span> {{ caseStatusDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.caseStatusDetails.status">Status</span></dt>
+                <dd>
+                    <span>{{ caseStatusDetails.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.caseStatusDetails.assignee">Assignee</span></dt>
+                <dd>
+                    <span>{{ caseStatusDetails.assignee }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.caseStatusDetails.comments">Comments</span></dt>
+                <dd>
+                    <span>{{ caseStatusDetails.comments }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.caseStatusDetails.timeElapasedInCurrentStatus">Time Elapased In Current Status</span></dt>
+                <dd>
+                    <span>{{ caseStatusDetails.timeElapasedInCurrentStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.caseStatusDetails.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ caseStatusDetails.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.caseStatusDetails.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ caseStatusDetails.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.caseStatusDetails.invoiceLineItem">Invoice Line Item</span></dt>
+                <dd>
+                    <div *ngIf="caseStatusDetails.invoiceLineItem">
+                        <a [routerLink]="['/invoice-line-item', caseStatusDetails.invoiceLineItem?.id, 'view']">{{ caseStatusDetails.invoiceLineItem?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/case-status-details', caseStatusDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

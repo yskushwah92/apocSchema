@@ -1,0 +1,11 @@
+{
+  "appApp": {
+    "CommunicationMode": {
+      "null": "",
+      "MAIL": "MAIL",
+      "SMS": "SMS",
+      "WHATSAPP": "WHATSAPP",
+      "CALL": "CALL"
+    }
+  }
+}

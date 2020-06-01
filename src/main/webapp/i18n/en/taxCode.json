@@ -1,0 +1,30 @@
+{
+  "appApp": {
+    "taxCode": {
+      "home": {
+        "title": "Tax Codes",
+        "createLabel": "Create a new Tax Code",
+        "createOrEditLabel": "Create or edit a Tax Code",
+        "notFound": "No Tax Codes found"
+      },
+      "created": "A new Tax Code is created with identifier {{ param }}",
+      "updated": "A Tax Code is updated with identifier {{ param }}",
+      "deleted": "A Tax Code is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tax Code {{ id }}?"
+      },
+      "detail": {
+        "title": "Tax Code"
+      },
+      "name": "Name",
+      "country": "Country",
+      "countryKey": "Country Key",
+      "taxCode": "Tax Code",
+      "description": "Description",
+      "taxCodeDescription": "Tax Code Description",
+      "taxRate": "Tax Rate",
+      "createdAt": "Created At",
+      "createdBy": "Created By"
+    }
+  }
+}

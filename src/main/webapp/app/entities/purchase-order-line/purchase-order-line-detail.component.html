@@ -1,0 +1,146 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="purchaseOrderLine">
+            <h2><span jhiTranslate="appApp.purchaseOrderLine.detail.title">Purchase Order Line</span> {{ purchaseOrderLine.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.country">Country</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.articleNo">Article No</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.articleNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.qty">Qty</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.qty }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.receivedQty">Received Qty</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.receivedQty }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.billedQty">Billed Qty</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.billedQty }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.unitOfMeasurement">Unit Of Measurement</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.unitOfMeasurement }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.currency">Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + purchaseOrderLine.currency }}">{{ purchaseOrderLine.currency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.lineAmount">Line Amount</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.lineAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.lineAmountExclTax">Line Amount Excl Tax</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.lineAmountExclTax }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.unitPrice">Unit Price</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.unitPrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.costCentre">Cost Centre</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.costCentre }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.costCentreid">Cost Centreid</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.costCentreid }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.articleDescription">Article Description</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.articleDescription }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.deliveryReceiptNo">Delivery Receipt No</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.deliveryReceiptNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.deliveryDate">Delivery Date</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.deliveryDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.hsnCode">Hsn Code</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.hsnCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.tolerance">Tolerance</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.tolerance }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.tolerancePrice">Tolerance Price</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.tolerancePrice }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.receiptReqd">Receipt Reqd</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.receiptReqd }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.acceptedQty">Accepted Qty</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.acceptedQty }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.amountReceived">Amount Received</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.amountReceived }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.availableQty">Available Qty</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.availableQty }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ purchaseOrderLine.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.organization">Organization</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrderLine.organization">
+                        <a [routerLink]="['/organization', purchaseOrderLine.organization?.id, 'view']">{{ purchaseOrderLine.organization?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.vendor">Vendor</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrderLine.vendor">
+                        <a [routerLink]="['/vendor', purchaseOrderLine.vendor?.id, 'view']">{{ purchaseOrderLine.vendor?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.gLAccountDetails">G L Account Details</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrderLine.gLAccountDetails">
+                        <a [routerLink]="['/gl-account-details', purchaseOrderLine.gLAccountDetails?.id, 'view']">{{ purchaseOrderLine.gLAccountDetails?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrderLine.purchaseOrder">Purchase Order</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrderLine.purchaseOrder">
+                        <a [routerLink]="['/purchase-order', purchaseOrderLine.purchaseOrder?.id, 'view']">{{ purchaseOrderLine.purchaseOrder?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/purchase-order-line', purchaseOrderLine.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

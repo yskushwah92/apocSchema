@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="assignment">
+            <h2><span jhiTranslate="appApp.assignment.detail.title">Assignment</span> {{ assignment.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.assignment.assignmentDate">Assignment Date</span></dt>
+                <dd>
+                    <span>{{ assignment.assignmentDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.assignedTo">Assigned To</span></dt>
+                <dd>
+                    <span>{{ assignment.assignedTo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.assignedBy">Assigned By</span></dt>
+                <dd>
+                    <span>{{ assignment.assignedBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.setSLA">Set SLA</span></dt>
+                <dd>
+                    <span>{{ assignment.setSLA }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.assignmentStatus">Assignment Status</span></dt>
+                <dd>
+                    <span>{{ assignment.assignmentStatus }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.percentageCompleted">Percentage Completed</span></dt>
+                <dd>
+                    <span>{{ assignment.percentageCompleted }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.assignmentMode">Assignment Mode</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.AssignmentMode.' + assignment.assignmentMode }}">{{ assignment.assignmentMode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ assignment.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ assignment.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.assignment.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="assignment.invoice">
+                        <a [routerLink]="['/invoice', assignment.invoice?.id, 'view']">{{ assignment.invoice?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/assignment', assignment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

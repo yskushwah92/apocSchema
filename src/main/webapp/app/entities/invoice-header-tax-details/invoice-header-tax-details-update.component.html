@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-invoice-header-tax-details-heading" jhiTranslate="appApp.invoiceHeaderTaxDetails.home.createOrEditLabel">Create or edit a Invoice Header Tax Details</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.taxCode" for="field_taxCode">Tax Code</label>
+                    <input type="text" class="form-control" name="taxCode" id="field_taxCode"
+                           formControlName="taxCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.taxRate" for="field_taxRate">Tax Rate</label>
+                    <input type="number" class="form-control" name="taxRate" id="field_taxRate"
+                           formControlName="taxRate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.taxAmount" for="field_taxAmount">Tax Amount</label>
+                    <input type="number" class="form-control" name="taxAmount" id="field_taxAmount"
+                           formControlName="taxAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.taxDescription" for="field_taxDescription">Tax Description</label>
+                    <input type="text" class="form-control" name="taxDescription" id="field_taxDescription"
+                           formControlName="taxDescription"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.taxDisplay" for="field_taxDisplay">Tax Display</label>
+                    <input type="text" class="form-control" name="taxDisplay" id="field_taxDisplay"
+                           formControlName="taxDisplay"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.whtApplicable" for="field_whtApplicable">Wht Applicable</label>
+                    <input type="text" class="form-control" name="whtApplicable" id="field_whtApplicable"
+                           formControlName="whtApplicable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.whtGrpId" for="field_whtGrpId">Wht Grp Id</label>
+                    <input type="text" class="form-control" name="whtGrpId" id="field_whtGrpId"
+                           formControlName="whtGrpId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.whtType" for="field_whtType">Wht Type</label>
+                    <input type="text" class="form-control" name="whtType" id="field_whtType"
+                           formControlName="whtType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.whtCode" for="field_whtCode">Wht Code</label>
+                    <input type="text" class="form-control" name="whtCode" id="field_whtCode"
+                           formControlName="whtCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.whtAmount" for="field_whtAmount">Wht Amount</label>
+                    <input type="number" class="form-control" name="whtAmount" id="field_whtAmount"
+                           formControlName="whtAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.unplannedDeliveryTaxRate" for="field_unplannedDeliveryTaxRate">Unplanned Delivery Tax Rate</label>
+                    <input type="number" class="form-control" name="unplannedDeliveryTaxRate" id="field_unplannedDeliveryTaxRate"
+                           formControlName="unplannedDeliveryTaxRate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeaderTaxDetails.unplannedDeliveryTaxAmount" for="field_unplannedDeliveryTaxAmount">Unplanned Delivery Tax Amount</label>
+                    <input type="number" class="form-control" name="unplannedDeliveryTaxAmount" id="field_unplannedDeliveryTaxAmount"
+                           formControlName="unplannedDeliveryTaxAmount"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.caseStatusDetails.home.title">Case Status Details</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-case-status-details" [routerLink]="['/case-status-details/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.caseStatusDetails.home.createLabel">
+            Create a new Case Status Details
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="caseStatusDetails?.length === 0">
+        <span jhiTranslate="appApp.caseStatusDetails.home.notFound">No caseStatusDetails found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="caseStatusDetails && caseStatusDetails.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.caseStatusDetails.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.caseStatusDetails.assignee">Assignee</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.caseStatusDetails.comments">Comments</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.caseStatusDetails.timeElapasedInCurrentStatus">Time Elapased In Current Status</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.caseStatusDetails.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.caseStatusDetails.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.caseStatusDetails.invoiceLineItem">Invoice Line Item</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let caseStatusDetails of caseStatusDetails ;trackBy: trackId">
+                    <td><a [routerLink]="['/case-status-details', caseStatusDetails.id, 'view']">{{ caseStatusDetails.id }}</a></td>
+                    <td>{{ caseStatusDetails.status }}</td>
+                    <td>{{ caseStatusDetails.assignee }}</td>
+                    <td>{{ caseStatusDetails.comments }}</td>
+                    <td>{{ caseStatusDetails.timeElapasedInCurrentStatus }}</td>
+                    <td>{{ caseStatusDetails.createdAt | date:'medium' }}</td>
+                    <td>{{ caseStatusDetails.createdBy }}</td>
+                    <td>
+                        <div *ngIf="caseStatusDetails.invoiceLineItem">
+                            <a [routerLink]="['/invoice-line-item', caseStatusDetails.invoiceLineItem?.id, 'view']" >{{ caseStatusDetails.invoiceLineItem?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/case-status-details', caseStatusDetails.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/case-status-details', caseStatusDetails.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(caseStatusDetails)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

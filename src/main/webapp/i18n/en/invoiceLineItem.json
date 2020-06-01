@@ -1,0 +1,66 @@
+{
+  "appApp": {
+    "invoiceLineItem": {
+      "home": {
+        "title": "Invoice Line Items",
+        "createLabel": "Create a new Invoice Line Item",
+        "createOrEditLabel": "Create or edit a Invoice Line Item",
+        "notFound": "No Invoice Line Items found"
+      },
+      "created": "A new Invoice Line Item is created with identifier {{ param }}",
+      "updated": "A Invoice Line Item is updated with identifier {{ param }}",
+      "deleted": "A Invoice Line Item is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Invoice Line Item {{ id }}?"
+      },
+      "detail": {
+        "title": "Invoice Line Item"
+      },
+      "name": "Name",
+      "expenseType": "Expense Type",
+      "distributionId": "Distribution Id",
+      "lineNumber": "Line Number",
+      "description": "Description",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "taxRate": "Tax Rate",
+      "taxDesc": "Tax Desc",
+      "taxAmount": "Tax Amount",
+      "lineAmount": "Line Amount",
+      "grossLineAmount": "Gross Line Amount",
+      "confirmerId": "Confirmer Id",
+      "poRequestBy": "Po Request By",
+      "uom": "Uom",
+      "debitCreditIndicator": "Debit Credit Indicator",
+      "availableQty": "Available Qty",
+      "additionalCostPerUnit": "Additional Cost Per Unit",
+      "taxBaseAmount": "Tax Base Amount",
+      "invoiceQty": "Invoice Qty",
+      "invoiceUnitPrice": "Invoice Unit Price",
+      "vatTaxRate": "Vat Tax Rate",
+      "confirmerName": "Confirmer Name",
+      "availableExpectedvalue": "Available Expectedvalue",
+      "availableLimitValue": "Available Limit Value",
+      "expectedValue": "Expected Value",
+      "actualLimit": "Actual Limit",
+      "overallLimit": "Overall Limit",
+      "limitOrderExpiryDate": "Limit Order Expiry Date",
+      "limitOrderStartDate": "Limit Order Start Date",
+      "vatTaxCode": "Vat Tax Code",
+      "internalOrderStatistical": "Internal Order Statistical",
+      "debitCreditValue": "Debit Credit Value",
+      "deliveryNote": "Delivery Note",
+      "reason": "Reason",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "purchaseOrderLine": "Purchase Order Line",
+      "gLAccountDetails": "G L Account Details",
+      "technicalApprover": "Technical Approver",
+      "shippingLocation": "Shipping Location",
+      "product": "Product",
+      "gRNDetails": "G RN Details",
+      "caseStatusDetails": "Case Status Details",
+      "invoice": "Invoice"
+    }
+  }
+}

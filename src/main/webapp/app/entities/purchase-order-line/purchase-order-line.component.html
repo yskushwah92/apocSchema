@@ -1,0 +1,131 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.purchaseOrderLine.home.title">Purchase Order Lines</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-purchase-order-line" [routerLink]="['/purchase-order-line/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.purchaseOrderLine.home.createLabel">
+            Create a new Purchase Order Line
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="purchaseOrderLines?.length === 0">
+        <span jhiTranslate="appApp.purchaseOrderLine.home.notFound">No purchaseOrderLines found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="purchaseOrderLines && purchaseOrderLines.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.country">Country</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.articleNo">Article No</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.qty">Qty</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.receivedQty">Received Qty</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.billedQty">Billed Qty</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.unitOfMeasurement">Unit Of Measurement</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.currency">Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.lineAmount">Line Amount</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.lineAmountExclTax">Line Amount Excl Tax</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.unitPrice">Unit Price</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.costCentre">Cost Centre</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.costCentreid">Cost Centreid</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.articleDescription">Article Description</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.deliveryReceiptNo">Delivery Receipt No</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.deliveryDate">Delivery Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.hsnCode">Hsn Code</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.tolerance">Tolerance</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.tolerancePrice">Tolerance Price</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.receiptReqd">Receipt Reqd</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.acceptedQty">Accepted Qty</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.amountReceived">Amount Received</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.availableQty">Available Qty</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.organization">Organization</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.vendor">Vendor</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.gLAccountDetails">G L Account Details</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.purchaseOrderLine.purchaseOrder">Purchase Order</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let purchaseOrderLine of purchaseOrderLines ;trackBy: trackId">
+                    <td><a [routerLink]="['/purchase-order-line', purchaseOrderLine.id, 'view']">{{ purchaseOrderLine.id }}</a></td>
+                    <td>{{ purchaseOrderLine.country }}</td>
+                    <td>{{ purchaseOrderLine.articleNo }}</td>
+                    <td>{{ purchaseOrderLine.qty }}</td>
+                    <td>{{ purchaseOrderLine.receivedQty }}</td>
+                    <td>{{ purchaseOrderLine.billedQty }}</td>
+                    <td>{{ purchaseOrderLine.unitOfMeasurement }}</td>
+                    <td jhiTranslate="{{ 'appApp.Currency.' + purchaseOrderLine.currency }}">{{ purchaseOrderLine.currency }}</td>
+                    <td>{{ purchaseOrderLine.lineAmount }}</td>
+                    <td>{{ purchaseOrderLine.lineAmountExclTax }}</td>
+                    <td>{{ purchaseOrderLine.unitPrice }}</td>
+                    <td>{{ purchaseOrderLine.costCentre }}</td>
+                    <td>{{ purchaseOrderLine.costCentreid }}</td>
+                    <td>{{ purchaseOrderLine.articleDescription }}</td>
+                    <td>{{ purchaseOrderLine.deliveryReceiptNo }}</td>
+                    <td>{{ purchaseOrderLine.deliveryDate | date:'medium' }}</td>
+                    <td>{{ purchaseOrderLine.hsnCode }}</td>
+                    <td>{{ purchaseOrderLine.tolerance }}</td>
+                    <td>{{ purchaseOrderLine.tolerancePrice }}</td>
+                    <td>{{ purchaseOrderLine.receiptReqd }}</td>
+                    <td>{{ purchaseOrderLine.acceptedQty }}</td>
+                    <td>{{ purchaseOrderLine.amountReceived }}</td>
+                    <td>{{ purchaseOrderLine.availableQty }}</td>
+                    <td>{{ purchaseOrderLine.createdAt | date:'medium' }}</td>
+                    <td>{{ purchaseOrderLine.createdBy }}</td>
+                    <td>
+                        <div *ngIf="purchaseOrderLine.organization">
+                            <a [routerLink]="['/organization', purchaseOrderLine.organization?.id, 'view']" >{{ purchaseOrderLine.organization?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="purchaseOrderLine.vendor">
+                            <a [routerLink]="['/vendor', purchaseOrderLine.vendor?.id, 'view']" >{{ purchaseOrderLine.vendor?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="purchaseOrderLine.gLAccountDetails">
+                            <a [routerLink]="['/gl-account-details', purchaseOrderLine.gLAccountDetails?.id, 'view']" >{{ purchaseOrderLine.gLAccountDetails?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="purchaseOrderLine.purchaseOrder">
+                            <a [routerLink]="['/purchase-order', purchaseOrderLine.purchaseOrder?.id, 'view']" >{{ purchaseOrderLine.purchaseOrder?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/purchase-order-line', purchaseOrderLine.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/purchase-order-line', purchaseOrderLine.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(purchaseOrderLine)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-ocr-raw-extraction-heading" jhiTranslate="appApp.oCRRawExtraction.home.createOrEditLabel">Create or edit a OCR Raw Extraction</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.fieldName" for="field_fieldName">Field Name</label>
+                    <input type="text" class="form-control" name="fieldName" id="field_fieldName"
+                           formControlName="fieldName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.capturedfieldValue" for="field_capturedfieldValue">Capturedfield Value</label>
+                    <input type="text" class="form-control" name="capturedfieldValue" id="field_capturedfieldValue"
+                           formControlName="capturedfieldValue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.actualFieldValue" for="field_actualFieldValue">Actual Field Value</label>
+                    <input type="text" class="form-control" name="actualFieldValue" id="field_actualFieldValue"
+                           formControlName="actualFieldValue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.language" for="field_language">Language</label>
+                    <select class="form-control" name="language" formControlName="language" id="field_language">
+                        <option value="ENGLISH">{{ 'appApp.Language.ENGLISH' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.documentType" for="field_documentType">Document Type</label>
+                    <select class="form-control" name="documentType" formControlName="documentType" id="field_documentType">
+                        <option value="INVOICE">{{ 'appApp.DocumentType.INVOICE' | translate }}</option>
+                        <option value="PURCHASE_ORDER">{{ 'appApp.DocumentType.PURCHASE_ORDER' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.accuracy" for="field_accuracy">Accuracy</label>
+                    <input type="text" class="form-control" name="accuracy" id="field_accuracy"
+                           formControlName="accuracy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.extractions" for="field_extractions">Extractions</label>
+                    <input type="text" class="form-control" name="extractions" id="field_extractions"
+                           formControlName="extractions"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.oCRRawExtraction.invoice" for="field_invoice">Invoice</label>
+                    <select class="form-control" id="field_invoice" name="invoice" formControlName="invoice">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="invoiceOption.id === editForm.get('invoice')!.value?.id ? editForm.get('invoice')!.value : invoiceOption" *ngFor="let invoiceOption of invoices; trackBy: trackById">{{ invoiceOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

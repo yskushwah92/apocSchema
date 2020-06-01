@@ -1,0 +1,30 @@
+{
+  "appApp": {
+    "modelInfo": {
+      "home": {
+        "title": "Model Infos",
+        "createLabel": "Create a new Model Info",
+        "createOrEditLabel": "Create or edit a Model Info",
+        "notFound": "No Model Infos found"
+      },
+      "created": "A new Model Info is created with identifier {{ param }}",
+      "updated": "A Model Info is updated with identifier {{ param }}",
+      "deleted": "A Model Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Model Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Model Info"
+      },
+      "name": "Name",
+      "version": "Version",
+      "location": "Location",
+      "executionScript": "Execution Script",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "oCRRawExtraction": "O CR Raw Extraction",
+      "invoice": "Invoice",
+      "oCRExtractionEngineInfo": "O CR Extraction Engine Info"
+    }
+  }
+}

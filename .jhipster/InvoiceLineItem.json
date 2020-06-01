@@ -1,0 +1,227 @@
+{
+  "name": "InvoiceLineItem",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "expenseType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "distributionId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lineNumber",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unitPrice",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "taxRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "taxDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "lineAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "grossLineAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "confirmerId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "poRequestBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "uom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "debitCreditIndicator",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "availableQty",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "additionalCostPerUnit",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "taxBaseAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "invoiceQty",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "invoiceUnitPrice",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "vatTaxRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "confirmerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "availableExpectedvalue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "availableLimitValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "expectedValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "actualLimit",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "overallLimit",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "limitOrderExpiryDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "limitOrderStartDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "vatTaxCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "internalOrderStatistical",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "debitCreditValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "deliveryNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "purchaseOrderLine",
+      "otherEntityRelationshipName": "invoiceLineItem",
+      "relationshipName": "purchaseOrderLine",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gLAccountDetails",
+      "otherEntityRelationshipName": "invoiceLineItem",
+      "relationshipName": "gLAccountDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "invoiceLineItem",
+      "relationshipName": "technicalApprover",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "shippingLocation",
+      "otherEntityRelationshipName": "invoiceLineItem",
+      "relationshipName": "shippingLocation",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "invoiceLineItem",
+      "relationshipName": "product",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gRNDetails",
+      "otherEntityRelationshipName": "invoiceLineItem",
+      "relationshipName": "gRNDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "caseStatusDetails",
+      "otherEntityRelationshipName": "invoiceLineItem",
+      "relationshipName": "caseStatusDetails"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "invoiceLineItem",
+      "relationshipName": "invoice",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601215218",
+  "entityTableName": "invoice_line_item",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

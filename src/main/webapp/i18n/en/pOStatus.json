@@ -1,0 +1,9 @@
+{
+  "appApp": {
+    "POStatus": {
+      "null": "",
+      "CLOSED": "CLOSED",
+      "CANCELLED": "CANCELLED"
+    }
+  }
+}

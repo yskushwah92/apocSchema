@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    
+    <!--
+        Added the entity GLAccountDetails.
+    -->
+    <changeSet id="20200601214018-1" author="jhipster">
+        <createTable tableName="gl_account_details">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="account_no" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="country" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="chart_of_accounts" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="category_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="account_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_balance_sheet" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="text_for_criterion" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="some_text" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tax_cat_tax_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="currencykey" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="active_coa" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="active_co_code" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="posting_without_tax_allowed" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="posting_block" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="post_at_profit_centre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="post_at_cost_centre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="post_at_segment" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="post_at_internal_order" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="is_active" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_at" type="datetime">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_by" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="gl_account_details" columnName="created_at" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20200601214018-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200601214018-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/gl_account_details.csv"
+                  separator=";"
+                  tableName="gl_account_details">
+            <column name="id" type="numeric"/>
+            <column name="account_no" type="string"/>
+            <column name="country" type="string"/>
+            <column name="chart_of_accounts" type="string"/>
+            <column name="category_id" type="string"/>
+            <column name="account_type" type="string"/>
+            <column name="is_balance_sheet" type="boolean"/>
+            <column name="text_for_criterion" type="string"/>
+            <column name="some_text" type="string"/>
+            <column name="tax_cat_tax_code" type="string"/>
+            <column name="currencykey" type="string"/>
+            <column name="active_coa" type="string"/>
+            <column name="active_co_code" type="string"/>
+            <column name="posting_without_tax_allowed" type="string"/>
+            <column name="posting_block" type="string"/>
+            <column name="post_at_profit_centre" type="string"/>
+            <column name="post_at_cost_centre" type="string"/>
+            <column name="post_at_segment" type="string"/>
+            <column name="post_at_internal_order" type="string"/>
+            <column name="is_active" type="boolean"/>
+            <column name="created_at" type="datetime"/>
+            <column name="created_by" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fileSourceDetails">
+            <h2><span jhiTranslate="appApp.fileSourceDetails.detail.title">File Source Details</span> {{ fileSourceDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.fileSourceDetails.name">Name</span></dt>
+                <dd>
+                    <span>{{ fileSourceDetails.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileSourceDetails.apiKey">Api Key</span></dt>
+                <dd>
+                    <span>{{ fileSourceDetails.apiKey }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileSourceDetails.userName">User Name</span></dt>
+                <dd>
+                    <span>{{ fileSourceDetails.userName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileSourceDetails.password">Password</span></dt>
+                <dd>
+                    <span>{{ fileSourceDetails.password }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileSourceDetails.protocol">Protocol</span></dt>
+                <dd>
+                    <span>{{ fileSourceDetails.protocol }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileSourceDetails.url">Url</span></dt>
+                <dd>
+                    <span>{{ fileSourceDetails.url }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileSourceDetails.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ fileSourceDetails.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileSourceDetails.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ fileSourceDetails.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileSourceDetails.fileInfo">File Info</span></dt>
+                <dd>
+                    <div *ngIf="fileSourceDetails.fileInfo">
+                        <a [routerLink]="['/file-info', fileSourceDetails.fileInfo?.id, 'view']">{{ fileSourceDetails.fileInfo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/file-source-details', fileSourceDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

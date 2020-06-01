@@ -1,0 +1,65 @@
+{
+  "name": "InvoiceHeaderTaxDetails",
+  "fields": [
+    {
+      "fieldName": "taxCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "taxAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "taxDescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxDisplay",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "whtApplicable",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "whtGrpId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "whtType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "whtCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "whtAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "unplannedDeliveryTaxRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "unplannedDeliveryTaxAmount",
+      "fieldType": "Double"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200601215118",
+  "entityTableName": "invoice_header_tax_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

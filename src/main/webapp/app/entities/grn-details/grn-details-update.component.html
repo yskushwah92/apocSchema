@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-grn-details-heading" jhiTranslate="appApp.gRNDetails.home.createOrEditLabel">Create or edit a GRN Details</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gRNDetails.grnNumber" for="field_grnNumber">Grn Number</label>
+                    <input type="text" class="form-control" name="grnNumber" id="field_grnNumber"
+                           formControlName="grnNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gRNDetails.grnLineNumber" for="field_grnLineNumber">Grn Line Number</label>
+                    <input type="text" class="form-control" name="grnLineNumber" id="field_grnLineNumber"
+                           formControlName="grnLineNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gRNDetails.grnQuantity" for="field_grnQuantity">Grn Quantity</label>
+                    <input type="number" class="form-control" name="grnQuantity" id="field_grnQuantity"
+                           formControlName="grnQuantity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gRNDetails.grnType" for="field_grnType">Grn Type</label>
+                    <select class="form-control" name="grnType" formControlName="grnType" id="field_grnType">
+                        <option value="INVOICE">{{ 'appApp.GRNType.INVOICE' | translate }}</option>
+                        <option value="PO">{{ 'appApp.GRNType.PO' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gRNDetails.deliveryNote" for="field_deliveryNote">Delivery Note</label>
+                    <input type="text" class="form-control" name="deliveryNote" id="field_deliveryNote"
+                           formControlName="deliveryNote"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gRNDetails.isOpen" for="field_isOpen">Is Open</label>
+                    <input type="checkbox" class="form-control" name="isOpen" id="field_isOpen"
+                           formControlName="isOpen"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

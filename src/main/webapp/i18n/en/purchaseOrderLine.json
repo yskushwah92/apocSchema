@@ -1,0 +1,50 @@
+{
+  "appApp": {
+    "purchaseOrderLine": {
+      "home": {
+        "title": "Purchase Order Lines",
+        "createLabel": "Create a new Purchase Order Line",
+        "createOrEditLabel": "Create or edit a Purchase Order Line",
+        "notFound": "No Purchase Order Lines found"
+      },
+      "created": "A new Purchase Order Line is created with identifier {{ param }}",
+      "updated": "A Purchase Order Line is updated with identifier {{ param }}",
+      "deleted": "A Purchase Order Line is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Purchase Order Line {{ id }}?"
+      },
+      "detail": {
+        "title": "Purchase Order Line"
+      },
+      "country": "Country",
+      "articleNo": "Article No",
+      "qty": "Qty",
+      "receivedQty": "Received Qty",
+      "billedQty": "Billed Qty",
+      "unitOfMeasurement": "Unit Of Measurement",
+      "currency": "Currency",
+      "lineAmount": "Line Amount",
+      "lineAmountExclTax": "Line Amount Excl Tax",
+      "unitPrice": "Unit Price",
+      "costCentre": "Cost Centre",
+      "costCentreid": "Cost Centreid",
+      "articleDescription": "Article Description",
+      "deliveryReceiptNo": "Delivery Receipt No",
+      "deliveryDate": "Delivery Date",
+      "hsnCode": "Hsn Code",
+      "tolerance": "Tolerance",
+      "tolerancePrice": "Tolerance Price",
+      "receiptReqd": "Receipt Reqd",
+      "acceptedQty": "Accepted Qty",
+      "amountReceived": "Amount Received",
+      "availableQty": "Available Qty",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "organization": "Organization",
+      "vendor": "Vendor",
+      "gLAccountDetails": "G L Account Details",
+      "invoiceLineItem": "Invoice Line Item",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

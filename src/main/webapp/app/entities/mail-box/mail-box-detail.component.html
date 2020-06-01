@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mailBox">
+            <h2><span jhiTranslate="appApp.mailBox.detail.title">Mail Box</span> {{ mailBox.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.mailBox.name">Name</span></dt>
+                <dd>
+                    <span>{{ mailBox.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.mailBox.server">Server</span></dt>
+                <dd>
+                    <span>{{ mailBox.server }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.mailBox.address">Address</span></dt>
+                <dd>
+                    <span>{{ mailBox.address }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.mailBox.displayName">Display Name</span></dt>
+                <dd>
+                    <span>{{ mailBox.displayName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.mailBox.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ mailBox.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.mailBox.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ mailBox.createdBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/mail-box', mailBox.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fileInfo">
+            <h2><span jhiTranslate="appApp.fileInfo.detail.title">File Info</span> {{ fileInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.fileInfo.source">Source</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.FileSource.' + fileInfo.source }}">{{ fileInfo.source }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.sourceDetails">Source Details</span></dt>
+                <dd>
+                    <span>{{ fileInfo.sourceDetails }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.senderMailId">Sender Mail Id</span></dt>
+                <dd>
+                    <span>{{ fileInfo.senderMailId }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.filePath">File Path</span></dt>
+                <dd>
+                    <span>{{ fileInfo.filePath }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.fileName">File Name</span></dt>
+                <dd>
+                    <span>{{ fileInfo.fileName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.reason">Reason</span></dt>
+                <dd>
+                    <span>{{ fileInfo.reason }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.fileExtension">File Extension</span></dt>
+                <dd>
+                    <span>{{ fileInfo.fileExtension }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.FileType.' + fileInfo.type }}">{{ fileInfo.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.documentType">Document Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.DocumentType.' + fileInfo.documentType }}">{{ fileInfo.documentType }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.documentCategory">Document Category</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.DocumentCategory.' + fileInfo.documentCategory }}">{{ fileInfo.documentCategory }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.clientId">Client Id</span></dt>
+                <dd>
+                    <span>{{ fileInfo.clientId }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.clientDetails">Client Details</span></dt>
+                <dd>
+                    <span>{{ fileInfo.clientDetails }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.protocol">Protocol</span></dt>
+                <dd>
+                    <span>{{ fileInfo.protocol }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ fileInfo.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ fileInfo.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.fileInfo.fileInfo">File Info</span></dt>
+                <dd>
+                    <div *ngIf="fileInfo.fileInfo">
+                        <a [routerLink]="['/file-info', fileInfo.fileInfo?.id, 'view']">{{ fileInfo.fileInfo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/file-info', fileInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

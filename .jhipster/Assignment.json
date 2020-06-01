@@ -1,0 +1,62 @@
+{
+  "name": "Assignment",
+  "fields": [
+    {
+      "fieldName": "assignmentDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "assignedTo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "setSLA",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "assignmentStatus",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "percentageCompleted",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "assignmentMode",
+      "fieldType": "AssignmentMode",
+      "fieldValues": "MANUAL,AUTOMATIC"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "assignment",
+      "relationshipName": "invoice",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601214818",
+  "entityTableName": "assignment",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

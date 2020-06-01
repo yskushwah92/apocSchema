@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vendorPaymentAccountDetails">
+            <h2><span jhiTranslate="appApp.vendorPaymentAccountDetails.detail.title">Vendor Payment Account Details</span> {{ vendorPaymentAccountDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.name">Name</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.PaymentAccountType.' + vendorPaymentAccountDetails.type }}">{{ vendorPaymentAccountDetails.type }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.method">Method</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.PaymentMethod.' + vendorPaymentAccountDetails.method }}">{{ vendorPaymentAccountDetails.method }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.accountNumber">Account Number</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.accountNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.accountName">Account Name</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.accountName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.accountCode">Account Code</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.accountCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.accountKey">Account Key</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.accountKey }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.bankAccountType">Bank Account Type</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.bankAccountType }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.iban">Iban</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.iban }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.isActive }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ vendorPaymentAccountDetails.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.vendorPaymentAccountDetails.vendor">Vendor</span></dt>
+                <dd>
+                    <div *ngIf="vendorPaymentAccountDetails.vendor">
+                        <a [routerLink]="['/vendor', vendorPaymentAccountDetails.vendor?.id, 'view']">{{ vendorPaymentAccountDetails.vendor?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vendor-payment-account-details', vendorPaymentAccountDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

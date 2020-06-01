@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="modelInfo">
+            <h2><span jhiTranslate="appApp.modelInfo.detail.title">Model Info</span> {{ modelInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.modelInfo.name">Name</span></dt>
+                <dd>
+                    <span>{{ modelInfo.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.modelInfo.version">Version</span></dt>
+                <dd>
+                    <span>{{ modelInfo.version }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.modelInfo.location">Location</span></dt>
+                <dd>
+                    <span>{{ modelInfo.location }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.modelInfo.executionScript">Execution Script</span></dt>
+                <dd>
+                    <span>{{ modelInfo.executionScript }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.modelInfo.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ modelInfo.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.modelInfo.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ modelInfo.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.modelInfo.oCRRawExtraction">O CR Raw Extraction</span></dt>
+                <dd>
+                    <div *ngIf="modelInfo.oCRRawExtraction">
+                        <a [routerLink]="['/ocr-raw-extraction', modelInfo.oCRRawExtraction?.id, 'view']">{{ modelInfo.oCRRawExtraction?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/model-info', modelInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

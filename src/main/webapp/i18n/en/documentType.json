@@ -1,0 +1,9 @@
+{
+  "appApp": {
+    "DocumentType": {
+      "null": "",
+      "INVOICE": "INVOICE",
+      "PURCHASE_ORDER": "PURCHASE_ORDER"
+    }
+  }
+}

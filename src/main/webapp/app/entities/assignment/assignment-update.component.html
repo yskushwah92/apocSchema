@@ -1,0 +1,93 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-assignment-heading" jhiTranslate="appApp.assignment.home.createOrEditLabel">Create or edit a Assignment</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.assignmentDate" for="field_assignmentDate">Assignment Date</label>
+                    <div class="d-flex">
+                        <input id="field_assignmentDate" type="datetime-local" class="form-control" name="assignmentDate" formControlName="assignmentDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.assignedTo" for="field_assignedTo">Assigned To</label>
+                    <input type="text" class="form-control" name="assignedTo" id="field_assignedTo"
+                           formControlName="assignedTo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.assignedBy" for="field_assignedBy">Assigned By</label>
+                    <input type="text" class="form-control" name="assignedBy" id="field_assignedBy"
+                           formControlName="assignedBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.setSLA" for="field_setSLA">Set SLA</label>
+                    <div class="d-flex">
+                        <input id="field_setSLA" type="datetime-local" class="form-control" name="setSLA" formControlName="setSLA" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.assignmentStatus" for="field_assignmentStatus">Assignment Status</label>
+                    <input type="text" class="form-control" name="assignmentStatus" id="field_assignmentStatus"
+                           formControlName="assignmentStatus"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.percentageCompleted" for="field_percentageCompleted">Percentage Completed</label>
+                    <input type="number" class="form-control" name="percentageCompleted" id="field_percentageCompleted"
+                           formControlName="percentageCompleted"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.assignmentMode" for="field_assignmentMode">Assignment Mode</label>
+                    <select class="form-control" name="assignmentMode" formControlName="assignmentMode" id="field_assignmentMode">
+                        <option value="MANUAL">{{ 'appApp.AssignmentMode.MANUAL' | translate }}</option>
+                        <option value="AUTOMATIC">{{ 'appApp.AssignmentMode.AUTOMATIC' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.assignment.invoice" for="field_invoice">Invoice</label>
+                    <select class="form-control" id="field_invoice" name="invoice" formControlName="invoice">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="invoiceOption.id === editForm.get('invoice')!.value?.id ? editForm.get('invoice')!.value : invoiceOption" *ngFor="let invoiceOption of invoices; trackBy: trackById">{{ invoiceOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

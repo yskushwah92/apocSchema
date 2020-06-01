@@ -1,0 +1,67 @@
+{
+  "name": "CurrencyExchange",
+  "fields": [
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fromCurrency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "toCurrency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "validfrom",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "exchangeRate",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "exchangeType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ratioFrom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ratioTo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "isDeleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200601213418",
+  "entityTableName": "currency_exchange",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

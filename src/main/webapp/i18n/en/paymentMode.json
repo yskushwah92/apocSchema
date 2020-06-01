@@ -1,0 +1,12 @@
+{
+  "appApp": {
+    "PaymentMode": {
+      "null": "",
+      "CASH": "CASH",
+      "UPI": "UPI",
+      "ONLINEBANKING": "ONLINEBANKING",
+      "CHEQUE": "CHEQUE",
+      "DRAFT": "DRAFT"
+    }
+  }
+}

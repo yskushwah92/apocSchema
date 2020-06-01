@@ -1,0 +1,9 @@
+{
+  "appApp": {
+    "DocumentCategory": {
+      "null": "",
+      "INVOICE": "INVOICE",
+      "PO": "PO"
+    }
+  }
+}

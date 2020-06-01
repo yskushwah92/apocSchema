@@ -1,0 +1,108 @@
+{
+  "name": "FileInfo",
+  "fields": [
+    {
+      "fieldName": "source",
+      "fieldType": "FileSource",
+      "fieldValues": "MAIL,FAX,SFTP"
+    },
+    {
+      "fieldName": "sourceDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senderMailId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "filePath",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fileName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fileExtension",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "FileType",
+      "fieldValues": "PDF,DOC,PNG,JPEG,DOCX,RTF"
+    },
+    {
+      "fieldName": "documentType",
+      "fieldType": "DocumentType",
+      "fieldValues": "INVOICE,PURCHASE_ORDER"
+    },
+    {
+      "fieldName": "documentCategory",
+      "fieldType": "DocumentCategory",
+      "fieldValues": "INVOICE,PO"
+    },
+    {
+      "fieldName": "clientId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "clientDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "protocol",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fileInfo",
+      "otherEntityRelationshipName": "fileInfo",
+      "relationshipName": "fileInfo"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fileSourceDetails",
+      "otherEntityRelationshipName": "fileInfo",
+      "relationshipName": "fileSourceDetails"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "fileInfo",
+      "relationshipName": "invoice",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "fileInfo",
+      "otherEntityRelationshipName": "fileInfo",
+      "relationshipName": "fileInfo",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601213318",
+  "entityTableName": "file_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

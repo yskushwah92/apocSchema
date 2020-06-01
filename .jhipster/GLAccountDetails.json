@@ -1,0 +1,123 @@
+{
+  "name": "GLAccountDetails",
+  "fields": [
+    {
+      "fieldName": "accountNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chartOfAccounts",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "categoryId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isBalanceSheet",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "textForCriterion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "someText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taxCatTaxCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "currencykey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activeCOA",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activeCoCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postingWithoutTaxAllowed",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postingBlock",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postAtProfitCentre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postAtCostCentre",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postAtSegment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "postAtInternalOrder",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "vendor",
+      "otherEntityRelationshipName": "gLAccountDetails",
+      "relationshipName": "vendor",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "purchaseOrderLine",
+      "otherEntityRelationshipName": "gLAccountDetails",
+      "relationshipName": "purchaseOrderLine",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoiceLineItem",
+      "otherEntityRelationshipName": "gLAccountDetails",
+      "relationshipName": "invoiceLineItem",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200601214018",
+  "entityTableName": "gl_account_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

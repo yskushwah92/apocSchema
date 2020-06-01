@@ -1,0 +1,172 @@
+{
+  "name": "PaymentInfo",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "terms",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mode",
+      "fieldType": "PaymentMode",
+      "fieldValues": "CASH,UPI,ONLINEBANKING,CHEQUE,DRAFT"
+    },
+    {
+      "fieldName": "dueDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "PaymentStatus",
+      "fieldValues": "SUCCESS,FAILURE,PROCESSING,PENDING"
+    },
+    {
+      "fieldName": "paymentChannel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "PaymentType",
+      "fieldValues": "FORWARD,REFUND"
+    },
+    {
+      "fieldName": "approvalStatus",
+      "fieldType": "ApprovalStatus",
+      "fieldValues": "APPROVED,DISAPPROVED,PAID,CANCELLED,FAILED"
+    },
+    {
+      "fieldName": "dateOfApproval",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "dateOfPayment",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "paymentReferenceNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "checkNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "checkAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "earlyPaymentDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "earlyPaymentDiscount",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "earlyPaymentAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "earlyPaymentRemarks",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentDocDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "paymentDocNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "paymentAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "discountTaken",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "discountLost",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "paymentCurrency",
+      "fieldType": "Currency",
+      "fieldValues": "INDIAN_RUPEE,US_DOLLAR"
+    },
+    {
+      "fieldName": "invoiceBaseAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "clearedDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "clearedAmount",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "transactionId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "paymentInfo",
+      "otherEntityRelationshipName": "paymentInfo",
+      "relationshipName": "paymentInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "paymentInfo",
+      "relationshipName": "invoice",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "paymentInfo",
+      "otherEntityRelationshipName": "paymentInfo",
+      "relationshipName": "paymentInfo",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "paymentInfo",
+      "relationshipName": "invoice",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601220018",
+  "entityTableName": "payment_info",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

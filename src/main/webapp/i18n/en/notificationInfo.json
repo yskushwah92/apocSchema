@@ -1,0 +1,32 @@
+{
+  "appApp": {
+    "notificationInfo": {
+      "home": {
+        "title": "Notification Infos",
+        "createLabel": "Create a new Notification Info",
+        "createOrEditLabel": "Create or edit a Notification Info",
+        "notFound": "No Notification Infos found"
+      },
+      "created": "A new Notification Info is created with identifier {{ param }}",
+      "updated": "A Notification Info is updated with identifier {{ param }}",
+      "deleted": "A Notification Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Notification Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Notification Info"
+      },
+      "sender": "Sender",
+      "receiver": "Receiver",
+      "mode": "Mode",
+      "message": "Message",
+      "status": "Status",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "purchaseOrder": "Purchase Order",
+      "notificationInfo": "Notification Info",
+      "invoice": "Invoice",
+      "notificationInfo": "Notification Info"
+    }
+  }
+}

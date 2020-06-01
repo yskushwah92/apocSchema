@@ -1,0 +1,97 @@
+{
+  "name": "PurchaseOrder",
+  "fields": [
+    {
+      "fieldName": "serialNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "header",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "unit",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "issuer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "issuerDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "purchaseOrderHeader",
+      "otherEntityRelationshipName": "purchaseOrder",
+      "relationshipName": "purchaseOrderHeader",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "gRNDetails",
+      "otherEntityRelationshipName": "purchaseOrder",
+      "relationshipName": "gRNDetails",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "purchaseOrderLine",
+      "otherEntityRelationshipName": "purchaseOrder",
+      "relationshipName": "purchaseOrderLine"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "purchaseOrder",
+      "relationshipName": "invoice"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "vendor",
+      "otherEntityRelationshipName": "purchaseOrder",
+      "relationshipName": "vendor",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "notificationInfo",
+      "otherEntityRelationshipName": "purchaseOrder",
+      "relationshipName": "notificationInfo",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200601213618",
+  "entityTableName": "purchase_order",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

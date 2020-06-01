@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-notification-info-heading" jhiTranslate="appApp.notificationInfo.home.createOrEditLabel">Create or edit a Notification Info</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.sender" for="field_sender">Sender</label>
+                    <input type="text" class="form-control" name="sender" id="field_sender"
+                           formControlName="sender"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.receiver" for="field_receiver">Receiver</label>
+                    <input type="text" class="form-control" name="receiver" id="field_receiver"
+                           formControlName="receiver"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.mode" for="field_mode">Mode</label>
+                    <input type="text" class="form-control" name="mode" id="field_mode"
+                           formControlName="mode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.message" for="field_message">Message</label>
+                    <input type="text" class="form-control" name="message" id="field_message"
+                           formControlName="message"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.purchaseOrder" for="field_purchaseOrder">Purchase Order</label>
+                    <select class="form-control" id="field_purchaseOrder" name="purchaseOrder" formControlName="purchaseOrder">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="purchaseOrderOption.id === editForm.get('purchaseOrder')!.value?.id ? editForm.get('purchaseOrder')!.value : purchaseOrderOption" *ngFor="let purchaseOrderOption of purchaseorders; trackBy: trackById">{{ purchaseOrderOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.notificationInfo.notificationInfo" for="field_notificationInfo">Notification Info</label>
+                    <select class="form-control" id="field_notificationInfo" name="notificationInfo" formControlName="notificationInfo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="notificationInfoOption.id === editForm.get('notificationInfo')!.value?.id ? editForm.get('notificationInfo')!.value : notificationInfoOption" *ngFor="let notificationInfoOption of notificationinfos; trackBy: trackById">{{ notificationInfoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

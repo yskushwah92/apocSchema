@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="oCRRawExtraction">
+            <h2><span jhiTranslate="appApp.oCRRawExtraction.detail.title">OCR Raw Extraction</span> {{ oCRRawExtraction.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.name">Name</span></dt>
+                <dd>
+                    <span>{{ oCRRawExtraction.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.fieldName">Field Name</span></dt>
+                <dd>
+                    <span>{{ oCRRawExtraction.fieldName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.capturedfieldValue">Capturedfield Value</span></dt>
+                <dd>
+                    <span>{{ oCRRawExtraction.capturedfieldValue }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.actualFieldValue">Actual Field Value</span></dt>
+                <dd>
+                    <span>{{ oCRRawExtraction.actualFieldValue }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.language">Language</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Language.' + oCRRawExtraction.language }}">{{ oCRRawExtraction.language }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.documentType">Document Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.DocumentType.' + oCRRawExtraction.documentType }}">{{ oCRRawExtraction.documentType }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.accuracy">Accuracy</span></dt>
+                <dd>
+                    <span>{{ oCRRawExtraction.accuracy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.extractions">Extractions</span></dt>
+                <dd>
+                    <span>{{ oCRRawExtraction.extractions }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ oCRRawExtraction.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ oCRRawExtraction.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRRawExtraction.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="oCRRawExtraction.invoice">
+                        <a [routerLink]="['/invoice', oCRRawExtraction.invoice?.id, 'view']">{{ oCRRawExtraction.invoice?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ocr-raw-extraction', oCRRawExtraction.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

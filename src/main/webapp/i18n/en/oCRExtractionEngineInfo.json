@@ -1,0 +1,28 @@
+{
+  "appApp": {
+    "oCRExtractionEngineInfo": {
+      "home": {
+        "title": "OCR Extraction Engine Infos",
+        "createLabel": "Create a new OCR Extraction Engine Info",
+        "createOrEditLabel": "Create or edit a OCR Extraction Engine Info",
+        "notFound": "No OCR Extraction Engine Infos found"
+      },
+      "created": "A new OCR Extraction Engine Info is created with identifier {{ param }}",
+      "updated": "A OCR Extraction Engine Info is updated with identifier {{ param }}",
+      "deleted": "A OCR Extraction Engine Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete OCR Extraction Engine Info {{ id }}?"
+      },
+      "detail": {
+        "title": "OCR Extraction Engine Info"
+      },
+      "name": "Name",
+      "userName": "User Name",
+      "password": "Password",
+      "apiKey": "Api Key",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "modelInfo": "Model Info"
+    }
+  }
+}

@@ -1,0 +1,291 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-invoice-header-heading" jhiTranslate="appApp.invoiceHeader.home.createOrEditLabel">Create or edit a Invoice Header</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.companyCode" for="field_companyCode">Company Code</label>
+                    <input type="text" class="form-control" name="companyCode" id="field_companyCode"
+                           formControlName="companyCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.legalEntityName" for="field_legalEntityName">Legal Entity Name</label>
+                    <input type="text" class="form-control" name="legalEntityName" id="field_legalEntityName"
+                           formControlName="legalEntityName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.comments" for="field_comments">Comments</label>
+                    <input type="text" class="form-control" name="comments" id="field_comments"
+                           formControlName="comments"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.grossAmount" for="field_grossAmount">Gross Amount</label>
+                    <input type="text" class="form-control" name="grossAmount" id="field_grossAmount"
+                           formControlName="grossAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.netAmount" for="field_netAmount">Net Amount</label>
+                    <input type="text" class="form-control" name="netAmount" id="field_netAmount"
+                           formControlName="netAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.currency" for="field_currency">Currency</label>
+                    <select class="form-control" name="currency" formControlName="currency" id="field_currency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.country" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                           formControlName="country"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.countryKey" for="field_countryKey">Country Key</label>
+                    <input type="text" class="form-control" name="countryKey" id="field_countryKey"
+                           formControlName="countryKey"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.languageKey" for="field_languageKey">Language Key</label>
+                    <input type="text" class="form-control" name="languageKey" id="field_languageKey"
+                           formControlName="languageKey"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.erpReferenceNumber" for="field_erpReferenceNumber">Erp Reference Number</label>
+                    <input type="text" class="form-control" name="erpReferenceNumber" id="field_erpReferenceNumber"
+                           formControlName="erpReferenceNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.poBoxCode" for="field_poBoxCode">Po Box Code</label>
+                    <input type="text" class="form-control" name="poBoxCode" id="field_poBoxCode"
+                           formControlName="poBoxCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.scanDate" for="field_scanDate">Scan Date</label>
+                    <div class="d-flex">
+                        <input id="field_scanDate" type="datetime-local" class="form-control" name="scanDate" formControlName="scanDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.receivedDate" for="field_receivedDate">Received Date</label>
+                    <div class="d-flex">
+                        <input id="field_receivedDate" type="datetime-local" class="form-control" name="receivedDate" formControlName="receivedDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.caseCreationDate" for="field_caseCreationDate">Case Creation Date</label>
+                    <div class="d-flex">
+                        <input id="field_caseCreationDate" type="datetime-local" class="form-control" name="caseCreationDate" formControlName="caseCreationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.numberOfScannedPages" for="field_numberOfScannedPages">Number Of Scanned Pages</label>
+                    <input type="text" class="form-control" name="numberOfScannedPages" id="field_numberOfScannedPages"
+                           formControlName="numberOfScannedPages"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.sla" for="field_sla">Sla</label>
+                    <input type="text" class="form-control" name="sla" id="field_sla"
+                           formControlName="sla"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.slaExpirationDate" for="field_slaExpirationDate">Sla Expiration Date</label>
+                    <div class="d-flex">
+                        <input id="field_slaExpirationDate" type="datetime-local" class="form-control" name="slaExpirationDate" formControlName="slaExpirationDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.tradingPartner" for="field_tradingPartner">Trading Partner</label>
+                    <input type="text" class="form-control" name="tradingPartner" id="field_tradingPartner"
+                           formControlName="tradingPartner"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.deliveryDate" for="field_deliveryDate">Delivery Date</label>
+                    <div class="d-flex">
+                        <input id="field_deliveryDate" type="datetime-local" class="form-control" name="deliveryDate" formControlName="deliveryDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.deliveryNoteNumber" for="field_deliveryNoteNumber">Delivery Note Number</label>
+                    <div class="d-flex">
+                        <input id="field_deliveryNoteNumber" type="datetime-local" class="form-control" name="deliveryNoteNumber" formControlName="deliveryNoteNumber" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.recepientEmail" for="field_recepientEmail">Recepient Email</label>
+                    <input type="text" class="form-control" name="recepientEmail" id="field_recepientEmail"
+                           formControlName="recepientEmail"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.isCaseClose" for="field_isCaseClose">Is Case Close</label>
+                    <input type="text" class="form-control" name="isCaseClose" id="field_isCaseClose"
+                           formControlName="isCaseClose"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.ocrRequired" for="field_ocrRequired">Ocr Required</label>
+                    <input type="checkbox" class="form-control" name="ocrRequired" id="field_ocrRequired"
+                           formControlName="ocrRequired"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.barcode" for="field_barcode">Barcode</label>
+                    <input type="text" class="form-control" name="barcode" id="field_barcode"
+                           formControlName="barcode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.functionalCurrency" for="field_functionalCurrency">Functional Currency</label>
+                    <select class="form-control" name="functionalCurrency" formControlName="functionalCurrency" id="field_functionalCurrency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.reportingCurrency" for="field_reportingCurrency">Reporting Currency</label>
+                    <select class="form-control" name="reportingCurrency" formControlName="reportingCurrency" id="field_reportingCurrency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.approverRequired" for="field_approverRequired">Approver Required</label>
+                    <input type="text" class="form-control" name="approverRequired" id="field_approverRequired"
+                           formControlName="approverRequired"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.siteCode" for="field_siteCode">Site Code</label>
+                    <input type="text" class="form-control" name="siteCode" id="field_siteCode"
+                           formControlName="siteCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.sortCode" for="field_sortCode">Sort Code</label>
+                    <input type="text" class="form-control" name="sortCode" id="field_sortCode"
+                           formControlName="sortCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.discount" for="field_discount">Discount</label>
+                    <input type="number" class="form-control" name="discount" id="field_discount"
+                           formControlName="discount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.additionalCharges" for="field_additionalCharges">Additional Charges</label>
+                    <input type="number" class="form-control" name="additionalCharges" id="field_additionalCharges"
+                           formControlName="additionalCharges"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.sumLineAmount" for="field_sumLineAmount">Sum Line Amount</label>
+                    <input type="number" class="form-control" name="sumLineAmount" id="field_sumLineAmount"
+                           formControlName="sumLineAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.conversionRate" for="field_conversionRate">Conversion Rate</label>
+                    <input type="number" class="form-control" name="conversionRate" id="field_conversionRate"
+                           formControlName="conversionRate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.paymentCurrency" for="field_paymentCurrency">Payment Currency</label>
+                    <select class="form-control" name="paymentCurrency" formControlName="paymentCurrency" id="field_paymentCurrency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.liabilityAccount" for="field_liabilityAccount">Liability Account</label>
+                    <input type="text" class="form-control" name="liabilityAccount" id="field_liabilityAccount"
+                           formControlName="liabilityAccount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.postingDate" for="field_postingDate">Posting Date</label>
+                    <div class="d-flex">
+                        <input id="field_postingDate" type="datetime-local" class="form-control" name="postingDate" formControlName="postingDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.termDate" for="field_termDate">Term Date</label>
+                    <div class="d-flex">
+                        <input id="field_termDate" type="datetime-local" class="form-control" name="termDate" formControlName="termDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.shippingAmount" for="field_shippingAmount">Shipping Amount</label>
+                    <input type="number" class="form-control" name="shippingAmount" id="field_shippingAmount"
+                           formControlName="shippingAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.invoiceHeader.gRNDetails" for="field_gRNDetails">G RN Details</label>
+                    <select class="form-control" id="field_gRNDetails" name="gRNDetails" formControlName="gRNDetails">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gRNDetailsOption.id === editForm.get('gRNDetails')!.value?.id ? editForm.get('gRNDetails')!.value : gRNDetailsOption" *ngFor="let gRNDetailsOption of grndetails; trackBy: trackById">{{ gRNDetailsOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

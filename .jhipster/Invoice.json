@@ -1,0 +1,240 @@
+{
+  "name": "Invoice",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "serialNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "invoiceNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referenceNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "caseNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "priority",
+      "fieldType": "Priority",
+      "fieldValues": "HIGH,MEDIUM,LOW"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "InvoiceType",
+      "fieldValues": "PURCHASE_ORDER,NON_PURCHASE_ORDER"
+    },
+    {
+      "fieldName": "dateOfCreation",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "sellerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountFunctional",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "amountReporting",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "issuer",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tax",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "inclusiveOfTax",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "InvoiceStatus",
+      "fieldValues": "ACCEPTED,REJECTED,FULFILLED,DEFERRED,HALT"
+    },
+    {
+      "fieldName": "gstn",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prefferredModeOfCommunication",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pointOfContact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankAccDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "upiDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "preferredModeOfPayment",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "fileInfo",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "fileInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "modelInfo",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "modelInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "notificationInfo",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "notificationInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "paymentInfo",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "paymentInfo",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoiceHeader",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "invoiceHeader",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "oCRRawExtraction",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "oCRRawExtraction"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "invoice"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "invoiceLineItem",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "invoiceLineItem"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "invoiceStatusDetails",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "invoiceStatusDetails"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "paymentInfo",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "paymentInfo"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "auditLog",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "auditLog"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "assignment",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "assignment"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "vendor",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "vendor",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "invoice",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "purchaseOrder",
+      "otherEntityRelationshipName": "invoice",
+      "relationshipName": "purchaseOrder",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601214518",
+  "entityTableName": "invoice",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

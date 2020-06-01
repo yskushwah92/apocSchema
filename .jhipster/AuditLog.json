@@ -1,0 +1,83 @@
+{
+  "name": "AuditLog",
+  "fields": [
+    {
+      "fieldName": "activityName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activityCreationDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "activityStartTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "activityEndTime",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "assignedDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "user",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "comments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "completeOn",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Duration"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "auditLogDetails",
+      "otherEntityRelationshipName": "auditLog",
+      "relationshipName": "auditLogDetails"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "invoice",
+      "otherEntityRelationshipName": "auditLog",
+      "relationshipName": "invoice",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601214618",
+  "entityTableName": "audit_log",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

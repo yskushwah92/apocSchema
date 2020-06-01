@@ -1,0 +1,153 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-gl-account-details-heading" jhiTranslate="appApp.gLAccountDetails.home.createOrEditLabel">Create or edit a GL Account Details</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.accountNo" for="field_accountNo">Account No</label>
+                    <input type="text" class="form-control" name="accountNo" id="field_accountNo"
+                           formControlName="accountNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.country" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                           formControlName="country"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.chartOfAccounts" for="field_chartOfAccounts">Chart Of Accounts</label>
+                    <input type="text" class="form-control" name="chartOfAccounts" id="field_chartOfAccounts"
+                           formControlName="chartOfAccounts"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.categoryId" for="field_categoryId">Category Id</label>
+                    <input type="text" class="form-control" name="categoryId" id="field_categoryId"
+                           formControlName="categoryId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.accountType" for="field_accountType">Account Type</label>
+                    <input type="text" class="form-control" name="accountType" id="field_accountType"
+                           formControlName="accountType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.isBalanceSheet" for="field_isBalanceSheet">Is Balance Sheet</label>
+                    <input type="checkbox" class="form-control" name="isBalanceSheet" id="field_isBalanceSheet"
+                           formControlName="isBalanceSheet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.textForCriterion" for="field_textForCriterion">Text For Criterion</label>
+                    <input type="text" class="form-control" name="textForCriterion" id="field_textForCriterion"
+                           formControlName="textForCriterion"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.someText" for="field_someText">Some Text</label>
+                    <input type="text" class="form-control" name="someText" id="field_someText"
+                           formControlName="someText"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.taxCatTaxCode" for="field_taxCatTaxCode">Tax Cat Tax Code</label>
+                    <input type="text" class="form-control" name="taxCatTaxCode" id="field_taxCatTaxCode"
+                           formControlName="taxCatTaxCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.currencykey" for="field_currencykey">Currencykey</label>
+                    <input type="text" class="form-control" name="currencykey" id="field_currencykey"
+                           formControlName="currencykey"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.activeCOA" for="field_activeCOA">Active COA</label>
+                    <input type="text" class="form-control" name="activeCOA" id="field_activeCOA"
+                           formControlName="activeCOA"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.activeCoCode" for="field_activeCoCode">Active Co Code</label>
+                    <input type="text" class="form-control" name="activeCoCode" id="field_activeCoCode"
+                           formControlName="activeCoCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.postingWithoutTaxAllowed" for="field_postingWithoutTaxAllowed">Posting Without Tax Allowed</label>
+                    <input type="text" class="form-control" name="postingWithoutTaxAllowed" id="field_postingWithoutTaxAllowed"
+                           formControlName="postingWithoutTaxAllowed"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.postingBlock" for="field_postingBlock">Posting Block</label>
+                    <input type="text" class="form-control" name="postingBlock" id="field_postingBlock"
+                           formControlName="postingBlock"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.postAtProfitCentre" for="field_postAtProfitCentre">Post At Profit Centre</label>
+                    <input type="text" class="form-control" name="postAtProfitCentre" id="field_postAtProfitCentre"
+                           formControlName="postAtProfitCentre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.postAtCostCentre" for="field_postAtCostCentre">Post At Cost Centre</label>
+                    <input type="text" class="form-control" name="postAtCostCentre" id="field_postAtCostCentre"
+                           formControlName="postAtCostCentre"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.postAtSegment" for="field_postAtSegment">Post At Segment</label>
+                    <input type="text" class="form-control" name="postAtSegment" id="field_postAtSegment"
+                           formControlName="postAtSegment"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.postAtInternalOrder" for="field_postAtInternalOrder">Post At Internal Order</label>
+                    <input type="text" class="form-control" name="postAtInternalOrder" id="field_postAtInternalOrder"
+                           formControlName="postAtInternalOrder"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.isActive" for="field_isActive">Is Active</label>
+                    <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.gLAccountDetails.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

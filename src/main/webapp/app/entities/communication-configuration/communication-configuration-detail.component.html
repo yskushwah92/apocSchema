@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="communicationConfiguration">
+            <h2><span jhiTranslate="appApp.communicationConfiguration.detail.title">Communication Configuration</span> {{ communicationConfiguration.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.communicationConfiguration.priority">Priority</span></dt>
+                <dd>
+                    <span>{{ communicationConfiguration.priority }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.communicationConfiguration.retries">Retries</span></dt>
+                <dd>
+                    <span>{{ communicationConfiguration.retries }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.communicationConfiguration.mode">Mode</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.CommunicationMode.' + communicationConfiguration.mode }}">{{ communicationConfiguration.mode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.communicationConfiguration.name">Name</span></dt>
+                <dd>
+                    <span>{{ communicationConfiguration.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.communicationConfiguration.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ communicationConfiguration.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.communicationConfiguration.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ communicationConfiguration.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.communicationConfiguration.mailBox">Mail Box</span></dt>
+                <dd>
+                    <div *ngIf="communicationConfiguration.mailBox">
+                        <a [routerLink]="['/mail-box', communicationConfiguration.mailBox?.id, 'view']">{{ communicationConfiguration.mailBox?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/communication-configuration', communicationConfiguration.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

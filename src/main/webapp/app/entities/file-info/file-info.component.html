@@ -1,0 +1,95 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.fileInfo.home.title">File Infos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-file-info" [routerLink]="['/file-info/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.fileInfo.home.createLabel">
+            Create a new File Info
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="fileInfos?.length === 0">
+        <span jhiTranslate="appApp.fileInfo.home.notFound">No fileInfos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="fileInfos && fileInfos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.source">Source</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.sourceDetails">Source Details</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.senderMailId">Sender Mail Id</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.filePath">File Path</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.fileName">File Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.reason">Reason</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.fileExtension">File Extension</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.type">Type</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.documentType">Document Type</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.documentCategory">Document Category</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.clientId">Client Id</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.clientDetails">Client Details</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.protocol">Protocol</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.fileInfo.fileInfo">File Info</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let fileInfo of fileInfos ;trackBy: trackId">
+                    <td><a [routerLink]="['/file-info', fileInfo.id, 'view']">{{ fileInfo.id }}</a></td>
+                    <td jhiTranslate="{{ 'appApp.FileSource.' + fileInfo.source }}">{{ fileInfo.source }}</td>
+                    <td>{{ fileInfo.sourceDetails }}</td>
+                    <td>{{ fileInfo.senderMailId }}</td>
+                    <td>{{ fileInfo.filePath }}</td>
+                    <td>{{ fileInfo.fileName }}</td>
+                    <td>{{ fileInfo.reason }}</td>
+                    <td>{{ fileInfo.fileExtension }}</td>
+                    <td jhiTranslate="{{ 'appApp.FileType.' + fileInfo.type }}">{{ fileInfo.type }}</td>
+                    <td jhiTranslate="{{ 'appApp.DocumentType.' + fileInfo.documentType }}">{{ fileInfo.documentType }}</td>
+                    <td jhiTranslate="{{ 'appApp.DocumentCategory.' + fileInfo.documentCategory }}">{{ fileInfo.documentCategory }}</td>
+                    <td>{{ fileInfo.clientId }}</td>
+                    <td>{{ fileInfo.clientDetails }}</td>
+                    <td>{{ fileInfo.protocol }}</td>
+                    <td>{{ fileInfo.createdAt | date:'medium' }}</td>
+                    <td>{{ fileInfo.createdBy }}</td>
+                    <td>
+                        <div *ngIf="fileInfo.fileInfo">
+                            <a [routerLink]="['/file-info', fileInfo.fileInfo?.id, 'view']" >{{ fileInfo.fileInfo?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/file-info', fileInfo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/file-info', fileInfo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(fileInfo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

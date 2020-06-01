@@ -1,0 +1,28 @@
+{
+  "appApp": {
+    "caseStatusDetails": {
+      "home": {
+        "title": "Case Status Details",
+        "createLabel": "Create a new Case Status Details",
+        "createOrEditLabel": "Create or edit a Case Status Details",
+        "notFound": "No Case Status Details found"
+      },
+      "created": "A new Case Status Details is created with identifier {{ param }}",
+      "updated": "A Case Status Details is updated with identifier {{ param }}",
+      "deleted": "A Case Status Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Case Status Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Case Status Details"
+      },
+      "status": "Status",
+      "assignee": "Assignee",
+      "comments": "Comments",
+      "timeElapasedInCurrentStatus": "Time Elapased In Current Status",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "invoiceLineItem": "Invoice Line Item"
+    }
+  }
+}

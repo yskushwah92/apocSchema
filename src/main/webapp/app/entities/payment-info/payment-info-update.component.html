@@ -1,0 +1,248 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-payment-info-heading" jhiTranslate="appApp.paymentInfo.home.createOrEditLabel">Create or edit a Payment Info</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.terms" for="field_terms">Terms</label>
+                    <input type="text" class="form-control" name="terms" id="field_terms"
+                           formControlName="terms"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.mode" for="field_mode">Mode</label>
+                    <select class="form-control" name="mode" formControlName="mode" id="field_mode">
+                        <option value="CASH">{{ 'appApp.PaymentMode.CASH' | translate }}</option>
+                        <option value="UPI">{{ 'appApp.PaymentMode.UPI' | translate }}</option>
+                        <option value="ONLINEBANKING">{{ 'appApp.PaymentMode.ONLINEBANKING' | translate }}</option>
+                        <option value="CHEQUE">{{ 'appApp.PaymentMode.CHEQUE' | translate }}</option>
+                        <option value="DRAFT">{{ 'appApp.PaymentMode.DRAFT' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.dueDate" for="field_dueDate">Due Date</label>
+                    <div class="d-flex">
+                        <input id="field_dueDate" type="datetime-local" class="form-control" name="dueDate" formControlName="dueDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" formControlName="status" id="field_status">
+                        <option value="SUCCESS">{{ 'appApp.PaymentStatus.SUCCESS' | translate }}</option>
+                        <option value="FAILURE">{{ 'appApp.PaymentStatus.FAILURE' | translate }}</option>
+                        <option value="PROCESSING">{{ 'appApp.PaymentStatus.PROCESSING' | translate }}</option>
+                        <option value="PENDING">{{ 'appApp.PaymentStatus.PENDING' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.paymentChannel" for="field_paymentChannel">Payment Channel</label>
+                    <input type="text" class="form-control" name="paymentChannel" id="field_paymentChannel"
+                           formControlName="paymentChannel"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="FORWARD">{{ 'appApp.PaymentType.FORWARD' | translate }}</option>
+                        <option value="REFUND">{{ 'appApp.PaymentType.REFUND' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.approvalStatus" for="field_approvalStatus">Approval Status</label>
+                    <select class="form-control" name="approvalStatus" formControlName="approvalStatus" id="field_approvalStatus">
+                        <option value="APPROVED">{{ 'appApp.ApprovalStatus.APPROVED' | translate }}</option>
+                        <option value="DISAPPROVED">{{ 'appApp.ApprovalStatus.DISAPPROVED' | translate }}</option>
+                        <option value="PAID">{{ 'appApp.ApprovalStatus.PAID' | translate }}</option>
+                        <option value="CANCELLED">{{ 'appApp.ApprovalStatus.CANCELLED' | translate }}</option>
+                        <option value="FAILED">{{ 'appApp.ApprovalStatus.FAILED' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.dateOfApproval" for="field_dateOfApproval">Date Of Approval</label>
+                    <div class="d-flex">
+                        <input id="field_dateOfApproval" type="datetime-local" class="form-control" name="dateOfApproval" formControlName="dateOfApproval" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.dateOfPayment" for="field_dateOfPayment">Date Of Payment</label>
+                    <div class="d-flex">
+                        <input id="field_dateOfPayment" type="datetime-local" class="form-control" name="dateOfPayment" formControlName="dateOfPayment" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.paymentReferenceNumber" for="field_paymentReferenceNumber">Payment Reference Number</label>
+                    <input type="text" class="form-control" name="paymentReferenceNumber" id="field_paymentReferenceNumber"
+                           formControlName="paymentReferenceNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.checkDate" for="field_checkDate">Check Date</label>
+                    <div class="d-flex">
+                        <input id="field_checkDate" type="datetime-local" class="form-control" name="checkDate" formControlName="checkDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.checkNumber" for="field_checkNumber">Check Number</label>
+                    <input type="text" class="form-control" name="checkNumber" id="field_checkNumber"
+                           formControlName="checkNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.checkAmount" for="field_checkAmount">Check Amount</label>
+                    <input type="number" class="form-control" name="checkAmount" id="field_checkAmount"
+                           formControlName="checkAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.earlyPaymentDate" for="field_earlyPaymentDate">Early Payment Date</label>
+                    <div class="d-flex">
+                        <input id="field_earlyPaymentDate" type="datetime-local" class="form-control" name="earlyPaymentDate" formControlName="earlyPaymentDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.earlyPaymentDiscount" for="field_earlyPaymentDiscount">Early Payment Discount</label>
+                    <input type="text" class="form-control" name="earlyPaymentDiscount" id="field_earlyPaymentDiscount"
+                           formControlName="earlyPaymentDiscount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.earlyPaymentAmount" for="field_earlyPaymentAmount">Early Payment Amount</label>
+                    <input type="number" class="form-control" name="earlyPaymentAmount" id="field_earlyPaymentAmount"
+                           formControlName="earlyPaymentAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.earlyPaymentRemarks" for="field_earlyPaymentRemarks">Early Payment Remarks</label>
+                    <input type="text" class="form-control" name="earlyPaymentRemarks" id="field_earlyPaymentRemarks"
+                           formControlName="earlyPaymentRemarks"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.paymentDocDate" for="field_paymentDocDate">Payment Doc Date</label>
+                    <div class="d-flex">
+                        <input id="field_paymentDocDate" type="datetime-local" class="form-control" name="paymentDocDate" formControlName="paymentDocDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.paymentDocNo" for="field_paymentDocNo">Payment Doc No</label>
+                    <input type="text" class="form-control" name="paymentDocNo" id="field_paymentDocNo"
+                           formControlName="paymentDocNo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.paymentAmount" for="field_paymentAmount">Payment Amount</label>
+                    <input type="number" class="form-control" name="paymentAmount" id="field_paymentAmount"
+                           formControlName="paymentAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.discountTaken" for="field_discountTaken">Discount Taken</label>
+                    <input type="number" class="form-control" name="discountTaken" id="field_discountTaken"
+                           formControlName="discountTaken"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.discountLost" for="field_discountLost">Discount Lost</label>
+                    <input type="number" class="form-control" name="discountLost" id="field_discountLost"
+                           formControlName="discountLost"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.paymentCurrency" for="field_paymentCurrency">Payment Currency</label>
+                    <select class="form-control" name="paymentCurrency" formControlName="paymentCurrency" id="field_paymentCurrency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.invoiceBaseAmount" for="field_invoiceBaseAmount">Invoice Base Amount</label>
+                    <input type="number" class="form-control" name="invoiceBaseAmount" id="field_invoiceBaseAmount"
+                           formControlName="invoiceBaseAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.clearedDate" for="field_clearedDate">Cleared Date</label>
+                    <div class="d-flex">
+                        <input id="field_clearedDate" type="datetime-local" class="form-control" name="clearedDate" formControlName="clearedDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.clearedAmount" for="field_clearedAmount">Cleared Amount</label>
+                    <input type="number" class="form-control" name="clearedAmount" id="field_clearedAmount"
+                           formControlName="clearedAmount"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.transactionId" for="field_transactionId">Transaction Id</label>
+                    <input type="text" class="form-control" name="transactionId" id="field_transactionId"
+                           formControlName="transactionId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.paymentInfo" for="field_paymentInfo">Payment Info</label>
+                    <select class="form-control" id="field_paymentInfo" name="paymentInfo" formControlName="paymentInfo">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="paymentInfoOption.id === editForm.get('paymentInfo')!.value?.id ? editForm.get('paymentInfo')!.value : paymentInfoOption" *ngFor="let paymentInfoOption of paymentinfos; trackBy: trackById">{{ paymentInfoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.paymentInfo.invoice" for="field_invoice">Invoice</label>
+                    <select class="form-control" id="field_invoice" name="invoice" formControlName="invoice">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="invoiceOption.id === editForm.get('invoice')!.value?.id ? editForm.get('invoice')!.value : invoiceOption" *ngFor="let invoiceOption of invoices; trackBy: trackById">{{ invoiceOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

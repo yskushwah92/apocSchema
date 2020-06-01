@@ -1,0 +1,101 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.gLAccountDetails.home.title">GL Account Details</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-gl-account-details" [routerLink]="['/gl-account-details/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.gLAccountDetails.home.createLabel">
+            Create a new GL Account Details
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="gLAccountDetails?.length === 0">
+        <span jhiTranslate="appApp.gLAccountDetails.home.notFound">No gLAccountDetails found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="gLAccountDetails && gLAccountDetails.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.accountNo">Account No</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.country">Country</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.chartOfAccounts">Chart Of Accounts</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.categoryId">Category Id</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.accountType">Account Type</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.isBalanceSheet">Is Balance Sheet</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.textForCriterion">Text For Criterion</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.someText">Some Text</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.taxCatTaxCode">Tax Cat Tax Code</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.currencykey">Currencykey</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.activeCOA">Active COA</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.activeCoCode">Active Co Code</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.postingWithoutTaxAllowed">Posting Without Tax Allowed</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.postingBlock">Posting Block</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.postAtProfitCentre">Post At Profit Centre</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.postAtCostCentre">Post At Cost Centre</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.postAtSegment">Post At Segment</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.postAtInternalOrder">Post At Internal Order</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.isActive">Is Active</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.gLAccountDetails.createdBy">Created By</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let gLAccountDetails of gLAccountDetails ;trackBy: trackId">
+                    <td><a [routerLink]="['/gl-account-details', gLAccountDetails.id, 'view']">{{ gLAccountDetails.id }}</a></td>
+                    <td>{{ gLAccountDetails.accountNo }}</td>
+                    <td>{{ gLAccountDetails.country }}</td>
+                    <td>{{ gLAccountDetails.chartOfAccounts }}</td>
+                    <td>{{ gLAccountDetails.categoryId }}</td>
+                    <td>{{ gLAccountDetails.accountType }}</td>
+                    <td>{{ gLAccountDetails.isBalanceSheet }}</td>
+                    <td>{{ gLAccountDetails.textForCriterion }}</td>
+                    <td>{{ gLAccountDetails.someText }}</td>
+                    <td>{{ gLAccountDetails.taxCatTaxCode }}</td>
+                    <td>{{ gLAccountDetails.currencykey }}</td>
+                    <td>{{ gLAccountDetails.activeCOA }}</td>
+                    <td>{{ gLAccountDetails.activeCoCode }}</td>
+                    <td>{{ gLAccountDetails.postingWithoutTaxAllowed }}</td>
+                    <td>{{ gLAccountDetails.postingBlock }}</td>
+                    <td>{{ gLAccountDetails.postAtProfitCentre }}</td>
+                    <td>{{ gLAccountDetails.postAtCostCentre }}</td>
+                    <td>{{ gLAccountDetails.postAtSegment }}</td>
+                    <td>{{ gLAccountDetails.postAtInternalOrder }}</td>
+                    <td>{{ gLAccountDetails.isActive }}</td>
+                    <td>{{ gLAccountDetails.createdAt | date:'medium' }}</td>
+                    <td>{{ gLAccountDetails.createdBy }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/gl-account-details', gLAccountDetails.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/gl-account-details', gLAccountDetails.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(gLAccountDetails)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+{
+  "appApp": {
+    "gLAccountDetails": {
+      "home": {
+        "title": "GL Account Details",
+        "createLabel": "Create a new GL Account Details",
+        "createOrEditLabel": "Create or edit a GL Account Details",
+        "notFound": "No GL Account Details found"
+      },
+      "created": "A new GL Account Details is created with identifier {{ param }}",
+      "updated": "A GL Account Details is updated with identifier {{ param }}",
+      "deleted": "A GL Account Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete GL Account Details {{ id }}?"
+      },
+      "detail": {
+        "title": "GL Account Details"
+      },
+      "accountNo": "Account No",
+      "country": "Country",
+      "chartOfAccounts": "Chart Of Accounts",
+      "categoryId": "Category Id",
+      "accountType": "Account Type",
+      "isBalanceSheet": "Is Balance Sheet",
+      "textForCriterion": "Text For Criterion",
+      "someText": "Some Text",
+      "taxCatTaxCode": "Tax Cat Tax Code",
+      "currencykey": "Currencykey",
+      "activeCOA": "Active COA",
+      "activeCoCode": "Active Co Code",
+      "postingWithoutTaxAllowed": "Posting Without Tax Allowed",
+      "postingBlock": "Posting Block",
+      "postAtProfitCentre": "Post At Profit Centre",
+      "postAtCostCentre": "Post At Cost Centre",
+      "postAtSegment": "Post At Segment",
+      "postAtInternalOrder": "Post At Internal Order",
+      "isActive": "Is Active",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "vendor": "Vendor",
+      "purchaseOrderLine": "Purchase Order Line",
+      "invoiceLineItem": "Invoice Line Item"
+    }
+  }
+}

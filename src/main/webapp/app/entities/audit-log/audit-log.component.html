@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.auditLog.home.title">Audit Logs</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-audit-log" [routerLink]="['/audit-log/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.auditLog.home.createLabel">
+            Create a new Audit Log
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="auditLogs?.length === 0">
+        <span jhiTranslate="appApp.auditLog.home.notFound">No auditLogs found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="auditLogs && auditLogs.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.activityName">Activity Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.activityCreationDate">Activity Creation Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.activityStartTime">Activity Start Time</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.activityEndTime">Activity End Time</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.assignedDate">Assigned Date</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.user">User</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.status">Status</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.reason">Reason</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.comments">Comments</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.completeOn">Complete On</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.duration">Duration</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.auditLog.invoice">Invoice</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let auditLog of auditLogs ;trackBy: trackId">
+                    <td><a [routerLink]="['/audit-log', auditLog.id, 'view']">{{ auditLog.id }}</a></td>
+                    <td>{{ auditLog.activityName }}</td>
+                    <td>{{ auditLog.activityCreationDate | date:'medium' }}</td>
+                    <td>{{ auditLog.activityStartTime | date:'medium' }}</td>
+                    <td>{{ auditLog.activityEndTime | date:'medium' }}</td>
+                    <td>{{ auditLog.assignedDate | date:'medium' }}</td>
+                    <td>{{ auditLog.user }}</td>
+                    <td>{{ auditLog.status }}</td>
+                    <td>{{ auditLog.reason }}</td>
+                    <td>{{ auditLog.comments }}</td>
+                    <td>{{ auditLog.completeOn | date:'medium' }}</td>
+                    <td>{{ auditLog.duration }}</td>
+                    <td>{{ auditLog.createdAt | date:'medium' }}</td>
+                    <td>{{ auditLog.createdBy }}</td>
+                    <td>
+                        <div *ngIf="auditLog.invoice">
+                            <a [routerLink]="['/invoice', auditLog.invoice?.id, 'view']" >{{ auditLog.invoice?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/audit-log', auditLog.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/audit-log', auditLog.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(auditLog)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

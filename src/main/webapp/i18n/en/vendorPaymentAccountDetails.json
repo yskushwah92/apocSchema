@@ -1,0 +1,34 @@
+{
+  "appApp": {
+    "vendorPaymentAccountDetails": {
+      "home": {
+        "title": "Vendor Payment Account Details",
+        "createLabel": "Create a new Vendor Payment Account Details",
+        "createOrEditLabel": "Create or edit a Vendor Payment Account Details",
+        "notFound": "No Vendor Payment Account Details found"
+      },
+      "created": "A new Vendor Payment Account Details is created with identifier {{ param }}",
+      "updated": "A Vendor Payment Account Details is updated with identifier {{ param }}",
+      "deleted": "A Vendor Payment Account Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Vendor Payment Account Details {{ id }}?"
+      },
+      "detail": {
+        "title": "Vendor Payment Account Details"
+      },
+      "name": "Name",
+      "type": "Type",
+      "method": "Method",
+      "accountNumber": "Account Number",
+      "accountName": "Account Name",
+      "accountCode": "Account Code",
+      "accountKey": "Account Key",
+      "bankAccountType": "Bank Account Type",
+      "iban": "Iban",
+      "isActive": "Is Active",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "vendor": "Vendor"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "appApp": {
+    "gRNDetails": {
+      "home": {
+        "title": "GRN Details",
+        "createLabel": "Create a new GRN Details",
+        "createOrEditLabel": "Create or edit a GRN Details",
+        "notFound": "No GRN Details found"
+      },
+      "created": "A new GRN Details is created with identifier {{ param }}",
+      "updated": "A GRN Details is updated with identifier {{ param }}",
+      "deleted": "A GRN Details is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete GRN Details {{ id }}?"
+      },
+      "detail": {
+        "title": "GRN Details"
+      },
+      "grnNumber": "Grn Number",
+      "grnLineNumber": "Grn Line Number",
+      "grnQuantity": "Grn Quantity",
+      "grnType": "Grn Type",
+      "deliveryNote": "Delivery Note",
+      "isOpen": "Is Open",
+      "invoiceHeader": "Invoice Header",
+      "purchaseOrder": "Purchase Order",
+      "invoiceLineItem": "Invoice Line Item"
+    }
+  }
+}

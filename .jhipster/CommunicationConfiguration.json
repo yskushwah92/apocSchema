@@ -1,0 +1,51 @@
+{
+  "name": "CommunicationConfiguration",
+  "fields": [
+    {
+      "fieldName": "priority",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "retries",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mode",
+      "fieldType": "CommunicationMode",
+      "fieldValues": "MAIL,SMS,WHATSAPP,CALL"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "mailBox",
+      "otherEntityRelationshipName": "communicationConfiguration",
+      "relationshipName": "mailBox",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20200601215718",
+  "entityTableName": "communication_configuration",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

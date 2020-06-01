@@ -1,0 +1,64 @@
+{
+  "name": "GRNDetails",
+  "fields": [
+    {
+      "fieldName": "grnNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grnLineNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "grnQuantity",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "grnType",
+      "fieldType": "GRNType",
+      "fieldValues": "INVOICE,PO"
+    },
+    {
+      "fieldName": "deliveryNote",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isOpen",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoiceHeader",
+      "otherEntityRelationshipName": "gRNDetails",
+      "relationshipName": "invoiceHeader",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "purchaseOrder",
+      "otherEntityRelationshipName": "gRNDetails",
+      "relationshipName": "purchaseOrder",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "invoiceLineItem",
+      "otherEntityRelationshipName": "gRNDetails",
+      "relationshipName": "invoiceLineItem",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200601215318",
+  "entityTableName": "grn_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

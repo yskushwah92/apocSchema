@@ -1,0 +1,110 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="gLAccountDetails">
+            <h2><span jhiTranslate="appApp.gLAccountDetails.detail.title">GL Account Details</span> {{ gLAccountDetails.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.gLAccountDetails.accountNo">Account No</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.accountNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.country">Country</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.chartOfAccounts">Chart Of Accounts</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.chartOfAccounts }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.categoryId">Category Id</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.categoryId }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.accountType">Account Type</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.accountType }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.isBalanceSheet">Is Balance Sheet</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.isBalanceSheet }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.textForCriterion">Text For Criterion</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.textForCriterion }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.someText">Some Text</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.someText }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.taxCatTaxCode">Tax Cat Tax Code</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.taxCatTaxCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.currencykey">Currencykey</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.currencykey }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.activeCOA">Active COA</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.activeCOA }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.activeCoCode">Active Co Code</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.activeCoCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.postingWithoutTaxAllowed">Posting Without Tax Allowed</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.postingWithoutTaxAllowed }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.postingBlock">Posting Block</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.postingBlock }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.postAtProfitCentre">Post At Profit Centre</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.postAtProfitCentre }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.postAtCostCentre">Post At Cost Centre</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.postAtCostCentre }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.postAtSegment">Post At Segment</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.postAtSegment }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.postAtInternalOrder">Post At Internal Order</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.postAtInternalOrder }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.isActive }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.gLAccountDetails.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ gLAccountDetails.createdBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/gl-account-details', gLAccountDetails.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

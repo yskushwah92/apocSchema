@@ -1,0 +1,5 @@
+export const enum InvoiceType {
+  PURCHASE_ORDER = 'PURCHASE_ORDER',
+
+  NON_PURCHASE_ORDER = 'NON_PURCHASE_ORDER',
+}

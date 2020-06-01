@@ -1,0 +1,9 @@
+{
+  "appApp": {
+    "Currency": {
+      "null": "",
+      "INDIAN_RUPEE": "INDIAN_RUPEE",
+      "US_DOLLAR": "US_DOLLAR"
+    }
+  }
+}

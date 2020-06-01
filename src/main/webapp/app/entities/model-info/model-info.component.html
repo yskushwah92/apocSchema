@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.modelInfo.home.title">Model Infos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-model-info" [routerLink]="['/model-info/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.modelInfo.home.createLabel">
+            Create a new Model Info
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="modelInfos?.length === 0">
+        <span jhiTranslate="appApp.modelInfo.home.notFound">No modelInfos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="modelInfos && modelInfos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.modelInfo.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.modelInfo.version">Version</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.modelInfo.location">Location</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.modelInfo.executionScript">Execution Script</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.modelInfo.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.modelInfo.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.modelInfo.oCRRawExtraction">O CR Raw Extraction</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let modelInfo of modelInfos ;trackBy: trackId">
+                    <td><a [routerLink]="['/model-info', modelInfo.id, 'view']">{{ modelInfo.id }}</a></td>
+                    <td>{{ modelInfo.name }}</td>
+                    <td>{{ modelInfo.version }}</td>
+                    <td>{{ modelInfo.location }}</td>
+                    <td>{{ modelInfo.executionScript }}</td>
+                    <td>{{ modelInfo.createdAt | date:'medium' }}</td>
+                    <td>{{ modelInfo.createdBy }}</td>
+                    <td>
+                        <div *ngIf="modelInfo.oCRRawExtraction">
+                            <a [routerLink]="['/ocr-raw-extraction', modelInfo.oCRRawExtraction?.id, 'view']" >{{ modelInfo.oCRRawExtraction?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/model-info', modelInfo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/model-info', modelInfo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(modelInfo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

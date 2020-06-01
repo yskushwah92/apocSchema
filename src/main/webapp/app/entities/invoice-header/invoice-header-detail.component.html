@@ -1,0 +1,192 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoiceHeader">
+            <h2><span jhiTranslate="appApp.invoiceHeader.detail.title">Invoice Header</span> {{ invoiceHeader.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.invoiceHeader.companyCode">Company Code</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.companyCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.legalEntityName">Legal Entity Name</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.legalEntityName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.comments">Comments</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.comments }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.grossAmount">Gross Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.grossAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.netAmount">Net Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.netAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.currency">Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + invoiceHeader.currency }}">{{ invoiceHeader.currency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.country">Country</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.countryKey">Country Key</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.countryKey }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.languageKey">Language Key</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.languageKey }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.erpReferenceNumber">Erp Reference Number</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.erpReferenceNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.poBoxCode">Po Box Code</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.poBoxCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.scanDate">Scan Date</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.scanDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.receivedDate">Received Date</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.receivedDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.caseCreationDate">Case Creation Date</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.caseCreationDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.numberOfScannedPages">Number Of Scanned Pages</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.numberOfScannedPages }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.sla">Sla</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.sla }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.slaExpirationDate">Sla Expiration Date</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.slaExpirationDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.tradingPartner">Trading Partner</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.tradingPartner }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.deliveryDate">Delivery Date</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.deliveryDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.deliveryNoteNumber">Delivery Note Number</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.deliveryNoteNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.recepientEmail">Recepient Email</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.recepientEmail }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.isCaseClose">Is Case Close</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.isCaseClose }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.ocrRequired">Ocr Required</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.ocrRequired }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.barcode">Barcode</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.barcode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.functionalCurrency">Functional Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + invoiceHeader.functionalCurrency }}">{{ invoiceHeader.functionalCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.reportingCurrency">Reporting Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + invoiceHeader.reportingCurrency }}">{{ invoiceHeader.reportingCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.approverRequired">Approver Required</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.approverRequired }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.siteCode">Site Code</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.siteCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.sortCode">Sort Code</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.sortCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.discount">Discount</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.discount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.additionalCharges">Additional Charges</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.additionalCharges }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.sumLineAmount">Sum Line Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.sumLineAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.conversionRate">Conversion Rate</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.conversionRate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.paymentCurrency">Payment Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + invoiceHeader.paymentCurrency }}">{{ invoiceHeader.paymentCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.liabilityAccount">Liability Account</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.liabilityAccount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.postingDate">Posting Date</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.postingDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.termDate">Term Date</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.termDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.shippingAmount">Shipping Amount</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.shippingAmount }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ invoiceHeader.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.invoiceHeader.gRNDetails">G RN Details</span></dt>
+                <dd>
+                    <div *ngIf="invoiceHeader.gRNDetails">
+                        <a [routerLink]="['/grn-details', invoiceHeader.gRNDetails?.id, 'view']">{{ invoiceHeader.gRNDetails?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice-header', invoiceHeader.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

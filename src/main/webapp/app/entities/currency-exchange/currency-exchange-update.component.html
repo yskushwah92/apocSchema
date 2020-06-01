@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-currency-exchange-heading" jhiTranslate="appApp.currencyExchange.home.createOrEditLabel">Create or edit a Currency Exchange</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.country" for="field_country">Country</label>
+                    <input type="text" class="form-control" name="country" id="field_country"
+                           formControlName="country"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.fromCurrency" for="field_fromCurrency">From Currency</label>
+                    <select class="form-control" name="fromCurrency" formControlName="fromCurrency" id="field_fromCurrency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.toCurrency" for="field_toCurrency">To Currency</label>
+                    <select class="form-control" name="toCurrency" formControlName="toCurrency" id="field_toCurrency">
+                        <option value="INDIAN_RUPEE">{{ 'appApp.Currency.INDIAN_RUPEE' | translate }}</option>
+                        <option value="US_DOLLAR">{{ 'appApp.Currency.US_DOLLAR' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.validfrom" for="field_validfrom">Validfrom</label>
+                    <div class="d-flex">
+                        <input id="field_validfrom" type="datetime-local" class="form-control" name="validfrom" formControlName="validfrom" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.exchangeRate" for="field_exchangeRate">Exchange Rate</label>
+                    <input type="number" class="form-control" name="exchangeRate" id="field_exchangeRate"
+                           formControlName="exchangeRate"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.exchangeType" for="field_exchangeType">Exchange Type</label>
+                    <input type="text" class="form-control" name="exchangeType" id="field_exchangeType"
+                           formControlName="exchangeType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.ratioFrom" for="field_ratioFrom">Ratio From</label>
+                    <input type="text" class="form-control" name="ratioFrom" id="field_ratioFrom"
+                           formControlName="ratioFrom"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.ratioTo" for="field_ratioTo">Ratio To</label>
+                    <input type="text" class="form-control" name="ratioTo" id="field_ratioTo"
+                           formControlName="ratioTo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.isActive" for="field_isActive">Is Active</label>
+                    <input type="checkbox" class="form-control" name="isActive" id="field_isActive"
+                           formControlName="isActive"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.isDeleted" for="field_isDeleted">Is Deleted</label>
+                    <input type="checkbox" class="form-control" name="isDeleted" id="field_isDeleted"
+                           formControlName="isDeleted"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.createdAt" for="field_createdAt">Created At</label>
+                    <div class="d-flex">
+                        <input id="field_createdAt" type="datetime-local" class="form-control" name="createdAt" formControlName="createdAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="appApp.currencyExchange.createdBy" for="field_createdBy">Created By</label>
+                    <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                           formControlName="createdBy"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

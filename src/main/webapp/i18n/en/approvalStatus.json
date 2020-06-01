@@ -1,0 +1,12 @@
+{
+  "appApp": {
+    "ApprovalStatus": {
+      "null": "",
+      "APPROVED": "APPROVED",
+      "DISAPPROVED": "DISAPPROVED",
+      "PAID": "PAID",
+      "CANCELLED": "CANCELLED",
+      "FAILED": "FAILED"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="purchaseOrder">
+            <h2><span jhiTranslate="appApp.purchaseOrder.detail.title">Purchase Order</span> {{ purchaseOrder.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.purchaseOrder.serialNo">Serial No</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.serialNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.header">Header</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.header }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.unit">Unit</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.unit }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.issuer">Issuer</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.issuer }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.issuerDetails">Issuer Details</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.issuerDetails }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.creationDate">Creation Date</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.creationDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.price">Price</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.price }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.status">Status</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ purchaseOrder.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.purchaseOrderHeader">Purchase Order Header</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrder.purchaseOrderHeader">
+                        <a [routerLink]="['/purchase-order-header', purchaseOrder.purchaseOrderHeader?.id, 'view']">{{ purchaseOrder.purchaseOrderHeader?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.gRNDetails">G RN Details</span></dt>
+                <dd>
+                    <div *ngIf="purchaseOrder.gRNDetails">
+                        <a [routerLink]="['/grn-details', purchaseOrder.gRNDetails?.id, 'view']">{{ purchaseOrder.gRNDetails?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="appApp.purchaseOrder.vendor">Vendor</span></dt>
+                <dd>
+                    <span *ngFor="let vendor of purchaseOrder.vendors; let last = last">
+                        <a [routerLink]="['/vendor', vendor?.id, 'view']">{{ vendor.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/purchase-order', purchaseOrder.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

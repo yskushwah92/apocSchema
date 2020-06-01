@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.communicationConfiguration.home.title">Communication Configurations</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-communication-configuration" [routerLink]="['/communication-configuration/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.communicationConfiguration.home.createLabel">
+            Create a new Communication Configuration
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="communicationConfigurations?.length === 0">
+        <span jhiTranslate="appApp.communicationConfiguration.home.notFound">No communicationConfigurations found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="communicationConfigurations && communicationConfigurations.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.communicationConfiguration.priority">Priority</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.communicationConfiguration.retries">Retries</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.communicationConfiguration.mode">Mode</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.communicationConfiguration.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.communicationConfiguration.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.communicationConfiguration.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.communicationConfiguration.mailBox">Mail Box</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let communicationConfiguration of communicationConfigurations ;trackBy: trackId">
+                    <td><a [routerLink]="['/communication-configuration', communicationConfiguration.id, 'view']">{{ communicationConfiguration.id }}</a></td>
+                    <td>{{ communicationConfiguration.priority }}</td>
+                    <td>{{ communicationConfiguration.retries }}</td>
+                    <td jhiTranslate="{{ 'appApp.CommunicationMode.' + communicationConfiguration.mode }}">{{ communicationConfiguration.mode }}</td>
+                    <td>{{ communicationConfiguration.name }}</td>
+                    <td>{{ communicationConfiguration.createdAt | date:'medium' }}</td>
+                    <td>{{ communicationConfiguration.createdBy }}</td>
+                    <td>
+                        <div *ngIf="communicationConfiguration.mailBox">
+                            <a [routerLink]="['/mail-box', communicationConfiguration.mailBox?.id, 'view']" >{{ communicationConfiguration.mailBox?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/communication-configuration', communicationConfiguration.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/communication-configuration', communicationConfiguration.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(communicationConfiguration)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

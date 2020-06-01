@@ -1,0 +1,11 @@
+{
+  "appApp": {
+    "PaymentStatus": {
+      "null": "",
+      "SUCCESS": "SUCCESS",
+      "FAILURE": "FAILURE",
+      "PROCESSING": "PROCESSING",
+      "PENDING": "PENDING"
+    }
+  }
+}

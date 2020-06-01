@@ -1,0 +1,9 @@
+{
+  "appApp": {
+    "GRNType": {
+      "null": "",
+      "INVOICE": "INVOICE",
+      "PO": "PO"
+    }
+  }
+}

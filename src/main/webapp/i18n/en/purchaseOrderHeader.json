@@ -1,0 +1,33 @@
+{
+  "appApp": {
+    "purchaseOrderHeader": {
+      "home": {
+        "title": "Purchase Order Headers",
+        "createLabel": "Create a new Purchase Order Header",
+        "createOrEditLabel": "Create or edit a Purchase Order Header",
+        "notFound": "No Purchase Order Headers found"
+      },
+      "created": "A new Purchase Order Header is created with identifier {{ param }}",
+      "updated": "A Purchase Order Header is updated with identifier {{ param }}",
+      "deleted": "A Purchase Order Header is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Purchase Order Header {{ id }}?"
+      },
+      "detail": {
+        "title": "Purchase Order Header"
+      },
+      "serialNo": "Serial No",
+      "amount": "Amount",
+      "type": "Type",
+      "requestedBy": "Requested By",
+      "creationDate": "Creation Date",
+      "receiptRequired": "Receipt Required",
+      "status": "Status",
+      "companyCode": "Company Code",
+      "currencyCode": "Currency Code",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "purchaseOrder": "Purchase Order"
+    }
+  }
+}

@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="currencyExchange">
+            <h2><span jhiTranslate="appApp.currencyExchange.detail.title">Currency Exchange</span> {{ currencyExchange.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.currencyExchange.country">Country</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.fromCurrency">From Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + currencyExchange.fromCurrency }}">{{ currencyExchange.fromCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.toCurrency">To Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + currencyExchange.toCurrency }}">{{ currencyExchange.toCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.validfrom">Validfrom</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.validfrom }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.exchangeRate">Exchange Rate</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.exchangeRate }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.exchangeType">Exchange Type</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.exchangeType }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.ratioFrom">Ratio From</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.ratioFrom }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.ratioTo">Ratio To</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.ratioTo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.isActive">Is Active</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.isActive }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.isDeleted">Is Deleted</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.isDeleted }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.currencyExchange.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ currencyExchange.createdBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/currency-exchange', currencyExchange.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{
+  "appApp": {
+    "auditLog": {
+      "home": {
+        "title": "Audit Logs",
+        "createLabel": "Create a new Audit Log",
+        "createOrEditLabel": "Create or edit a Audit Log",
+        "notFound": "No Audit Logs found"
+      },
+      "created": "A new Audit Log is created with identifier {{ param }}",
+      "updated": "A Audit Log is updated with identifier {{ param }}",
+      "deleted": "A Audit Log is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Audit Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Audit Log"
+      },
+      "activityName": "Activity Name",
+      "activityCreationDate": "Activity Creation Date",
+      "activityStartTime": "Activity Start Time",
+      "activityEndTime": "Activity End Time",
+      "assignedDate": "Assigned Date",
+      "user": "User",
+      "status": "Status",
+      "reason": "Reason",
+      "comments": "Comments",
+      "completeOn": "Complete On",
+      "duration": "Duration",
+      "createdAt": "Created At",
+      "createdBy": "Created By",
+      "auditLogDetails": "Audit Log Details",
+      "invoice": "Invoice"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="oCRExtractionEngineInfo">
+            <h2><span jhiTranslate="appApp.oCRExtractionEngineInfo.detail.title">OCR Extraction Engine Info</span> {{ oCRExtractionEngineInfo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.oCRExtractionEngineInfo.name">Name</span></dt>
+                <dd>
+                    <span>{{ oCRExtractionEngineInfo.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRExtractionEngineInfo.userName">User Name</span></dt>
+                <dd>
+                    <span>{{ oCRExtractionEngineInfo.userName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRExtractionEngineInfo.password">Password</span></dt>
+                <dd>
+                    <span>{{ oCRExtractionEngineInfo.password }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRExtractionEngineInfo.apiKey">Api Key</span></dt>
+                <dd>
+                    <span>{{ oCRExtractionEngineInfo.apiKey }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRExtractionEngineInfo.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ oCRExtractionEngineInfo.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRExtractionEngineInfo.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ oCRExtractionEngineInfo.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.oCRExtractionEngineInfo.modelInfo">Model Info</span></dt>
+                <dd>
+                    <div *ngIf="oCRExtractionEngineInfo.modelInfo">
+                        <a [routerLink]="['/model-info', oCRExtractionEngineInfo.modelInfo?.id, 'view']">{{ oCRExtractionEngineInfo.modelInfo?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ocr-extraction-engine-info', oCRExtractionEngineInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

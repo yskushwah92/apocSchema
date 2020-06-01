@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="shippingLocation">
+            <h2><span jhiTranslate="appApp.shippingLocation.detail.title">Shipping Location</span> {{ shippingLocation.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.shippingLocation.name">Name</span></dt>
+                <dd>
+                    <span>{{ shippingLocation.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.shippingLocation.locationCode">Location Code</span></dt>
+                <dd>
+                    <span>{{ shippingLocation.locationCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.shippingLocation.description">Description</span></dt>
+                <dd>
+                    <span>{{ shippingLocation.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.shippingLocation.address">Address</span></dt>
+                <dd>
+                    <span>{{ shippingLocation.address }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.shippingLocation.country">Country</span></dt>
+                <dd>
+                    <span>{{ shippingLocation.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.shippingLocation.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{ shippingLocation.postalCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.shippingLocation.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ shippingLocation.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.shippingLocation.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ shippingLocation.createdBy }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/shipping-location', shippingLocation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

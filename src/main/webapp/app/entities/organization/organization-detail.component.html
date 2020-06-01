@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="organization">
+            <h2><span jhiTranslate="appApp.organization.detail.title">Organization</span> {{ organization.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="appApp.organization.name">Name</span></dt>
+                <dd>
+                    <span>{{ organization.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.organizationCode">Organization Code</span></dt>
+                <dd>
+                    <span>{{ organization.organizationCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.orgName">Org Name</span></dt>
+                <dd>
+                    <span>{{ organization.orgName }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.countryKey">Country Key</span></dt>
+                <dd>
+                    <span>{{ organization.countryKey }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.financeSystem">Finance System</span></dt>
+                <dd>
+                    <span>{{ organization.financeSystem }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.vatRegistrationNo">Vat Registration No</span></dt>
+                <dd>
+                    <span>{{ organization.vatRegistrationNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.currency">Currency</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'appApp.Currency.' + organization.currency }}">{{ organization.currency }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.language">Language</span></dt>
+                <dd>
+                    <span>{{ organization.language }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.createdAt">Created At</span></dt>
+                <dd>
+                    <span>{{ organization.createdAt }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.createdBy">Created By</span></dt>
+                <dd>
+                    <span>{{ organization.createdBy }}</span>
+                </dd>
+                <dt><span jhiTranslate="appApp.organization.contactDetails">Contact Details</span></dt>
+                <dd>
+                    <div *ngIf="organization.contactDetails">
+                        <a [routerLink]="['/contact-details', organization.contactDetails?.id, 'view']">{{ organization.contactDetails?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/organization', organization.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

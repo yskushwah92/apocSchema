@@ -1,0 +1,85 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="appApp.oCRRawExtraction.home.title">OCR Raw Extractions</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-ocr-raw-extraction" [routerLink]="['/ocr-raw-extraction/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="appApp.oCRRawExtraction.home.createLabel">
+            Create a new OCR Raw Extraction
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="oCRRawExtractions?.length === 0">
+        <span jhiTranslate="appApp.oCRRawExtraction.home.notFound">No oCRRawExtractions found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="oCRRawExtractions && oCRRawExtractions.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.name">Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.fieldName">Field Name</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.capturedfieldValue">Capturedfield Value</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.actualFieldValue">Actual Field Value</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.language">Language</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.documentType">Document Type</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.accuracy">Accuracy</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.extractions">Extractions</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.createdAt">Created At</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.createdBy">Created By</span></th>
+                    <th scope="col" ><span jhiTranslate="appApp.oCRRawExtraction.invoice">Invoice</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let oCRRawExtraction of oCRRawExtractions ;trackBy: trackId">
+                    <td><a [routerLink]="['/ocr-raw-extraction', oCRRawExtraction.id, 'view']">{{ oCRRawExtraction.id }}</a></td>
+                    <td>{{ oCRRawExtraction.name }}</td>
+                    <td>{{ oCRRawExtraction.fieldName }}</td>
+                    <td>{{ oCRRawExtraction.capturedfieldValue }}</td>
+                    <td>{{ oCRRawExtraction.actualFieldValue }}</td>
+                    <td jhiTranslate="{{ 'appApp.Language.' + oCRRawExtraction.language }}">{{ oCRRawExtraction.language }}</td>
+                    <td jhiTranslate="{{ 'appApp.DocumentType.' + oCRRawExtraction.documentType }}">{{ oCRRawExtraction.documentType }}</td>
+                    <td>{{ oCRRawExtraction.accuracy }}</td>
+                    <td>{{ oCRRawExtraction.extractions }}</td>
+                    <td>{{ oCRRawExtraction.createdAt | date:'medium' }}</td>
+                    <td>{{ oCRRawExtraction.createdBy }}</td>
+                    <td>
+                        <div *ngIf="oCRRawExtraction.invoice">
+                            <a [routerLink]="['/invoice', oCRRawExtraction.invoice?.id, 'view']" >{{ oCRRawExtraction.invoice?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/ocr-raw-extraction', oCRRawExtraction.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/ocr-raw-extraction', oCRRawExtraction.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(oCRRawExtraction)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

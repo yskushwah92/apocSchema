@@ -1,0 +1,75 @@
+{
+  "name": "VendorPaymentAccountDetails",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "PaymentAccountType",
+      "fieldValues": "BYBANKTRANSFERINADVANCE,BYINVOICE,CASH,CHECKINADVANCE,COD,DIRECTDEBIT,GOOGLECHECKOUT,UPI,PAYTM,PAYPAL,PHONEPE"
+    },
+    {
+      "fieldName": "method",
+      "fieldType": "PaymentMethod",
+      "fieldValues": "BANK,CASH"
+    },
+    {
+      "fieldName": "accountNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "accountKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bankAccountType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "iban",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isActive",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "vendor",
+      "otherEntityRelationshipName": "vendorPaymentAccountDetails",
+      "relationshipName": "vendor",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200601214218",
+  "entityTableName": "vendor_payment_account_details",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
